@@ -43,8 +43,8 @@ except ImportError:
 class listLinkedFiles():
 
     def GetResources(self):
-        menutext = "Structure tree of the assembly"
-        tooltip  = "<p>Show the hierarchical tree structure of parts and sub-assemblies in the assembly. "
+        menutext = "Tree of Linked Files"
+        tooltip  = "<p>Show the hierarchical tree structure of parts in the selected container. "
         tooltip += "The tree is displayed with ASCII art</p>"
         tooltip += "<p><b>Usage</b>: select an entity and click the command</p>"
         iconFile = os.path.join(Asm4.iconPath, 'Asm4_List_Liked_Files_Tree.svg')

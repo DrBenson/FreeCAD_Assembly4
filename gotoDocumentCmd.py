@@ -8,14 +8,15 @@
 
 
 
-import os
+import math, re, os
 
 from PySide import QtGui, QtCore
 import FreeCADGui as Gui
 import FreeCAD as App
+import Part
 
 import Asm4_libs as Asm4
-from Asm4_Translate import translate
+from Asm4_Translate import QT_TRANSLATE_NOOP as Qtranslate
 
 
 
@@ -32,8 +33,8 @@ class gotoDocumentCmd:
 
 
     def GetResources(self):
-        return {"MenuText": "Open Document",
-                "ToolTip": translate("Commands", "Activates the document of the selected linked part"),
+        return {"MenuText": Qtranslate("Asm4_gotoDocument", "Open Document"),
+                "ToolTip": Qtranslate("Asm4_gotoDocument", "Activates the document of the selected linked part"),
                 "Pixmap": os.path.join(Asm4.iconPath, 'Asm4_openDocument.svg')
                 }
 

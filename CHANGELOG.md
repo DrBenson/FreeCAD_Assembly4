@@ -2,25 +2,6 @@
 
 ## Release notes
 
-* 2024.03.19 (**0.50.12**) :  
-Re-added warning for incompatible FreeCAD version  
-Updated ReadMe  
-
-* 2024.03.19 (**0.50.11**) :  
-Fixed a silly ? left over  
-Removed version check (needs more testing)  
-
-* 2024.03.19 (**0.50.10**) :  
-Added warning for incompatible FreeCAD development version  
-
-* 2024.03.08 (**0.50.9**) :  
-fixed some translation code errors  
-
-* 2024.03.06 (**0.50.8**) :  
-Improved error handling for OpenCV library in animations  
-Translations  
-Minor fixes  
-
 * 2024.01.31 (**0.50.7**) :  
 Merged BoM and PartInfo code from JonasThomas (still doesn't seem to work !)  
 Simplyfied globalPlacement for LCS in Asm4_Measure  
