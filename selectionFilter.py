@@ -33,30 +33,37 @@ Asm4_3DselObserver = None
         button.objectName()
         button.setCheckable(True)
 """
+
+
 class selectionFilterClearCmd:
     def GetResources(self):
-        return {"MenuText": "Clear all selection filters",
-                "ToolTip": "Clear all selection filters",
-                "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_SelectionAll.svg')
+        return {"MenuText": App.Qt.translate("Assembly", "Clear all selection filters"),
+                "ToolTip": App.Qt.translate("Assembly", "Clear all selection filters"),
+                "Pixmap": os.path.join(Asm4.iconPath, 'Asm4_SelectionAll.svg')
                 }
+
     def IsActive(self):
         return True
+
     def Activated(self):
         # This function is executed when the command is activated
         Gui.Selection.removeSelectionGate()
         observerDisable()
         uncheckAll()
-        FCC.PrintMessage("All selection filters cleared\n")
+        FCC.PrintMessage(App.Qt.translate(
+            "Assembly", "All selection filters cleared\n"))
 
 
 class selectionFilterVertexCmd:
     def GetResources(self):
-        return {"MenuText": "Select only Vertices",
-                "ToolTip": "Select only Vertices",
-                "Pixmap" : os.path.join( Asm4.iconPath , 'Snap_Vertex.svg')
+        return {"MenuText": App.Qt.translate("Assembly", "Select only Vertices"),
+                "ToolTip": App.Qt.translate("Assembly", "Select only Vertices"),
+                "Pixmap": os.path.join(Asm4.iconPath, 'Snap_Vertex.svg')
                 }
+
     def IsActive(self):
         return True
+
     def Activated(self):
         # This function is executed when the command is activated
         button = 0
@@ -68,12 +75,14 @@ class selectionFilterVertexCmd:
 
 class selectionFilterEdgeCmd:
     def GetResources(self):
-        return {"MenuText": "Select only Edges",
-                "ToolTip": "Select only Edges",
-                "Pixmap" : os.path.join( Asm4.iconPath , 'Snap_Edge.svg')
+        return {"MenuText": App.Qt.translate("Assembly", "Select only Edges"),
+                "ToolTip": App.Qt.translate("Assembly", "Select only Edges"),
+                "Pixmap": os.path.join(Asm4.iconPath, 'Snap_Edge.svg')
                 }
+
     def IsActive(self):
         return True
+
     def Activated(self):
         # This function is executed when the command is activated
         button = 1
@@ -85,12 +94,14 @@ class selectionFilterEdgeCmd:
 
 class selectionFilterFaceCmd:
     def GetResources(self):
-        return {"MenuText": "Select only Faces",
-                "ToolTip": "Select only Faces",
-                "Pixmap" : os.path.join( Asm4.iconPath , 'Snap_Face.svg')
+        return {"MenuText": App.Qt.translate("Assembly", "Select only Faces"),
+                "ToolTip": App.Qt.translate("Assembly", "Select only Faces"),
+                "Pixmap": os.path.join(Asm4.iconPath, 'Snap_Face.svg')
                 }
+
     def IsActive(self):
         return True
+
     def Activated(self):
         # This function is executed when the command is activated
         button = 2
@@ -104,7 +115,7 @@ def getSelectionToolbar():
     mainwin = Gui.getMainWindow()
     sf_tb = None
     for tb in mainwin.findChildren(QtGui.QToolBar):
-        if tb.objectName()=='Selection Filter':
+        if tb.objectName() == 'Selection Filter':
             sf_tb = tb
     return sf_tb
 
@@ -134,12 +145,12 @@ def isChecked(button):
     return status
 
 
-def setButton(i,status):
+def setButton(i, status):
     tb = getSelectionToolbar()
     if tb is not None:
         if len(tb.actions()[0:-1]) >= i:
             tb.actions()[i].setChecked(status)
-            
+
 
 def applyFilter(button):
     subElement = None
@@ -151,11 +162,10 @@ def applyFilter(button):
         subElement = 'Face'
     if subElement is not None:
         observerDisable()
-        filter = Gui.Selection.Filter('SELECT Part::Feature SUBELEMENT '+subElement)
+        filter = Gui.Selection.Filter(
+            'SELECT Part::Feature SUBELEMENT '+subElement)
         Gui.Selection.addSelectionGate(filter)
         uncheckOthers(button)
-
-
 
 
 """
@@ -163,18 +173,20 @@ def applyFilter(button):
     |            treeSelectionOverride              |
     +-----------------------------------------------+
 """
-class selObserver3DViewCmd( QtGui.QDialog):
+
+
+class selObserver3DViewCmd(QtGui.QDialog):
     def __init__(self):
-        super(selObserver3DViewCmd,self).__init__()
+        super(selObserver3DViewCmd, self).__init__()
         global Asm4_3DselObserver
         Asm4_3DselObserver = None
 
     def GetResources(self):
-        return {"MenuText": "Enable/Disable 3D View selection mode",
-                "ToolTip": "Enable/Disable 3D View selection mode\n\n"    + \
-                "Allows to select a Link object in the 3D view\n" + \
-                "window instead of the Model tree",
-                "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_enableLinkSelection.svg')
+        return {"MenuText": App.Qt.translate("Assembly", "Enable/Disable 3D View selection mode"),
+                "ToolTip": App.Qt.translate("Assembly", "Enable/Disable 3D View selection mode\n\n" +
+                                            "Allows to select a Link object in the 3D view\n" +
+                                            "window instead of the Model tree"),
+                "Pixmap": os.path.join(Asm4.iconPath, 'Asm4_enableLinkSelection.svg')
                 }
 
     def IsActive(self):
@@ -190,18 +202,19 @@ class selObserver3DViewCmd( QtGui.QDialog):
             observerDisable()
 
 
-
 """
     +-----------------------------------------------+
     |               Asm4_3DselObserver class        |
     +-----------------------------------------------+
 """
+
+
 class selObserver3DView:
     # Selection object
-    def addSelection(self,doc,obj,sub,pnt):
+    def addSelection(self, doc, obj, sub, pnt):
         # Since both 3D view clicks and manual tree selection gets into the same callback
         # we will determine by clicked coordinates, for manual tree selections the coordinates are (0,0,0)
-        if pnt != (0,0,0):
+        if pnt != (0, 0, 0):
             # 3D view click
             objList = App.getDocument(doc).getObject(obj).getSubObjectList(sub)
             # Build the name of the selected sub-object for multiple sub-assembly levels
@@ -209,12 +222,12 @@ class selObserver3DView:
             # first look for the linked object of the selected entity:
             # Get linked object name that handles sub-sub-assembly
             for subObj in objList:
-                if subObj.TypeId=='App::Link':
+                if subObj.TypeId == 'App::Link':
                     subObjName = subObjName + subObj.Name + '.'
             # if no App::Link found, let's look for other things:
             if subObjName == '':
                 for subObj in objList:
-                    if subObj.TypeId=='App::Part' or subObj.TypeId=='PartDesign::Body'or subObj.isDerivedFrom('Part::Feature'):
+                    if subObj.TypeId == 'App::Part' or subObj.TypeId == 'PartDesign::Body' or subObj.isDerivedFrom('Part::Feature'):
                         # the objList contains also the top-level object, don't count it twice
                         if subObj.Name != obj:
                             subObjName = subObjName + subObj.Name + '.'
@@ -222,27 +235,29 @@ class selObserver3DView:
             if subObjName != '':
                 Gui.Selection.clearSelection()
                 Gui.Selection.addSelection(doc, obj, subObjName)
-                #FCC.PrintMessage("*"+doc+"*"+obj+"*"+subObjName+"*\n")
+                # FCC.PrintMessage("*"+doc+"*"+obj+"*"+subObjName+"*\n")
 
 
 def observerEnable():
     # remove any selection filters
     Gui.Selection.removeSelectionGate()
     global Asm4_3DselObserver
-    Asm4_3DselObserver = selObserver3DView();
+    Asm4_3DselObserver = selObserver3DView()
     # add the listener, 0 forces to resolve the links
     Gui.Selection.addObserver(Asm4_3DselObserver, 0)
-    setButton(3,True)
-    FCC.PrintMessage("Asm4 3D view selection mode is now ENABLED\n")
+    setButton(3, True)
+    FCC.PrintMessage(App.Qt.translate(
+        "Assembly", "Asm4 3D view selection mode is now ENABLED\n"))
 
 
 def observerDisable():
     global Asm4_3DselObserver
-    Gui.Selection.removeObserver(Asm4_3DselObserver) 
-    setButton(3,False)
+    Gui.Selection.removeObserver(Asm4_3DselObserver)
+    setButton(3, False)
     # only print to Console if the Asm4_3DselObserver was there
     if Asm4_3DselObserver:
-        FCC.PrintMessage("Asm4 3D view selection mode is now DISABLED\n")
+        FCC.PrintMessage(App.Qt.translate(
+            "Assembly", "Asm4 3D view selection mode is now DISABLED\n"))
     Asm4_3DselObserver = None
 
 
@@ -254,17 +269,13 @@ def observerStatus():
     return status
 
 
-
-
 """
     +-----------------------------------------------+
     |       add the command to the workbench        |
     +-----------------------------------------------+
 """
-Gui.addCommand( 'Asm4_SelectionFilterVertexCmd', selectionFilterVertexCmd() )
-Gui.addCommand( 'Asm4_SelectionFilterEdgeCmd',   selectionFilterEdgeCmd() )
-Gui.addCommand( 'Asm4_SelectionFilterFaceCmd',   selectionFilterFaceCmd() )
-Gui.addCommand( 'Asm4_selObserver3DViewCmd',     selObserver3DViewCmd() )
-Gui.addCommand( 'Asm4_SelectionFilterClearCmd',  selectionFilterClearCmd() )
-
-
+Gui.addCommand('Asm4_SelectionFilterVertexCmd', selectionFilterVertexCmd())
+Gui.addCommand('Asm4_SelectionFilterEdgeCmd',   selectionFilterEdgeCmd())
+Gui.addCommand('Asm4_SelectionFilterFaceCmd',   selectionFilterFaceCmd())
+Gui.addCommand('Asm4_selObserver3DViewCmd',     selObserver3DViewCmd())
+Gui.addCommand('Asm4_SelectionFilterClearCmd',  selectionFilterClearCmd())

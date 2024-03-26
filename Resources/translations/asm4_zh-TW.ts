@@ -17,126 +17,382 @@
 <context>
     <name>Assembly</name>
     <message>
+        <location filename="../../AnimationExportLib.py" line="203"/>
+        <source>Export failed for &quot;</source>
+        <translation>匯出失敗于 &quot;</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="203"/>
+        <source>&quot;. Using another container type can help.
+</source>
+        <translation>&quot;. 使用另一種容器類型會有所幫助.
+</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="239"/>
+        <source>Capturing and Exporting...</source>
+        <translation>擷取和匯出...</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="455"/>
+        <source>Animation Export Preview</source>
+        <translation>動畫匯出預覽</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="466"/>
+        <source>Preview</source>
+        <translation>預覽</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="468"/>
+        <source>TheImageLabel</source>
+        <translation>圖形標籤</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="478"/>
+        <source>Preview Scale:</source>
+        <translation>預覽縮放:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="493"/>
+        <source>Choose a file
+Supported extensions are *.gif *.mp4 *.avi *.mov *.mkv</source>
+        <translation>選擇一個檔案
+支援的副檔名格式有 *.gif *.mp4 *.avi *.mov *.mkv</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="530"/>
+        <source>FPS:</source>
+        <translation>影格/秒:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="533"/>
+        <source>Loops:</source>
+        <translation>循環:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="539"/>
+        <source>Smoothen:</source>
+        <translation>平滑:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="547"/>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="564"/>
+        <source>Logo</source>
+        <translation>圖標</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="568"/>
+        <source>Choose an image file
+Supported extensions are *.png *.jpg *.jpeg *.gif</source>
+        <translation>選擇圖片檔案
+支援的副檔名格式有 *.png *.jpg *.jpeg *.gif</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="598"/>
+        <source>Width:</source>
+        <translation>寬度:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="601"/>
+        <source>Height:</source>
+        <translation>高度:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="607"/>
+        <source>X-Offset:</source>
+        <translation>偏移 X:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="610"/>
+        <source>Y-Offset:</source>
+        <translation>偏移 Y:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="632"/>
+        <source>Refresh Preview</source>
+        <translation>重新整理預覽</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="634"/>
+        <source>Create and Save</source>
+        <translation>建立並儲存</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="699"/>
+        <source>File:</source>
+        <translation>檔案:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="714"/>
+        <source>Select File</source>
+        <translation>選擇一個檔案</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="715"/>
+        <source>Image Files (*.png *.jpg *.jpeg *.gif)</source>
+        <translation>圖片檔案 (*.png *.jpg *.jpeg *.gif)</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="715"/>
+        <source>Supported Files (*.mp4 *.avi *.mov *.mkv *.gif *.png)</source>
+        <translation>支援的檔案格式 (*.mp4 *.avi *.mov *.mkv *.gif *.png)</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="757"/>
+        <source>Color:</source>
+        <translation>顏色:</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="761"/>
+        <source>Select</source>
+        <translation>選擇</translation>
+    </message>
+    <message>
+        <location filename="../../variantLinkCmd.py" line="42"/>
+        <source>EXPERIMENTAL !!!
+Create a variant link to a part
+Select a part containing a &quot;Variables&quot; property container</source>
+        <translation>實驗性!!!
+建立零件的變體鏈接
+選擇包含“變數”屬性容器的零件</translation>
+    </message>
+    <message>
+        <location filename="../../variantLinkCmd.py" line="46"/>
+        <source>Create a variant Part</source>
+        <translation>建立一個變量零件</translation>
+    </message>
+    <message>
+        <location filename="../../insertLinkCmd.py" line="113"/>
+        <source>Please create an Assembly</source>
+        <translation>請先建立一個零件組合</translation>
+    </message>
+    <message>
+        <location filename="../../insertLinkCmd.py" line="281"/>
+        <source>The current document must be saved before inserting an external part</source>
+        <translation>插入外部零件之前必須先儲存目前文件</translation>
+    </message>
+    <message>
+        <location filename="../../variantLinkCmd.py" line="304"/>
+        <source>Insert a variant of a Part</source>
+        <translation>插入零件的變數</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationExportLib.py" line="239"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../../insertLinkCmd.py" line="348"/>
+        <source>Insert</source>
+        <translation>插入</translation>
+    </message>
+    <message>
+        <location filename="../../insertLinkCmd.py" line="354"/>
+        <source>Filter :</source>
+        <translation>篩選器 :</translation>
+    </message>
+    <message>
+        <location filename="../../insertLinkCmd.py" line="357"/>
+        <source>Select Part to be inserted :</source>
+        <translation>選擇要插入的零件:</translation>
+    </message>
+    <message>
+        <location filename="../../insertLinkCmd.py" line="360"/>
+        <source>Name for the link :</source>
+        <translation>連結的名稱:</translation>
+    </message>
+    <message>
+        <location filename="../../exportFiles.py" line="51"/>
+        <source>Tree of Linked Files</source>
+        <translation>連結檔案樹</translation>
+    </message>
+    <message>
+        <location filename="../../exportFiles.py" line="52"/>
+        <source>&lt;p&gt;Show the hierarchical tree structure of parts in the selected container. The tree is displayed with ASCII art&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage&lt;/b&gt;: select an entity and click the command&lt;/p&gt;</source>
+        <translation>&lt;p&gt;顯示所選容器中零件的層次樹結構. 樹以ASCII方式顯示&lt;/p&gt;&lt;p&gt;&lt;b&gt;用法&lt;/b&gt;: 選擇一個實體並點選指令&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../exportFiles.py" line="99"/>
+        <source>Oups, you shouldn&apos;t see this message, something went wrong</source>
+        <translation>哎呀，您不應該看到此訊息，出了點問題</translation>
+    </message>
+    <message>
+        <location filename="../../exportFiles.py" line="170"/>
+        <source>Copied to clipboard</source>
+        <translation>複製到剪貼簿</translation>
+    </message>
+    <message>
+        <location filename="../../exportFiles.py" line="181"/>
+        <source>Tree structure of the selected object</source>
+        <translation>所選物體的樹狀結構</translation>
+    </message>
+    <message>
+        <location filename="../../exportFiles.py" line="200"/>
+        <source>Copy to clipboard</source>
+        <translation>複製到剪貼簿</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="638"/>
+        <source>Close</source>
+        <translation>結束</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="38"/>
         <source>animationProvider.nextFrame not implemented.</source>
         <translation>animationProvider.nextFrame 未達成.</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="95"/>
         <source>Variable name invalid</source>
         <translation>變量名稱無效</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="96"/>
         <source>The selected variable name &quot;</source>
         <translation>選定的變數名稱 &quot;</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="96"/>
         <source>&quot; is not valid. </source>
         <translation>&quot; 是無效的. </translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="97"/>
         <source>Please select an existing variable.</source>
         <translation>請選擇一個現有變數.</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="175"/>
         <source>- Select Document -</source>
         <translation>- 選取文件 -</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="200"/>
         <source>- Select Variable (only float) -</source>
         <translation>- 選擇變量 (只有浮動) -</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="335"/>
         <source>Unknown State/Transition</source>
         <translation>未知狀態/轉換</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="485"/>
         <source>The Python module &quot;OpenCV&quot; is not installed</source>
         <translation>Python模組 &quot;OpenCV&quot; 尚未安裝</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="523"/>
         <source>Animate Assembly</source>
         <translation>零件組合動畫</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="536"/>
         <source>Document</source>
         <translation>文件</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="547"/>
         <source>Range Begin</source>
         <translation>範圍開始</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="553"/>
         <source>Range End</source>
         <translation>範圍結束</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="560"/>
         <source>Step Size</source>
         <translation>步進大小</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="569"/>
         <source>Sleep (s)</source>
         <translation>暫停(秒)</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="579"/>
         <source>Current Value:</source>
         <translation>目前值:</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="592"/>
         <source>Begin</source>
         <translation>開始</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="594"/>
         <source>End</source>
         <translation>結束</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="596"/>
         <source>The last reachable variable value with the given stepping. Flagged red in case this is not equal to the intended value. The last step of the animation will be reduced to stay inside the configured limits.</source>
         <translation>給定步進的最後一個可到達的變數值. 如果不等於預期值，則標記為紅色. 動畫的最後一步將減少以保持在設定的限制內.</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="609"/>
         <source>Force GUI to update on every step.</source>
         <translation>強制 GUI 到每一步更新動作.</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="611"/>
         <source>Force-render every step</source>
         <translation>強制渲染每一步動作</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="617"/>
         <source>Infinite Loop</source>
         <translation>無限循環</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="618"/>
         <source>Loop</source>
         <translation>循環</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="623"/>
         <source>Back-and-forth pendulum</source>
         <translation>來回擺動</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="625"/>
         <source>Pendulum</source>
         <translation>擺動</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="640"/>
         <source>Exit</source>
-        <translation>結束離開</translation>
+        <translation>離開</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="644"/>
         <source>Save</source>
         <translation>儲存</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="646"/>
         <source>Save this sequence as video</source>
         <translation>將此序列儲存為影片</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="651"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="657"/>
         <source>Run</source>
         <translation>執行</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="658"/>
         <source>Run this sequence in the 3D window
 
 If the model is large and complex,
@@ -147,66 +403,82 @@ it is advisable to try with 10 frames</source>
 建議嘗試10影格/秒</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="666"/>
         <source>Dummy</source>
         <translation>模擬</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="820"/>
         <source>The hintfield for the animation dialog</source>
         <translation>動畫對話框的提示欄位</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="77"/>
         <source>&lt;p&gt;Adds a variable into the &lt;i&gt;Variables&lt;/i&gt; placeholder in the document. This variable can then be used in any formula using the &lt;i&gt;ExpressionEngine&lt;/i&gt; of any compatible input field. These are marked with a &quot;f(x)&quot; symbol&lt;/p&gt;</source>
         <translation>&lt;p&gt;將變數加入文件中的&lt;i&gt;變數&lt;/i&gt;佔位符中. 然後，可以使用&lt;i&gt;ExpressionEngine&lt;/i&gt;在任何公式中使用該變數任何相容的輸入欄位. 它們標有&quot;f(x)&quot;符號&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="178"/>
         <source>Add Variable</source>
         <translation>新增變量</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="191"/>
         <source>Type</source>
         <translation>類型</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="395"/>
         <source>OK</source>
         <translation>確定</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="250"/>
         <source>Delete a Variable</source>
         <translation>刪除一個變量</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="266"/>
         <source>There are no variables here</source>
         <translation>這裡沒有變數</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="301"/>
         <source>Please choose</source>
         <translation>請選擇</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="312"/>
         <source>Delete Variable</source>
         <translation>刪除變量</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="577"/>
         <source>Variable</source>
         <translation>變量</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="329"/>
         <source>Name</source>
         <translation>名稱</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="333"/>
         <source>Value</source>
-        <translation>值</translation>
+        <translation>數值</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="337"/>
         <source>Description</source>
-        <translation>說明</translation>
+        <translation>內容描述</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="266"/>
         <source>Delete</source>
         <translation>刪除</translation>
     </message>
     <message>
+        <location filename="../../VariablesLib.py" line="379"/>
         <source>Adds a variable into the &quot;Variables&quot; placeholder in the document.
 This variable can then be used in any formula using the ExpressionEngine
 of any compatible input field. These are marked with a &quot;f(x)&quot; symbol.</source>
@@ -215,296 +487,62 @@ of any compatible input field. These are marked with a &quot;f(x)&quot; symbol.<
 它們標有&quot;f(x)&quot;符號.</translation>
     </message>
     <message>
-        <source>Tree of Linked Files</source>
-        <translation>連結檔案樹</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Show the hierarchical tree structure of parts in the selected container. The tree is displayed with ASCII art&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage&lt;/b&gt;: select an entity and click the command&lt;/p&gt;</source>
-        <translation>&lt;p&gt;顯示所選容器中零件的層次樹結構. 樹以ASCII方式顯示&lt;/p&gt;&lt;p&gt;&lt;b&gt;用法&lt;/b&gt;: 選擇一個實體並點選指令&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Oups, you shouldn&apos;t see this message, something went wrong</source>
-        <translation>哎呀，您不應該看到此訊息，出了點問題</translation>
-    </message>
-    <message>
-        <source>Copied to clipboard</source>
-        <translation>複製到剪貼簿</translation>
-    </message>
-    <message>
-        <source>Tree structure of the selected object</source>
-        <translation>所選物體的樹狀結構</translation>
-    </message>
-    <message>
-        <source>Copy to clipboard</source>
-        <translation>複製到剪貼簿</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>關閉</translation>
-    </message>
-    <message>
-        <source>This Part contains an incompatible &quot;Variables&quot; object, </source>
-        <translation>此零件包含不相容的&quot;變量&quot;物體， </translation>
-    </message>
-    <message>
-        <source>this could lead to unexpected results
-</source>
-        <translation>這可能會導致意想不到的結果
-</translation>
-    </message>
-    <message>
-        <source>Found legacy AssemblyType property, adding new empty SolverId property
-</source>
-        <translation>找到舊的 &quot;零件組合類型&quot; 屬性，新增新的空白 求解ID 屬性
-</translation>
-    </message>
-    <message>
-        <source>FreeCAD Warning</source>
-        <translation>FreeCAD 警示</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to proceed ?</source>
-        <translation>您確定要繼續嗎?</translation>
-    </message>
-    <message>
-        <source>Measure Tool</source>
-        <translation>測量工具</translation>
-    </message>
-    <message>
-        <source>Measure</source>
-        <translation>測量</translation>
-    </message>
-    <message>
-        <source>Observer started</source>
-        <translation>已啟動觀測</translation>
-    </message>
-    <message>
-        <source>closing ... </source>
-        <translation>關閉中... </translation>
-    </message>
-    <message>
-        <source>was not able to remove observer</source>
-        <translation>無法刪除觀測</translation>
-    </message>
-    <message>
-        <source>Removing all measurements ...</source>
-        <translation>清除全部量測標注 ...</translation>
-    </message>
-    <message>
-        <source>done</source>
-        <translation>完成</translation>
-    </message>
-    <message>
-        <source>Controls</source>
-        <translation>控制</translation>
-    </message>
-    <message>
-        <source>Measure Radius of Arc or Circle
-Measure Length of Edge</source>
-        <translation>測量圓弧或圓的半徑
-測量邊長</translation>
-    </message>
-    <message>
-        <source>Measure Distance</source>
-        <translation>測量距離</translation>
-    </message>
-    <message>
-        <source>Measure Angle</source>
-        <translation>測量角度</translation>
-    </message>
-    <message>
-        <source>Snap to EndPoint, MiddlePoint, Center</source>
-        <translation>捕捉到端點、中間點、中心</translation>
-    </message>
-    <message>
-        <source>Select Shape</source>
-        <translation>選取造型</translation>
-    </message>
-    <message>
-        <source>Selection 1</source>
-        <translation>選擇 1</translation>
-    </message>
-    <message>
-        <source>Select First Element</source>
-        <translation>選擇第一個元素</translation>
-    </message>
-    <message>
-        <source>Selection 2</source>
-        <translation>選擇 2</translation>
-    </message>
-    <message>
-        <source>Select Second Element</source>
-        <translation>選擇第二個元素</translation>
-    </message>
-    <message>
-        <source>Enable extra Label</source>
-        <translation>啟用額外標籤</translation>
-    </message>
-    <message>
-        <source>Show Label in 3D view</source>
-        <translation>在 3D 視圖中顯示標籤</translation>
-    </message>
-    <message>
-        <source>Show all dimension components</source>
-        <translation>顯示所有維度組件</translation>
-    </message>
-    <message>
-        <source>Show Components</source>
-        <translation>顯示元件</translation>
-    </message>
-    <message>
-        <source>Results</source>
-        <translation>結果</translation>
-    </message>
-    <message>
-        <source>Can&apos;t measure
-</source>
-        <translation>無法測量
-</translation>
-    </message>
-    <message>
-        <source>Select only faces or lines</source>
-        <translation>僅選擇面或線段</translation>
-    </message>
-    <message>
-        <source>ERROR 44
-</source>
-        <translation>錯誤 44
-</translation>
-    </message>
-    <message>
-        <source>Measuring angles</source>
-        <translation>量測角度</translation>
-    </message>
-    <message>
-        <source>Ivalid directions</source>
-        <translation>方向無效</translation>
-    </message>
-    <message>
-        <source>Minimum Distance :
-  </source>
-        <translation>最小距離:
-  </translation>
-    </message>
-    <message>
-        <source>Ivalid shapes</source>
-        <translation>非有效形狀</translation>
-    </message>
-    <message>
-        <source>Not a valid Line
-</source>
-        <translation>非有效線段
-</translation>
-    </message>
-    <message>
-        <source>Not valid Points</source>
-        <translation>非有效端點</translation>
-    </message>
-    <message>
-        <source>Radius : </source>
-        <translation>半徑: </translation>
-    </message>
-    <message>
-        <source>Diameter : </source>
-        <translation>直徑: </translation>
-    </message>
-    <message>
-        <source>Center : 
-</source>
-        <translation>中心: 
-</translation>
-    </message>
-    <message>
-        <source>Not a valid circle
-</source>
-        <translation>非有效圓形
-</translation>
-    </message>
-    <message>
-        <source>Invalid shape
-</source>
-        <translation>非有效形狀
-</translation>
-    </message>
-    <message>
-        <source>Coordinates :
-</source>
-        <translation>座標軸:
-</translation>
-    </message>
-    <message>
-        <source>Flat face
-Area : </source>
-        <translation>平面
-區域: </translation>
-    </message>
-    <message>
-        <source>Area : </source>
-        <translation>區域: </translation>
-    </message>
-    <message>
-        <source>Not a valid surface
-</source>
-        <translation>不是有效表面
-</translation>
-    </message>
-    <message>
-        <source>Angle : </source>
-        <translation>角度: </translation>
-    </message>
-    <message>
-        <source>Distance // </source>
-        <translation>距離 // </translation>
-    </message>
-    <message>
-        <source>Angle: </source>
-        <translation>角度: </translation>
-    </message>
-    <message>
+        <location filename="../../Asm4_objects.py" line="53"/>
         <source>Initialising ...</source>
         <translation>初始化 ...</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="106"/>
         <source>100 temporary variant documents are already in use, not creating a new one.</source>
         <translation>100 個臨時變數文件已在使用中，未建立新文件.</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="154"/>
         <source>No &quot;Variables&quot; container in source object</source>
         <translation>來源物體中沒有&quot;變數&quot;容器</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="169"/>
         <source>Attaching VariantLink ...</source>
         <translation>附加變數連結 ...</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="171"/>
         <source>Original object from which this variant is derived</source>
         <translation>衍生此變數的原始物體</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="174"/>
         <source>Link to the modified object</source>
         <translation>連結到修改後的物體</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="211"/>
         <source>Triggered onSettingDocument() in VariantLink</source>
         <translation>由變數連結中的 onSettingDocument() 觸發</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="218"/>
         <source>Triggered onLostLinkToObject() in VariantLink</source>
         <translation>由變數連結中的 onLostLinkToObject() 觸發</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="225"/>
         <source>Triggered by setupObject() in VariantLink</source>
         <translation>由變數連結中的 setupObject() 觸發</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="287"/>
         <source>The object to array</source>
         <translation>要陣列的物體</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="291"/>
         <source>Total number of elements in the array</source>
         <translation>陣列中元素的總數</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="515"/>
         <source>Calculates element placements in relation to the Axis.
 Each element is assigned an Index starting from 0
 The Index can be used in expressions calculating this Placement or its sub-properties
@@ -519,56 +557,334 @@ on Position.X: Index*30</source>
 在位置.X: Index*30</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="524"/>
         <source>The axis, direction or plane the Placer relates to</source>
         <translation>放置位置相關的軸、方向或平面</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="547"/>
         <source>Missing Source Object</source>
         <translation>缺少來源物體</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="552"/>
         <source>Source Object must reside inside a Part</source>
         <translation>來源物體必須駐留在零件內</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="556"/>
         <source>Source Object and Axis must have the same parent Part</source>
         <translation>來源物體和軸必須具有相同的上級零件</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="560"/>
         <source>The type of the selected axis is not supported</source>
         <translation>不支援所選軸的類型</translation>
     </message>
     <message>
+        <location filename="../../Asm4_objects.py" line="702"/>
         <source>Circular reference detected: {} -&gt; {}</source>
         <translation>偵測到循環引用: {} -&gt; {}</translation>
     </message>
     <message>
+        <location filename="../../Asm4_Measure.py" line="98"/>
+        <source>Measure Tool</source>
+        <translation>測量工具</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="125"/>
+        <source>Measure</source>
+        <translation>測量</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="145"/>
+        <source>Observer started</source>
+        <translation>已啟動觀測</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="179"/>
+        <source>closing ... </source>
+        <translation>關閉中... </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="184"/>
+        <source>was not able to remove observer</source>
+        <translation>無法刪除觀測</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="195"/>
+        <source>Removing all measurements ...</source>
+        <translation>清除全部量測標注 ...</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="217"/>
+        <source>done</source>
+        <translation>完成</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="291"/>
+        <source>Controls</source>
+        <translation>控制</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="304"/>
+        <source>Measure Radius of Arc or Circle
+Measure Length of Edge</source>
+        <translation>測量圓弧或圓的半徑
+測量邊長</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="313"/>
+        <source>Measure Distance</source>
+        <translation>測量距離</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="321"/>
+        <source>Measure Angle</source>
+        <translation>測量角度</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="339"/>
+        <source>Snap to EndPoint, MiddlePoint, Center</source>
+        <translation>捕捉到端點、中間點、中心</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="349"/>
+        <source>Select Shape</source>
+        <translation>選取造型</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="430"/>
+        <source>Selection 1</source>
+        <translation>選擇 1</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="431"/>
+        <source>Select First Element</source>
+        <translation>選擇第一個元素</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="449"/>
+        <source>Selection 2</source>
+        <translation>選擇 2</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="450"/>
+        <source>Select Second Element</source>
+        <translation>選擇第二個元素</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="473"/>
+        <source>Enable extra Label</source>
+        <translation>啟用額外標籤</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="474"/>
+        <source>Show Label in 3D view</source>
+        <translation>在 3D 視圖中顯示標籤</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="481"/>
+        <source>Show all dimension components</source>
+        <translation>顯示所有維度組件</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="482"/>
+        <source>Show Components</source>
+        <translation>顯示元件</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="487"/>
+        <source>Results</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="629"/>
+        <source>Can&apos;t measure
+</source>
+        <translation>無法測量
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="681"/>
+        <source>Select only faces or lines</source>
+        <translation>僅選擇面或線段</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="684"/>
+        <source>ERROR 44
+</source>
+        <translation>錯誤 44
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="695"/>
+        <source>Measuring angles</source>
+        <translation>量測角度</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="733"/>
+        <source>Ivalid directions</source>
+        <translation>方向無效</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="745"/>
+        <source>Minimum Distance :
+  </source>
+        <translation>最小距離:
+  </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="751"/>
+        <source>Ivalid shapes</source>
+        <translation>非有效形狀</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="780"/>
+        <source>Not a valid Line
+</source>
+        <translation>非有效線段
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="807"/>
+        <source>Not valid Points</source>
+        <translation>非有效端點</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="818"/>
+        <source>Radius : </source>
+        <translation>半徑: </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="820"/>
+        <source>Diameter : </source>
+        <translation>直徑: </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="821"/>
+        <source>Center : 
+</source>
+        <translation>中心: 
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="833"/>
+        <source>Not a valid circle
+</source>
+        <translation>非有效圓形
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="875"/>
+        <source>Invalid shape
+</source>
+        <translation>非有效形狀
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="893"/>
+        <source>Coordinates :
+</source>
+        <translation>座標軸:
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="905"/>
+        <source>Flat face
+Area : </source>
+        <translation>平面
+區域: </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="907"/>
+        <source>Area : </source>
+        <translation>區域: </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="909"/>
+        <source>Not a valid surface
+</source>
+        <translation>不是有效表面
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="920"/>
+        <source>Angle : </source>
+        <translation>角度: </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="1014"/>
+        <source>Distance // </source>
+        <translation>距離 // </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_Measure.py" line="1014"/>
+        <source>Angle: </source>
+        <translation>角度: </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_libs.py" line="194"/>
+        <source>This Part contains an incompatible &quot;Variables&quot; object, </source>
+        <translation>此零件包含不相容的&quot;變量&quot;物體， </translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_libs.py" line="195"/>
+        <source>this could lead to unexpected results
+</source>
+        <translation>這可能會導致意想不到的結果
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_libs.py" line="546"/>
+        <source>Found legacy AssemblyType property, adding new empty SolverId property
+</source>
+        <translation>找到舊的 &quot;零件組合類型&quot; 屬性，新增新的空白 求解ID 屬性
+</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_libs.py" line="582"/>
+        <source>FreeCAD Warning</source>
+        <translation>FreeCAD 警示</translation>
+    </message>
+    <message>
+        <location filename="../../Asm4_libs.py" line="585"/>
+        <source>Are you sure you want to proceed ?</source>
+        <translation>您確定要繼續嗎?</translation>
+    </message>
+    <message>
+        <location filename="../../checkInterference.py" line="33"/>
         <source>Check Intereferences</source>
         <translation>檢查交叉引用</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="34"/>
         <source>Check interferences among assembled objects (may take time)</source>
         <translation>檢查零件組合物體之間的干涉(可能需要點時間)</translation>
     </message>
     <message>
+        <location filename="../../checkInterference_z.py" line="80"/>
         <source>FOUND {} OBJECTS
 </source>
         <translation>找到 {} 個物體
 </translation>
     </message>
     <message>
+        <location filename="../../checkInterference_z.py" line="90"/>
         <source>
 &gt;&gt; PROCESSING INTERSECTIONS ... </source>
         <translation>
 &gt;&gt; 處理交叉引用 ... </translation>
     </message>
     <message>
+        <location filename="../../checkInterference_z.py" line="104"/>
         <source>Not enough parts for intersections
 </source>
         <translation>交叉引用零件不足
 </translation>
     </message>
     <message>
+        <location filename="../../checkInterference_z.py" line="108"/>
         <source>DONE. 
 There seems to be some conflicts between parts
 </source>
@@ -577,442 +893,488 @@ There seems to be some conflicts between parts
 </translation>
     </message>
     <message>
+        <location filename="../../checkInterference_z.py" line="111"/>
         <source>DONE. No conflicts found
 </source>
         <translation>完成. 沒有發現衝突
 </translation>
     </message>
     <message>
-        <source>
-&gt;&gt; USED PARTS:</source>
-        <translation>
-&gt;&gt; 使用過的零件:</translation>
-    </message>
-    <message>
-        <source>{} | Collision detected</source>
-        <translation>{}| 偵測到碰撞</translation>
-    </message>
-    <message>
-        <source>{} | Touching faces (REMOVING)</source>
-        <translation>{} | 接觸平面(移除)</translation>
-    </message>
-    <message>
+        <location filename="../../checkInterference.py" line="45"/>
         <source>Check interference works with Asm4 Assemblies and there is none in this file</source>
         <translation>檢查 Asm4 零件組件的干涉是否有效，此文件中沒有干涉</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="115"/>
         <source>Totaling {} possible comparisons (with fasteners)</source>
         <translation>總計 {} 種可能的比較(使用緊固件)</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="118"/>
         <source>Totaling {} possible comparisons</source>
         <translation>總計 {} 種可能的比較</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="120"/>
         <source>Checking interferences may take time, hold on.</source>
         <translation>檢查干涉可能需要時間，請稍等.</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="127"/>
         <source>
 Elapsed time: {:.2f} ms</source>
         <translation>
 經過時間: {:.2f} ms</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="130"/>
         <source>
 Elapsed time: {:.2f} s</source>
         <translation>
 經過時間: {:.2f} s</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="133"/>
         <source>
 Elapsed time: {:.2f} min</source>
         <translation>
 經過時間: {:.2f} min</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="136"/>
         <source>
 Elapsed time: {:.2f} h</source>
         <translation>
 經過時間: {:.2f} h</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="148"/>
         <source>Checked items:</source>
         <translation>已檢查項目:</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="164"/>
         <source>
 Starting checking interferences...</source>
         <translation>
 開始檢查干涉...</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="182"/>
         <source>Interferences</source>
         <translation>交叉引用干涉</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="196"/>
         <source>Intersections</source>
         <translation>交叉引用</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="243"/>
         <source>{count: {width}}. {obj1} vs {obj2}</source>
         <translation>{計數：{width}}. {obj1} 和 {obj2}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="291"/>
         <source>{}| Step already processed</source>
         <translation>{}| 步驟已處理</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="293"/>
         <source>{}| See {} vs {}</source>
         <translation>{}| 詳見 {} 與 {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="306"/>
         <source>
 &gt;&gt;&gt; {} is clean! &lt;&lt;&lt;</source>
         <translation>
 &gt;&gt;&gt; {} 已清除! &lt;&lt;&lt;</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="312"/>
         <source>
 &gt;&gt;&gt; Found {} interferences &lt;&lt;&lt;</source>
         <translation>
 &gt;&gt;&gt; 發現 {} 個干涉 &lt;&lt;&lt;</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="351"/>
         <source>{}| {} does not have shape.</source>
         <translation>{}| {} 沒有形狀.</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="357"/>
         <source>{}| There are missing shape(s) (SKIPPING).</source>
         <translation>{}| 缺少形狀(跳過).</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="400"/>
         <source>{}| Collision detected</source>
         <translation>{}| 偵測到碰撞</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="402"/>
         <source>{}| Object = {}</source>
         <translation>{}| 物體 = {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="404"/>
         <source>{}| Shape volume = {}</source>
         <translation>{}| 形狀體積 = {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="410"/>
         <source>{}| Touching faces (KEEPING)</source>
         <translation>{}| 接觸平面(保留)</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="415"/>
         <source>{}| Touching faces (REMOVING)</source>
         <translation>{}| 接觸平面(移除)</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="429"/>
         <source>{}| Interference clear</source>
         <translation>{}| 干涉清除</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="486"/>
         <source>Minimum interference volume = {}</source>
         <translation>最小干涉體積 = {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="496"/>
         <source>
 &gt;&gt;&gt; OPERATION HAS BEEN ABORTED &lt;&lt;&lt;</source>
         <translation>
 &gt;&gt;&gt; 操作已中止 &lt;&lt;&lt;</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="509"/>
         <source>
 Aborting the current processing...</source>
         <translation>
 中止目前處理...</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="525"/>
         <source>Allow faces touching = {}</source>
         <translation>允許平面接觸 = {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="534"/>
         <source>Check fasteners = {}</source>
         <translation>檢查緊固件 = {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="545"/>
         <source>Verbose = {}</source>
         <translation>預覽 = {}</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="562"/>
         <source>Interference Checks</source>
         <translation>檢查交叉引用</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="571"/>
         <source>Allow faces touching</source>
         <translation>允許平面接觸</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="573"/>
         <source>Include fasteners</source>
         <translation>包含緊固件</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="575"/>
         <source>Verbose</source>
         <translation>預覽</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="587"/>
         <source>Minimum interference volume:</source>
         <translation>最小干涉體積:</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="627"/>
         <source>Clear Checks</source>
         <translation>清除檢查</translation>
     </message>
     <message>
+        <location filename="../../checkInterference.py" line="634"/>
         <source>Check Interferences</source>
         <translation>檢查交叉引用干涉</translation>
     </message>
     <message>
-        <source>EXPERIMENTAL !!!
-Create a variant link to a part
-Select a part containing a &quot;Variables&quot; property container</source>
-        <translation>實驗性!!!
-建立零件的變體鏈接
-選擇包含“變數”屬性容器的零件</translation>
-    </message>
-    <message>
-        <source>Create a variant Part</source>
-        <translation>建立一個變量零件</translation>
-    </message>
-    <message>
-        <source>Please create an Assembly</source>
-        <translation>請先建立一個零件組合</translation>
-    </message>
-    <message>
-        <source>The current document must be saved before inserting an external part</source>
-        <translation>插入外部零件之前必須儲存目前文件</translation>
-    </message>
-    <message>
-        <source>Insert a variant of a Part</source>
-        <translation>插入零件的變數</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>取消</translation>
-    </message>
-    <message>
-        <source>Insert</source>
-        <translation>插入</translation>
-    </message>
-    <message>
-        <source>Filter :</source>
-        <translation>篩選器 :</translation>
-    </message>
-    <message>
-        <source>Select Part to be inserted :</source>
-        <translation>選擇要插入的零件:</translation>
-    </message>
-    <message>
-        <source>Name for the link :</source>
-        <translation>連結的名稱:</translation>
-    </message>
-    <message>
+        <location filename="../../configurationEngine.py" line="51"/>
         <source>No assembly container here, quitting
 </source>
         <translation>這裡沒有組合容器，退出
 </translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="86"/>
         <source>Apply configuration</source>
         <translation>套用參數設定</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="87"/>
         <source>Applies selected configuration
 Configurations allow to set visibilities and offsets of parts</source>
         <translation>套用選定的參數設定
 參數設定允許設定零件的可見性和偏移</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="118"/>
         <source>Open configurations panel</source>
         <translation>開啟參數設定面板</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="119"/>
         <source>Configurations allow to set visibilities and offsets of parts</source>
         <translation>參數設定允許設定零件的可見性和偏移</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="140"/>
         <source>Assembly Configurations</source>
         <translation>零件組合參數設定</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="173"/>
         <source>Please select a configuration in the list</source>
         <translation>請在列表中選擇一個參數設定</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="186"/>
         <source>This will delete configuration &quot;</source>
         <translation>這將刪除參數設定 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="191"/>
         <source>Configuration &quot;</source>
         <translation>參數設定 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="191"/>
         <source>&quot; not touched
 </source>
         <translation>&quot; 沒有被觸及
 </translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="194"/>
         <source>Object &quot;</source>
         <translation>物體 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="194"/>
         <source>&quot; is not a valid Assembly4 configuration, leaving untouched
 </source>
         <translation>&quot; 不是有效的零件組合四參數設定，保持不變
 </translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="251"/>
         <source>Available configurations:</source>
         <translation>可用參數設定:</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="257"/>
         <source>Description:</source>
         <translation>內容描述:</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="265"/>
         <source>New</source>
         <translation>新增</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="268"/>
         <source>Overwrite</source>
         <translation>覆蓋</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="301"/>
         <source>New configuration</source>
         <translation>新增參數設定</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="302"/>
         <source>Create a new configuration of the assembly</source>
         <translation>新增此零件組合參數設定</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="333"/>
         <source>Please specify configuration name!</source>
         <translation>請指定參數設定名稱!</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="361"/>
         <source>Create a new assembly configuration</source>
         <translation>新增零件組合參數設定</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="372"/>
         <source>Enter configuration name:</source>
         <translation>輸入參數設定名稱:</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="377"/>
         <source>Description (optional):</source>
         <translation>描述 (選項):</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="383"/>
         <source>Existing configurations:</source>
         <translation>現有參數設定:</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="420"/>
         <source>Saving configuration to &quot;</source>
         <translation>儲存新增參數設定到 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="425"/>
         <source>This will overwrite existing configuration &quot;</source>
         <translation>這將覆蓋現有參數設定 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="428"/>
         <source>Cancel save of configuration &quot;</source>
         <translation>取消儲存參數設定 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="519"/>
         <source>Restoring configuration &quot;</source>
         <translation>恢復參數設定 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="552"/>
         <source>No data for object &quot;</source>
         <translation>沒有物體的資料 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="586"/>
         <source>&quot; in configuration &quot;</source>
         <translation>&quot; 於參數設定 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="586"/>
         <source>Unknown AssemblyType &quot;</source>
         <translation>未知零件組合類型 &quot;</translation>
     </message>
     <message>
+        <location filename="../../configurationEngine.py" line="586"/>
         <source>&quot; for object &quot;</source>
         <translation>&quot; 於物體 &quot;</translation>
     </message>
     <message>
+        <location filename="../../checkInterference_lh.py" line="153"/>
+        <source>
+&gt;&gt; USED PARTS:</source>
+        <translation>
+&gt;&gt; 使用過的零件:</translation>
+    </message>
+    <message>
+        <location filename="../../checkInterference_lh.py" line="199"/>
+        <source>{} | Collision detected</source>
+        <translation>{}| 偵測到碰撞</translation>
+    </message>
+    <message>
+        <location filename="../../checkInterference_lh.py" line="204"/>
+        <source>{} | Touching faces (REMOVING)</source>
+        <translation>{} | 接觸平面(移除)</translation>
+    </message>
+    <message>
+        <location filename="../../FastenersLib.py" line="59"/>
         <source>Insert Screw</source>
         <translation>插入螺絲</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="60"/>
         <source>&lt;p&gt;Insert a Screw into the Assembly&lt;/p&gt;&lt;p&gt;If another fastener is selected, a new fastener of the same type is created in the same assembly.If an axis or LCS is selected, the new fastener will be attached to it.If an assembly is selected, the new fastener will be inside that assembly.&lt;/p&gt;</source>
         <translation>&lt;p&gt;將螺絲插入緊固件&lt;/p&gt;&lt;p&gt;如果選擇了另一個緊固件，則會在同一緊固件中建立相同類型的新緊固件。如果選擇了軸或區域座標系統(LCS)，如果選擇了某個緊固件則會附加新緊固件，新的緊固件將位於該緊固件內.&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="67"/>
         <source>Insert Nut</source>
         <translation>插入螺母</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="68"/>
         <source>&lt;p&gt;Insert a Nut into the Assembly&lt;/p&gt;&lt;p&gt;If another fastener is selected, a new fastener of the same type is created in the same assembly.If an axis or LCS is selected, the new fastener will be attached to it.If an assembly is selected, the new fastener will be inside that assembly.&lt;/p&gt;</source>
         <translation>&lt;p&gt;將螺帽插入零件組合&lt;/p&gt;&lt;p&gt;如果選擇了另一個緊固件，則會在同一零件組合中建立相同類型的新緊固件。如果選擇了軸或LCS，如果選擇了某個零件組合則會附加新緊固件，新的緊固件將位於該零件組合內.&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="75"/>
         <source>Insert Washer</source>
         <translation>插入墊圈</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="76"/>
         <source>&lt;p&gt;Insert a Washer into the Assembly&lt;/p&gt;&lt;p&gt;If another fastener is selected, a new fastener of the same type is created in the same assembly.If an axis or LCS is selected, the new fastener will be attached to it.If an assembly is selected, the new fastener will be inside that assembly.&lt;/p&gt;</source>
         <translation>&lt;p&gt;將墊圈插入零件組合&lt;/p&gt;&lt;p&gt;如果選擇了另一個緊固件，則會在同一零件組合中建立相同類型的新緊固件。如果選擇了軸或LCS，如果選擇了某個零件組合則會附加新緊固件，新的緊固件將位於該零件組合內.&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="84"/>
         <source>Insert threaded rod</source>
         <translation>插入螺桿</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="128"/>
         <source>Selected object doesn&apos;t seem to be a valid fastener, ignoring
 </source>
         <translation>所選物體似乎不是有效的緊固件，忽略
 </translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="166"/>
         <source>Length &quot;</source>
         <translation>長度 &quot;</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="166"/>
         <source>&quot; is not available, ignoring
 </source>
         <translation>&quot; 不可用，忽略
 </translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="188"/>
         <source>unknown fastener type &quot;</source>
         <translation>未知緊固件類型 &quot;</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="188"/>
         <source>&quot;, ignoring
 </source>
         <translation>&quot; 忽略
 </translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="225"/>
         <source>Change Fastener parameters</source>
         <translation>更改緊固件參數</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="293"/>
         <source>Clone Fastener to Axes</source>
         <translation>將緊固件複製到軸</translation>
     </message>
     <message>
+        <location filename="../../FastenersLib.py" line="381"/>
         <source>Fasteners</source>
         <translation>緊固件</translation>
     </message>
     <message>
+        <location filename="../../FastenersDummy.py" line="77"/>
         <source>Edit Attachment of a Fastener</source>
         <translation>編輯緊固件的連接</translation>
     </message>
     <message>
+        <location filename="../../FastenersDummy.py" line="121"/>
         <source>FastenersWorkbench is not installed.
  
 You can install it with the FreeCAD AddonsManager:
@@ -1023,22 +1385,27 @@ Menu Tools &gt; Addon Manager &gt; fasteners</source>
 功能表工具 &gt; 附加元件管理器 &gt; fasteners</translation>
     </message>
     <message>
+        <location filename="../../gotoDocumentCmd.py" line="37"/>
         <source>Open Document</source>
         <translation>開啟文件</translation>
     </message>
     <message>
+        <location filename="../../gotoDocumentCmd.py" line="38"/>
         <source>Activates the document of the selected linked part</source>
         <translation>啟用所選連結零件的檔案</translation>
     </message>
     <message>
+        <location filename="../../HelpCmd.py" line="27"/>
         <source>Help for Assembly4</source>
         <translation>零件組合四 求助說明</translation>
     </message>
     <message>
+        <location filename="../../HelpCmd.py" line="28"/>
         <source>Show basic usage for FreeCAD and Assembly4</source>
         <translation>顯示 FreeCAD 和 零件組合四 的基本用法</translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="32"/>
         <source>Imports the selected Datum object(s) from a sub-part into the root assembly.
 This creates a new datum of the same type, and with the same global placement
 
@@ -1051,14 +1418,17 @@ select a second datum in the same root container as the first selected datum</so
 在與第一個選定基準相同的根容器中選擇第二個基準</translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="37"/>
         <source>Import Datum object</source>
         <translation>匯入基準物體</translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="77"/>
         <source>This will superimpose </source>
         <translation>這將疊加 </translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="78"/>
         <source> on:
 
 </source>
@@ -1067,6 +1437,7 @@ select a second datum in the same root container as the first selected datum</so
 </translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="86"/>
         <source> is already attached to some geometry. This will superimpose its Placement on:
 
 </source>
@@ -1075,18 +1446,22 @@ select a second datum in the same root container as the first selected datum</so
 </translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="109"/>
         <source> is already at the top-level and cannot be imported</source>
         <translation> 已經是頂層，無法匯入</translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="119"/>
         <source> in </source>
         <translation> 於 </translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="119"/>
         <source>Create a new </source>
         <translation>建立一個新的 </translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="120"/>
         <source> 
 superimposed on:
 
@@ -1097,12 +1472,14 @@ superimposed on:
 </translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="123"/>
         <source>
 Enter name for this datum :</source>
         <translation>
 輸入該基準資料的名稱:</translation>
     </message>
     <message>
+        <location filename="../../importDatumCmd.py" line="128"/>
         <source> selected datum objects will be imported into the root assembly
 with their default names such as:
 </source>
@@ -1110,166 +1487,206 @@ with their default names such as:
 </translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="21"/>
         <source>Document or File name</source>
         <translation>文件或檔案名稱</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="22"/>
         <source>Part Name</source>
         <translation>零件名稱</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="23"/>
         <source>Part Reference</source>
         <translation>零件參照</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="24"/>
         <source>Cut length of the raw material</source>
         <translation>原材料切割長度</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="25"/>
         <source>Width of the raw material</source>
         <translation>原材料寬度</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="26"/>
         <source>Object dimensions (x, y, z)</source>
         <translation>物體維度 (x, y, z)</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="34"/>
         <source>Fastener diameter</source>
         <translation>緊固件直徑</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="35"/>
         <source>Fastener length</source>
         <translation>緊固件長度</translation>
     </message>
     <message>
+        <location filename="../../infoKeys.py" line="36"/>
         <source>Fastener type</source>
         <translation>緊固件類型</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="74"/>
         <source>&lt;p&gt;Edit Part information&lt;/p&gt;&lt;p&gt;User-supplied information can be added to a part&lt;/p&gt;</source>
         <translation>&lt;p&gt;編輯零件資訊&lt;/p&gt;&lt;p&gt;可以將使用者提供的資訊加入零件&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="213"/>
         <source>The Part Info field has been cleared</source>
         <translation>零件資訊欄位已被清除</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="367"/>
         <source>Configure fields</source>
         <translation>參數設定欄位</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="369"/>
         <source>Edit fields</source>
         <translation>編輯欄位</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="372"/>
         <source>Reset fields</source>
         <translation>重置欄位</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="373"/>
         <source>Autofill data</source>
         <translation>自動填入數據資料</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="375"/>
         <source>Autofill fields</source>
         <translation>自動填入欄位</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="408"/>
         <source>Edit Part Information</source>
         <translation>編輯零件資訊</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="442"/>
         <source>Fields Name cannot be blank. You must disable or delete it</source>
         <translation>欄位名稱不能為空. 您必須停用或刪除它</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="653"/>
         <source>Add</source>
-        <translation>新增</translation>
+        <translation>增加</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="669"/>
         <source>Update automatic input field</source>
         <translation>更新自動輸入欄位</translation>
     </message>
     <message>
+        <location filename="../../infoPartCmd.py" line="677"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="37"/>
         <source>&lt;p&gt;Insert a Part into the assembly. This will create a dynamic link to the part, which can be in this document or in another document that is open in the current session&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage&lt;/b&gt;: the part must be open in the current session&lt;/p&gt;&lt;p&gt;This command also enables to repair broken/missing links. Select the broken link, launch this command, and select a new target part in the list&lt;/p&gt;</source>
         <translation>&lt;p&gt;將零件插入組合件中。 這將建立到該零件的動態連結，該連結可以位於此文件中，也可以位於當前作業階段中打開的另一個文件中&lt;/p&gt;&lt;p&gt;&lt;b&gt;用法&lt;/b&gt;: 該零件必須在目前作業階段&lt;/p&gt;&lt;p&gt;此命令還可以修復損壞/遺失的連結. 選擇損壞的連結，啟動此命令，然後在列表中選擇新的目標零件&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="45"/>
         <source>Insert Part</source>
         <translation>插入零件</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="105"/>
         <source>Re-link broken link</source>
         <translation>重新連結損壞的連結</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="107"/>
         <source>Replace</source>
-        <translation>取代</translation>
+        <translation>替換</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="195"/>
         <source>Select FreeCAD document to import part from</source>
         <translation>選取 FreeCAD 文件匯入部分</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="205"/>
         <source>Supported Formats *.FCStd *.fcstd (*.FCStd *.fcstd);;All files (*.*)</source>
         <translation>支援的檔案格式 *.FCStd *.fcstd (*.FCStd *.fcstd);;All files (*.*)</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="328"/>
         <source>Insert a Part</source>
         <translation>插入零件</translation>
     </message>
     <message>
+        <location filename="../../insertLinkCmd.py" line="345"/>
         <source>Open file</source>
         <translation>開啟檔案</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="32"/>
         <source>Create an expression driven Array</source>
         <translation>建立表達式驅動陣列</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="36"/>
         <source>Create an array of the selected object where the placement of each element is calculated using expressions and an Index property.&lt;br&gt;Select a source object to array and optionally an Axis that transformation will be related to.&lt;br&gt;Without axis the transformations relates to the source object internal Z axis.&lt;br&gt;&lt;br&gt;&lt;b&gt;Count :&lt;/b&gt; The amount of elements in the array.&lt;br&gt;&lt;b&gt;Index :&lt;/b&gt; Hidden but Placer use it in expressions to calculating the Placements. Increments for each element starting with 0.&lt;br&gt;&lt;b&gt;Placer :&lt;/b&gt; Set an expression for the entire placement or its sub-properties.&lt;br&gt;  By opening Placer property in Tasks panel it is possible to set expressions for euler angles too.&lt;br&gt;Also see tooltips in Property view</source>
         <translation>建立所選物體的陣列，其中使用表達式和索引屬性計算每個元素的位置.&lt;br&gt;選擇要排列的來源物體，以及可選的與轉換相關的軸.&lt;br&gt;如果沒有軸，則轉換相關 到來源物體內部 Z 軸.&lt;br&gt;&lt;br&gt;&lt;b&gt;計數: &lt;/b&gt;陣列中元素的數量.&lt;br&gt;&lt;b&gt;索引: &lt;/b&gt;隱藏但安排在表達式中使用它 計算展示位置. 每個元素的增量從 0 開始.&lt;br&gt;&lt;b&gt;放置: &lt;/b&gt;為整個放置或其子屬性設定表達式.&lt;br&gt;通過在&quot;任務&quot;面板中打開放置屬性，可以為以下項目設定表達式 歐拉角也是如此.&lt;br&gt;另請參閱屬性視圖中的工具提示</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="132"/>
         <source>Create a circular array</source>
         <translation>建立一個圓形陣列</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="126"/>
         <source>&lt;p&gt;Create a circular (polar) array around an axis. Supported axis objects are axis or plane from an origin, datum line, LCS axes, straight line segments, arcs and circles&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage&lt;/b&gt;: Select an object and the axis (hold CTRL key to select second object)&lt;/p&gt;</source>
         <translation>&lt;p&gt;圍繞軸建立圓形(極座標)陣列. 支援的軸物體有原點的軸或平面、基準線、LCS 軸、直線段、圓弧和圓&lt;/p&gt;&lt;p&gt;&lt;b&gt;用法&lt;/b&gt;: 選擇物體和軸(按住 CTRL 鍵選擇第二個物體)&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="146"/>
         <source>The angle between two subsequent elements.
 Expression to place the last element at 180°: &lt;code&gt;180/(Count-1)&lt;/code&gt;</source>
         <translation>兩個後續元素之間的角度.
 將最後一個元素置於 180° 的表達式: &lt;code&gt;180/(Count-1)&lt;/code&gt;</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="165"/>
         <source>Create a linear array</source>
         <translation>建立線性陣列</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="156"/>
         <source>&lt;p&gt;Create a linear array along an axis.Supported axis objects are axis or plane from an origin, datum line, LCS axes, straight line segments, arcs and circles&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage&lt;/b&gt;: Select an object and an axis for the direction (hold CTRL key to select second object)&lt;/p&gt;</source>
         <translation>&lt;p&gt;沿軸建立線性陣列. 支援的軸物體為從原點開始的軸或平面、基準線、LCS 軸、直線段、圓弧和圓&lt;/p&gt;&lt;p&gt;&lt;b&gt;用法&lt;/b&gt;: 選擇一個物體和方向軸(按住CTRL鍵選擇第二個物體)&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="179"/>
         <source>The length between two subsequent elements.
 Expression to place the last element at 100 mm: 100mm/(Count-1)</source>
         <translation>兩個後續元素之間的長度.
 將最後一個元素放置在 100 mm 處的表達式: 100mm/(Count-1)</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="197"/>
         <source>Create mirror</source>
         <translation>建立鏡像特徵</translation>
     </message>
     <message>
+        <location filename="../../makeArrayCmd.py" line="200"/>
         <source>&lt;p&gt;Create a mirror of a part. Supported axis objects are axis or plane from an origin, datum line, LCS axes, straight line segments, arcs and circles&lt;/p&gt;&lt;p&gt;&lt;b&gt;Usage&lt;/b&gt;: Select a source object and a mirror plane or a normal to a plane (hold CTRL key to select second object)&lt;/p&gt;</source>
         <translation>&lt;p&gt;建立零件的鏡像. 支援的軸物體有原點的軸或平面、基準線、LCS 軸、直線段、圓弧和圓&lt;/p&gt;&lt;p&gt;&lt;b&gt;用法&lt;/b&gt;: 選擇來源物體和鏡像平面或鏡像垂直於平面(按住CTRL 鍵選擇第二個物體)&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../makeBinderCmd.py" line="33"/>
         <source>Create a reference to an external shape
 This creates a SubShapeBinder of the selected shapes
 (face, edge, point) in the root assembly
@@ -1280,64 +1697,79 @@ Only shapes belonging to the same part can be imported in a single step</source>
 只能在一個步驟中匯入屬於同一零件的形狀</translation>
     </message>
     <message>
+        <location filename="../../makeBinderCmd.py" line="38"/>
         <source>Create a shape binder</source>
-        <translation>建立形狀粘合</translation>
+        <translation>建立路徑面</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="67"/>
         <source>Bill of Materials</source>
         <translation>材料清單</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="68"/>
         <source>Create the Bill of Materials of the Assembly including sub-assemblies</source>
         <translation>建立零件組合的材料清單，包括子零件組合</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="73"/>
         <source>Local Bill of Materials</source>
         <translation>區域材料清單</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="74"/>
         <source>Create the Bill of Materials of the Assembly</source>
         <translation>建立零件組合的材料清單</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="100"/>
         <source>ASM4&gt; BOM of the Assembly 4 Model</source>
         <translation>ASM4&gt; 零件組合四模型的物料清單(BOM)</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="104"/>
         <source>ASM4&gt; BOM of the legacy Assembly 4 Model</source>
         <translation>ASM4&gt; 舊版零件組合四模型的物料清單(BOM)</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="107"/>
         <source>ASM4&gt; BOM might not work with this file</source>
         <translation>ASM4&gt; 物料清單(BOM) 可能不適用於此文件</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="117"/>
         <source>ASM4&gt; BOM following sub-assemblies</source>
         <translation>ASM4&gt; 物料清單(BOM)跟隨子零件組合</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="119"/>
         <source>ASM4&gt; BOM local parts only</source>
         <translation>ASM4&gt; 物料清單(BOM)僅區域零件</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="225"/>
         <source>(predefined)</source>
         <translation>(已預定)</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="230"/>
         <source>(extracted)</source>
         <translation>(已擷取)</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="435"/>
         <source>- object already added (</source>
         <translation>- 物體已新增 (</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="445"/>
         <source>- adding object (1)
 </source>
         <translation>- 新增物體 (1)
 </translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="497"/>
         <source>
 BOM creation is done
 </source>
@@ -1346,16 +1778,19 @@ BOM creation is done
 </translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="545"/>
         <source> spreadsheet was created.
 </source>
         <translation> 電子表格已建立.
 </translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="558"/>
         <source>Parts List (BOM)</source>
         <translation>零件清單&quot;物料清單(BOM)&quot;</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="568"/>
         <source>BOM generates bill of materials.
 
 It uses the Parts&apos; info to generate entries on BOM, unless autofill is set.
@@ -1366,10 +1801,12 @@ It uses the Parts&apos; info to generate entries on BOM, unless autofill is set.
 </translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="571"/>
         <source>Check &lt;a href=&apos;https://github.com/Zolko-123/FreeCAD_Assembly4/tree/master/Examples/ConfigBOM/README.md&apos;&gt;BOM tutorial&lt;/a&gt;</source>
         <translation>檢視&lt;a href=&apos;https://github.com/Zolko-123/FreeCAD_Assembly4/tree/master/Examples/ConfigBOM/README.md&apos;&gt;BOM 教學&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="../../makeBomCmd.py" line="575"/>
         <source>
 
 Report:</source>
@@ -1378,377 +1815,466 @@ Report:</source>
 報表:</translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="36"/>
         <source>Create a mirrored part of a part. Use only on individual parts, not assemblies
 You must re-create the attachment datums in the resulting part</source>
         <translation>建立零件的鏡像零件. 僅適用於單一零件，不適用於零件組合體
 您必須在產生的零件中重新建立零件基準</translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="39"/>
         <source>Create symmetric of part</source>
         <translation>建立對稱零件</translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="97"/>
         <source>ERROR : You shouldn&apos;t see this message from mirrorPartCmd()
 </source>
         <translation>錯誤: 您不應該從mirrorPartCmd()看到此訊息
 </translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="113"/>
         <source>Create mirrored Part</source>
         <translation>建立鏡像特徵零件</translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="123"/>
         <source>Selected Part :</source>
         <translation>選擇的零件:</translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="130"/>
         <source>Select the symmetry plane :</source>
         <translation>選擇對稱平面:</translation>
     </message>
     <message>
+        <location filename="../../mirrorPartCmd_obsolete.py" line="140"/>
         <source>Mirrored part&apos;s name :</source>
         <translation>鏡像零件名稱:</translation>
     </message>
     <message>
+        <location filename="../../newAssemblyCmd.py" line="40"/>
         <source>&lt;p&gt;Create a new Assembly container&lt;/p&gt;</source>
         <translation>&lt;p&gt;建立一個新的零件組合容器&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../../newAssemblyCmd.py" line="43"/>
         <source>New Assembly</source>
         <translation>新增零件組合</translation>
     </message>
     <message>
+        <location filename="../../newAssemblyCmd.py" line="59"/>
         <source>This document already contains a valid Assembly, please use it</source>
         <translation>此文件已包含有效零件組合，請使用它</translation>
     </message>
     <message>
+        <location filename="../../newAssemblyCmd.py" line="65"/>
         <source>This document already contains another FreeCAD object called &quot;Assembly&quot;, but it&apos;s of type &quot;</source>
         <translation>該文件已經包含另一個名為&quot;Assembly&quot;的 FreeCAD 物體，但它的類型為 &quot;</translation>
     </message>
     <message>
+        <location filename="../../newAssemblyCmd.py" line="67"/>
         <source>&quot;, unsuitable for an assembly. I can&apos;t proceed.</source>
         <translation>&quot;，不適用於零件組合. 無法繼續.</translation>
     </message>
     <message>
+        <location filename="../../newAssemblyCmd.py" line="107"/>
         <source>There seems to already be a Parts object, you might get unexpected behaviour</source>
         <translation>似乎已經有一個零件物體，您可能會得到意想不到的行為</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="37"/>
         <source>New Point</source>
         <translation>新增點</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="38"/>
         <source>Create a new Datum Point in a Part</source>
         <translation>在零件中建立新的基準點</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="45"/>
         <source>New Axis</source>
         <translation>新增軸</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="46"/>
         <source>Create a new Datum Axis in a Part</source>
         <translation>在零件中建立新的基準軸</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="53"/>
         <source>New Plane</source>
         <translation>新增基準面</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="54"/>
         <source>Create a new Datum Plane in a Part</source>
         <translation>在零件中建立新的基準平面</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="61"/>
         <source>New Coordinate System</source>
         <translation>新增座標系統</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="63"/>
         <source>Create a new Coordinate System in a Part</source>
         <translation>在零件中建立新的座標系統</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="71"/>
         <source>New Sketch</source>
         <translation>新增草圖</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="72"/>
         <source>Create a new Sketch in a Part</source>
         <translation>在零件中建立新的草圖</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="132"/>
         <source>I can&apos;t create a </source>
         <translation>我無法建立一個 </translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="132"/>
         <source> with the current selections</source>
         <translation> 與目前的選擇</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="143"/>
         <source>Create new </source>
         <translation>建立一個新的 </translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="143"/>
         <source>Enter </source>
         <translation>輸入 </translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="182"/>
         <source>New Hole Axis</source>
         <translation>新增圓孔軸</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="183"/>
         <source>Create a Datum Axis attached to a hole</source>
         <translation>建立附加到孔的基準軸</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="248"/>
         <source>Datum objects can only be created inside Part or Body containers</source>
         <translation>基準物體只能在「零件」或「實體」容器內建立</translation>
     </message>
     <message>
+        <location filename="../../newDatumCmd.py" line="268"/>
         <source>Create Datum Object</source>
         <translation>建立基準物體</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="36"/>
         <source>New Part</source>
         <translation>新增零件</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="37"/>
         <source>Create a new Part</source>
         <translation>建立一個零件</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="41"/>
         <source>New Body</source>
         <translation>新增實體</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="42"/>
         <source>Create a new Body</source>
         <translation>建立一個實體</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="46"/>
         <source>New Group</source>
         <translation>新增群組</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="47"/>
         <source>Create a new Group</source>
         <translation>建立一個群組</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="73"/>
         <source> name :</source>
         <translation> 名稱 :</translation>
     </message>
     <message>
+        <location filename="../../newPartCmd.py" line="73"/>
         <source>Enter new </source>
         <translation>輸入新的 </translation>
     </message>
     <message>
+        <location filename="../../placeLinkCmd.py" line="36"/>
         <source>Edit Placement of a Part</source>
         <translation>編輯零件的放置位置</translation>
     </message>
     <message>
+        <location filename="../../placeLinkCmd.py" line="37"/>
         <source>Move/Attach a Part in the assembly</source>
         <translation>在零件組合中移動/附加零件</translation>
     </message>
     <message>
+        <location filename="../../placeLinkCmd.py" line="69"/>
         <source>This Part has the Attachment extension, it can only be placed manually</source>
         <translation>該零件有附件延伸，只能手動放置</translation>
     </message>
     <message>
+        <location filename="../../placeLinkCmd.py" line="85"/>
         <source>Please select a link in the assembly Model.</source>
         <translation>請在零件組合模型中選擇一個連結.</translation>
     </message>
     <message>
+        <location filename="../../placeLinkCmd.py" line="111"/>
         <source>This Part wasn&apos;t assembled with this Assembly4 WorkBench, but I can convert it.</source>
         <translation>該零件不是用這個版本的 零件組合四工作台 組裝的，但可以轉換它.</translation>
     </message>
     <message>
+        <location filename="../../placeLinkCmd.py" line="121"/>
         <source>Please select an object in the assembly Model.</source>
         <translation>請在零件組合模型中選擇一個物體.</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="70"/>
         <source>WARNING : unsupported Assembly/Solver/Part combination, you shouldn&apos;t be seeing this
 </source>
         <translation>警告: 不支援的組裝/解算器/零件組合，您不應該看到此內容
 </translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="83"/>
         <source>Place linked Part</source>
         <translation>放置連結的零件</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="288"/>
         <source>Part is now manually placed
 </source>
         <translation>零件現在手動放置
 </translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="292"/>
         <source>Part untouched
 </source>
         <translation>零件未接觸
 </translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="718"/>
         <source>Selected Link :</source>
         <translation>選定的連結:</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="724"/>
         <source>Choose the part in which the attachment
 coordinate system is to be found</source>
         <translation>選擇要在其中找到附加依賴座標系統的零件</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="738"/>
         <source>Linked Part :</source>
         <translation>連結的零件:</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="745"/>
         <source>Select LCS in Part :</source>
         <translation>在零件中選擇區域座標系統(LCS):</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="756"/>
         <source>Parent Part :</source>
         <translation>上層零件:</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="763"/>
         <source>Select LCS in Parent :</source>
         <translation>在上層零件中選擇區域座標系統(LCS):</translation>
     </message>
     <message>
+        <location filename="../../placeLinkUI.py" line="767"/>
         <source>Select a coordinate system from the list</source>
         <translation>從清單中選擇座標系統</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="33"/>
         <source>Place a Part in the assembly</source>
         <translation>將零件放置在零件組合件中</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="46"/>
         <source>Please select ab object with a Placement property</source>
         <translation>請選擇具有放置位置(Placement) 屬性的物體</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="209"/>
         <source>Problem in selections
 </source>
         <translation>選擇上的問題
 </translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="342"/>
         <source>selection: </source>
         <translation>選擇: </translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="411"/>
         <source>Please select</source>
         <translation>請選擇</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="436"/>
         <source>Selected Object :</source>
         <translation>選擇的物體:</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="441"/>
         <source>Attach to :</source>
         <translation>附加到:</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="452"/>
         <source>Select attachment LCS in parent Part :</source>
         <translation>在上層零件中選擇附件區域座標系統(LCS):</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="463"/>
         <source>X Translation :</source>
         <translation>X 軸平移:</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="468"/>
         <source>Translation along X axis</source>
         <translation>沿 Z 軸平移</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="470"/>
         <source>Rotate X +90°</source>
         <translation>X 軸旋轉 90°</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="472"/>
         <source>Rotate 90 deg around X axis</source>
         <translation>繞X軸旋轉90°</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="482"/>
         <source>Y Translation :</source>
         <translation>Y 軸平移:</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="487"/>
         <source>Translation along Y</source>
         <translation>沿 Y 軸平移</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="489"/>
         <source>Rotate Y +90°</source>
         <translation>Y 軸旋轉 90°</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="491"/>
         <source>Rotate 90 deg around Y axis</source>
         <translation>繞Y軸旋轉90°</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="501"/>
         <source>Z Translation :</source>
         <translation>Z 軸平移:</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="506"/>
         <source>Translation along Z:</source>
         <translation>沿 Z 軸平移:</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="508"/>
         <source>Rotate Z +90°</source>
         <translation>Z 軸旋轉 90°</translation>
     </message>
     <message>
+        <location filename="../../placePartUI.py" line="510"/>
         <source>Rotate 90 deg around Z axis</source>
         <translation>繞Z軸旋轉90°</translation>
     </message>
     <message>
+        <location filename="../../releaseAttachmentCmd.py" line="36"/>
         <source>Release from Attachment</source>
         <translation>從附件中釋放</translation>
     </message>
     <message>
+        <location filename="../../releaseAttachmentCmd.py" line="37"/>
         <source>Release an object from all attachments to any geometry</source>
         <translation>將物體從任何幾何形體的所有附件中釋放</translation>
     </message>
     <message>
+        <location filename="../../releaseAttachmentCmd.py" line="78"/>
         <source>This command will release all attachments on </source>
         <translation>此命令將釋放所有附件 </translation>
     </message>
     <message>
+        <location filename="../../releaseAttachmentCmd.py" line="79"/>
         <source> and set it to manual positioning in its current location.</source>
         <translation> 並將其設定為手動定位在目前位置.</translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="41"/>
         <source>Clear all selection filters</source>
         <translation>清除所有選擇過濾器</translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="53"/>
         <source>All selection filters cleared
 </source>
         <translation>已清除所有選擇過濾器
 </translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="60"/>
         <source>Select only Vertices</source>
         <translation>僅選擇頂點</translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="79"/>
         <source>Select only Edges</source>
         <translation>僅選擇邊緣</translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="98"/>
         <source>Select only Faces</source>
         <translation>僅選擇平面</translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="249"/>
         <source>Asm4 3D view selection mode is now ENABLED
 </source>
         <translation>零件組合 3D視圖連結選擇模式現已啟用
 </translation>
     </message>
     <message>
+        <location filename="../../selectionFilter.py" line="259"/>
         <source>Asm4 3D view selection mode is now DISABLED
 </source>
         <translation>零件組合 3D視圖連結選擇模式現已停用
 </translation>
     </message>
     <message>
+        <location filename="../../treeSelectionOverride.py" line="31"/>
         <source>Enable/Disable 3D View selection mode</source>
         <translation>啟用/禁用 3D視圖連結選擇模式</translation>
     </message>
     <message>
+        <location filename="../../treeSelectionOverride.py" line="32"/>
         <source>Enable/Disable 3D View selection mode
 
 Allows to select a Link object in the 3D view
@@ -1758,38 +2284,46 @@ window instead of the Model tree</source>
 允許在 3D 視圖視窗中選擇連結物體而不是模型樹</translation>
     </message>
     <message>
+        <location filename="../../treeSelectionOverride.py" line="83"/>
         <source>3D view link selection mode is now ENABLED
 </source>
         <translation>3D 視圖連結選擇模式現已啟用
 </translation>
     </message>
     <message>
+        <location filename="../../treeSelectionOverride.py" line="98"/>
         <source>3D view link selection mode is now DISABLED
 </source>
         <translation>3D 視圖連結選擇模式現已停用
 </translation>
     </message>
     <message>
+        <location filename="../../showHideLcsCmd.py" line="28"/>
         <source>Show LCS</source>
         <translation>顯示區域座標系統(LCS)</translation>
     </message>
     <message>
+        <location filename="../../showHideLcsCmd.py" line="29"/>
         <source>Show LCS and Datums of selected part and its children</source>
         <translation>顯示所選零件及其子零件的區域座標系統和基準</translation>
     </message>
     <message>
+        <location filename="../../showHideLcsCmd.py" line="56"/>
         <source>Hide LCS</source>
         <translation>隱藏區域座標系統(LCS)</translation>
     </message>
     <message>
+        <location filename="../../showHideLcsCmd.py" line="57"/>
         <source>Hide LCS and Datums of selected part and its children</source>
         <translation>隱藏所選零件及其子零件的區域座標系統和基準</translation>
     </message>
     <message>
+        <location filename="../../updateAssemblyCmd.py" line="22"/>
         <source>Solve and Update Assembly</source>
         <translation>求解並更新零件組合</translation>
     </message>
     <message>
+        <location filename="../../updateAssemblyCmd.py" line="23"/>
         <source>Update Assembly</source>
         <translation>更新零件組合</translation>
     </message>
@@ -1797,42 +2331,52 @@ window instead of the Model tree</source>
 <context>
     <name>Workbench</name>
     <message>
+        <location filename="../../InitGui.py" line="61"/>
         <source>Assembly 4</source>
         <translation>零件組合四</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="63"/>
         <source>Assembly 4 workbench</source>
         <translation>零件組合四工作台</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="129"/>
         <source>Initializing Assembly4 workbench</source>
         <translation>初始化 零件組合四 工作台</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="197"/>
         <source>&amp;Assembly</source>
         <translation>零件組合(&amp;A)</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="202"/>
         <source>&amp;Constraints</source>
         <translation>約束(&amp;C)</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="209"/>
         <source>&amp;Help</source>
-        <translation>説明(&amp;H)</translation>
+        <translation>求助說明(&amp;H)</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="219"/>
         <source>Selection Filter</source>
         <translation>選擇篩選器</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="225"/>
         <source>done</source>
         <translation>完成</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="371"/>
         <source>Assembly</source>
         <translation>零件組合</translation>
     </message>
     <message>
+        <location filename="../../InitGui.py" line="374"/>
         <source>Create</source>
         <translation>建立</translation>
     </message>

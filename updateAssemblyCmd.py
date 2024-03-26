@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# 
-# updateAssembly.py 
+#
+# updateAssembly.py
 
 
-import math, re, os
+import math
+import re
+import os
 
 from PySide import QtGui, QtCore
 import FreeCADGui as Gui
@@ -14,35 +16,33 @@ import Part
 import Asm4_libs as Asm4
 
 
-
 class updateAssembly:
 
     def GetResources(self):
-        return {"MenuText": "Solve and Update Assembly",
-                "ToolTip": "Update Assembly",
-                "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_Solver.svg')
+        return {"MenuText": App.Qt.translate("Assembly", "Solve and Update Assembly"),
+                "ToolTip": App.Qt.translate("Assembly", "Update Assembly"),
+                "Pixmap": os.path.join(Asm4.iconPath, 'Asm4_Solver.svg')
                 }
-
 
     def IsActive(self):
         if App.ActiveDocument:
             return(True)
         return(False)
 
-
     """
     +-----------------------------------------------+
     |                 the real stuff                |
     +-----------------------------------------------+
     """
+
     def Activated(self):
         # find every Part in the document ...
         for obj in App.ActiveDocument.Objects:
             # ... and update it
             if obj.TypeId == 'App::Part':
                 obj.recompute(True)
-        #App.ActiveDocument.recompute()
+        # App.ActiveDocument.recompute()
 
 
 # add the command to the workbench
-Gui.addCommand( 'Asm4_updateAssembly', updateAssembly() )
+Gui.addCommand('Asm4_updateAssembly', updateAssembly())

@@ -20,7 +20,10 @@
 #####################################
 
 
-import os, json, re, zipfile
+import os
+import json
+import re
+import zipfile
 
 
 from PySide import QtGui, QtCore
@@ -40,60 +43,61 @@ except ImportError:
 '''
 
 # lists the parts and linked parts of the selected container
+
+
 class listLinkedFiles():
 
     def GetResources(self):
-        menutext = "Structure tree of the assembly"
-        tooltip  = "<p>Show the hierarchical tree structure of parts and sub-assemblies in the assembly. "
-        tooltip += "The tree is displayed with ASCII art</p>"
-        tooltip += "<p><b>Usage</b>: select an entity and click the command</p>"
-        iconFile = os.path.join(Asm4.iconPath, 'Asm4_List_Liked_Files_Tree.svg')
+        menutext = App.Qt.translate("Assembly", "Tree of Linked Files")
+        tooltip = App.Qt.translate(
+            "Assembly", "<p>Show the hierarchical tree structure of parts in the selected container. The tree is displayed with ASCII art</p><p><b>Usage</b>: select an entity and click the command</p>")
+        iconFile = os.path.join(
+            Asm4.iconPath, 'Asm4_List_Liked_Files_Tree.svg')
         return {
-            "MenuText": menutext,
-            "ToolTip" : tooltip,
-            "Pixmap"  : iconFile
+            "MenuText": App.Qt.translate("Assembly", menutext),
+            "ToolTip": App.Qt.translate("Assembly", tooltip),
+            "Pixmap": iconFile
         }
 
-
     def IsActive(self):
-        if App.ActiveDocument and len(Gui.Selection.getSelection())==1:
+        if App.ActiveDocument and len(Gui.Selection.getSelection()) == 1:
             return True
         elif App.ActiveDocument and Asm4.getAssembly():
             return True
         else:
             return False
 
-
     def __init__(self):
         super(listLinkedFiles, self).__init__()
         # types of objects to be included in the listing
         # links and derivatives are also included
-        self.DEF_TYPES = ['App::Part', 'PartDesign::Body', 'Part::FeaturePython', 'App::DocumentObjectGroup']
+        self.DEF_TYPES = ['App::Part', 'PartDesign::Body',
+                          'Part::FeaturePython', 'App::DocumentObjectGroup']
         # visual ASCII art
-        self.TAB    = '    '
+        self.TAB = '    '
         self.BRANCH = ' │  '
-        self.FORK   = ' ├─ '
-        self.LAST   = ' └─ '
+        self.FORK = ' ├─ '
+        self.LAST = ' └─ '
         # where we write stuff
         self.ascii_tree = ""
-        self.root_path  = ""
+        self.root_path = ""
         # the UI
         self.UI = QtGui.QDialog()
         self.drawUI()
 
-
     def Activated(self):
         # clear stuff
         self.ascii_tree = ""
-        self.root_path  = ""
+        self.root_path = ""
         self.tree_view.clear()
         #
-        if len(Gui.Selection.getSelection())==1:
+        if len(Gui.Selection.getSelection()) == 1:
             objects = Gui.Selection.getSelection()
         elif Asm4.getAssembly():
-            objects = [ Asm4.getAssembly() ]
+            objects = [Asm4.getAssembly()]
         else:
-            FCC.PrintWarning("Oups, you shouldn't see this message, something went wrong")
+            FCC.PrintWarning(App.Qt.translate(
+                "Assembly", "Oups, you shouldn't see this message, something went wrong"))
         # get the directory path of the selected object
         filename = objects[0].Document.Name
         self.root_path = objects[0].Document.FileName.partition(filename)[0]
@@ -103,11 +107,11 @@ class listLinkedFiles():
         self.UI.show()
         self.tree_view.setPlainText(self.ascii_tree)
 
-
     # this is where the magic happens. Copied from TreeToAscii macro
     # Build ASCII tree by recursive call
+
     def printChildren(self, objs=None, level=0, baseline=''):
-        for cnt, obj in enumerate(objs,1):
+        for cnt, obj in enumerate(objs, 1):
             # find the filepath
             filepath = ''
             if obj.isDerivedFrom('App::Link'):
@@ -116,20 +120,21 @@ class listLinkedFiles():
                 target = obj
             # try relative filepath ...
             if self.root_path:
-                filepath = target.Document.FileName.partition(self.root_path)[2]
+                filepath = target.Document.FileName.partition(self.root_path)[
+                    2]
             # ... else absolute
-            if filepath =='':
+            if filepath == '':
                 filepath = target.Document.FileName
             # make the data
             data = {
-                "LBL"  : obj.Label,
-                "NAME" : '('+obj.Name+')' if obj.Label!=obj.Name else '',
-                "DOC"  : filepath,
-                "TARG" : obj.LinkedObject.Name if obj.isDerivedFrom('App::Link') else ''
+                "LBL": obj.Label,
+                "NAME": '('+obj.Name+')' if obj.Label != obj.Name else '',
+                "DOC": filepath,
+                "TARG": obj.LinkedObject.Name if obj.isDerivedFrom('App::Link') else ''
             }
             # print the line
             if cnt == len(objs):
-                if level>0:
+                if level > 0:
                     self.ascii_tree += baseline + self.LAST
             else:
                 self.ascii_tree += baseline + self.FORK
@@ -140,12 +145,12 @@ class listLinkedFiles():
                 pattern = '{LBL} {NAME}'
             self.ascii_tree += pattern.format(**data)
             # we add the filename for the first element
-            if level==0 and target.Document.FileName != '' :
+            if level == 0 and target.Document.FileName != '':
                 self.ascii_tree += ' @ '+target.Document.FileName
             self.ascii_tree += '\n'
             # for the next line
             if cnt == len(objs):
-                if level>0:
+                if level > 0:
                     baselinenext = baseline + self.TAB
                 else:
                     baselinenext = ''
@@ -158,24 +163,27 @@ class listLinkedFiles():
                     children.append(child)
             self.printChildren(children, level + 1, baselinenext)
 
-
     def copyToClip(self):
         """Copies ASCII tree to clipboard"""
         self.tree_view.selectAll()
         self.tree_view.copy()
-        self.tree_view.setPlainText("Copied to clipboard")
-        QtCore.QTimer.singleShot(3000, lambda:self.tree_view.setPlainText(self.ascii_tree))
-
+        self.tree_view.setPlainText(App.Qt.translate(
+            "Assembly", "Copied to clipboard"))
+        QtCore.QTimer.singleShot(
+            3000, lambda: self.tree_view.setPlainText(self.ascii_tree))
 
     # defines the UI, only static elements
+
     def drawUI(self):
         # Our main window will be a QDialog
         # make this dialog stay above the others, always visible
-        self.UI.setWindowFlags( QtCore.Qt.WindowStaysOnTopHint )
-        self.UI.setWindowTitle('Tree structure of the selected object')
-        self.UI.setWindowIcon( QtGui.QIcon( os.path.join( Asm4.iconPath , 'FreeCad.svg' ) ) )
+        self.UI.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
+        self.UI.setWindowTitle(App.Qt.translate(
+            "Assembly", 'Tree structure of the selected object'))
+        self.UI.setWindowIcon(QtGui.QIcon(
+            os.path.join(Asm4.iconPath, 'FreeCad.svg')))
         self.UI.setMinimumWidth(470)
-        self.UI.resize(470,300)
+        self.UI.resize(470, 300)
         self.UI.setModal(False)
         # the layout for the main window is vertical (top to down)
         mainLayout = QtGui.QVBoxLayout(self.UI)
@@ -185,17 +193,19 @@ class listLinkedFiles():
         self.tree_view.setMinimumWidth(Gui.getMainWindow().width()/2)
         self.tree_view.setMinimumHeight(Gui.getMainWindow().height()/2)
         self.tree_view.setLineWrapMode(QtGui.QPlainTextEdit.NoWrap)
-        f = QtGui.QFont("unexistent");
-        f.setStyleHint(QtGui.QFont.Monospace);
-        self.tree_view.setFont(f);
+        f = QtGui.QFont("unexistent")
+        f.setStyleHint(QtGui.QFont.Monospace)
+        self.tree_view.setFont(f)
         button_box = QtGui.QDialogButtonBox()
-        copy_clip_but = QtGui.QPushButton("Copy to clipboard", button_box)
+        copy_clip_but = QtGui.QPushButton(App.Qt.translate(
+            "Assembly", "Copy to clipboard"), button_box)
         button_box.addButton(copy_clip_but, QtGui.QDialogButtonBox.ActionRole)
-        #button_box.addStretch()
-        close_dlg_but = QtGui.QPushButton("Close", button_box)
+        # button_box.addStretch()
+        close_dlg_but = QtGui.QPushButton(
+            App.Qt.translate("Assembly", "Close"), button_box)
         button_box.addButton(close_dlg_but, QtGui.QDialogButtonBox.RejectRole)
-        #button_box.addButton(QtGui.QDialogButtonBox.Close)
-        #button_box.button(QtGui.QDialogButtonBox.Close).setDefault(True)
+        # button_box.addButton(QtGui.QDialogButtonBox.Close)
+        # button_box.button(QtGui.QDialogButtonBox.Close).setDefault(True)
         mainLayout.addWidget(self.tree_view)
         mainLayout.addWidget(button_box)
         # actions
@@ -312,4 +322,3 @@ class exportFiles:
 
 # Add the command in the workbench
 Gui.addCommand('Asm4_listLinkedFiles', listLinkedFiles())
-

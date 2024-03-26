@@ -42,6 +42,7 @@ import Part
 # only needed for icons
 import Asm4_libs as Asm4
 import selectionFilter
+from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
 
 
 
@@ -93,8 +94,8 @@ class MeasureCmd():
         super(MeasureCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Measure",
-                "ToolTip": "Measure Tool",
+        return {"MenuText": App.Qt.translate("Assembly", "Measure"),
+                "ToolTip": App.Qt.translate("Assembly", "Measure Tool"),
                 "Pixmap" : os.path.join( iconDir , 'Part_Measure.svg')
                 }
 
@@ -121,7 +122,7 @@ class MeasureUI():
         self.form = self.base
         iconFile = os.path.join( iconDir , 'Part_Measure.svg')
         self.form.setWindowIcon(QtGui.QIcon( iconFile ))
-        self.form.setWindowTitle('Measure')
+        self.form.setWindowTitle(App.Qt.translate("Assembly", 'Measure'))
 
         # remove selectionFilter
         global Asm4_3DselObserver
@@ -141,7 +142,7 @@ class MeasureUI():
         #self.so=SelObserverCaliper()
         self.so = selectionObserver()
         Gui.Selection.addObserver( self.so, 1 ) # 1 = resolve
-        FCC.PrintMessage('Observer started\n')
+        FCC.PrintMessage(App.Qt.translate("Assembly", 'Observer started')+'\n')
 
         # enable the measurement points
         self.Selection1.setEnabled(True)
@@ -175,12 +176,12 @@ class MeasureUI():
 
     # Close
     def Finish(self):
-        FCC.PrintMessage("closing ... ")
+        FCC.PrintMessage(App.Qt.translate("Assembly", "closing ... "))
         try:
             Gui.Selection.removeObserver(self.so)   # uninstall the resident SelObserver function
-            FCC.PrintMessage("done\n")
+            FCC.PrintMessage(App.Qt.translate("Assembly", "done")+"\n")
         except:
-            FCC.PrintWarning("was not able to remove observer\n")
+            FCC.PrintWarning(App.Qt.translate("Assembly", "was not able to remove observer")+"\n")
         # remove PtS because it can have strange results
         removePtS()
         # close Task widget
@@ -191,7 +192,7 @@ class MeasureUI():
         global PtS, addedDims
         Gui.Selection.clearSelection()
         self.clearConsole()
-        FCC.PrintMessage('Removing all measurements ...')
+        FCC.PrintMessage(App.Qt.translate("Assembly", 'Removing all measurements ...'))
         removePtS()
         for d in addedDims:
             FCC.PrintMessage('.')
@@ -213,7 +214,7 @@ class MeasureUI():
         self.Selection1.setChecked(False)
         self.Selection2.setEnabled(False)
         self.resultText.clear()
-        FCC.PrintMessage(' done\n')
+        FCC.PrintMessage(" "+App.Qt.translate("Assembly", 'done')+'\n')
 
 
     # clear report view and Python panel
@@ -287,7 +288,7 @@ class MeasureUI():
 
         # the layout for the main window is vertical (top to down)
         self.mainLayout = QtGui.QVBoxLayout(self.form)
-        self.mainLayout.addWidget(QtGui.QLabel('Controls'))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Assembly",'Controls')))
 
         # measurement type
         self.measureGroup = QtGui.QFrame(self.form)
@@ -300,7 +301,7 @@ class MeasureUI():
         pm.loadFromData(base64.b64decode(Dim_Radius_b64))
         self.rbRadius = QtGui.QRadioButton(self.measureGroup)
         self.rbRadius.setObjectName("rbRadius")
-        self.rbRadius.setToolTip("Measure Radius of Arc or Circle\nMeasure Length of Edge")
+        self.rbRadius.setToolTip(App.Qt.translate("Assembly","Measure Radius of Arc or Circle\nMeasure Length of Edge"))
         self.rbRadius.setIconSize(QtCore.QSize(btn_md_sizeX,btn_md_sizeY))
         self.rbRadius.setIcon(QtGui.QIcon(pm))
         self.rbRadius.setChecked(True)
@@ -309,7 +310,7 @@ class MeasureUI():
         pm.loadFromData(base64.b64decode(Dim_Length_b64))
         self.rbDistance = QtGui.QRadioButton(self.measureGroup)
         self.rbDistance.setObjectName("rbDistance")
-        self.rbDistance.setToolTip("Measure Distance")
+        self.rbDistance.setToolTip(App.Qt.translate("Assembly","Measure Distance"))
         self.rbDistance.setIconSize(QtCore.QSize(btn_md_sizeX,btn_md_sizeY))
         self.rbDistance.setIcon(QtGui.QIcon(pm))
         self.measureGrid.addWidget(self.rbDistance, 0, 1 )
@@ -317,7 +318,7 @@ class MeasureUI():
         pm.loadFromData(base64.b64decode(Dim_Angle_b64))
         self.rbAngle = QtGui.QRadioButton(self.measureGroup)
         self.rbAngle.setObjectName("rbAngle")
-        self.rbAngle.setToolTip("Measure Angle")
+        self.rbAngle.setToolTip(App.Qt.translate("Assembly","Measure Angle"))
         self.rbAngle.setIconSize(QtCore.QSize(btn_md_sizeX,btn_md_sizeY))
         self.rbAngle.setIcon(QtGui.QIcon(pm))
         self.measureGrid.addWidget(self.rbAngle, 0, 2 )
@@ -335,7 +336,7 @@ class MeasureUI():
         pm.loadFromData(base64.b64decode(Snap_Options_b64))
         self.rbSnap = QtGui.QRadioButton(self.snapGroup)
         self.rbSnap.setObjectName("rbSnap")
-        self.rbSnap.setToolTip("Snap to EndPoint, MiddlePoint, Center")
+        self.rbSnap.setToolTip(App.Qt.translate("Assembly","Snap to EndPoint, MiddlePoint, Center"))
         self.rbSnap.setIconSize(QtCore.QSize(3*btn_md_sizeX,btn_md_sizeY))
         self.rbSnap.setIcon(QtGui.QIcon(pm))
         self.rbSnap.setChecked(False)
@@ -345,7 +346,7 @@ class MeasureUI():
         pm.loadFromData(base64.b64decode(Center_Mass_b64))
         self.rbShape = QtGui.QRadioButton(self.snapGroup)
         self.rbShape.setObjectName("rbShape")
-        self.rbShape.setToolTip("Select Shape")
+        self.rbShape.setToolTip(App.Qt.translate("Assembly","Select Shape"))
         self.rbShape.setIconSize(QtCore.QSize(btn_md_sizeX,btn_md_sizeY))
         self.rbShape.setIcon(QtGui.QIcon(pm))
         self.rbShape.setChecked(True)
@@ -426,8 +427,8 @@ class MeasureUI():
         # select elements
         self.selectGrid = QtGui.QGridLayout()
         # first element
-        self.Selection1 = QtGui.QPushButton('Selection 1')
-        self.Selection1.setToolTip("Select First Element")
+        self.Selection1 = QtGui.QPushButton(App.Qt.translate("Assembly", 'Selection 1'))
+        self.Selection1.setToolTip(App.Qt.translate("Assembly", "Select First Element"))
         self.Selection1.setMaximumWidth(150)
         self.Selection1.setCheckable(True)
         self.Selection1.setChecked(False)
@@ -445,8 +446,8 @@ class MeasureUI():
         self.selectGrid.addWidget(self.sel1Icon,   0,2)
 
         # second element
-        self.Selection2 = QtGui.QPushButton('Selection 2')
-        self.Selection2.setToolTip("Select Second Element")
+        self.Selection2 = QtGui.QPushButton(App.Qt.translate("Assembly", 'Selection 2'))
+        self.Selection2.setToolTip(App.Qt.translate("Assembly", "Select Second Element"))
         self.Selection2.setMaximumWidth(150)
         self.Selection2.setEnabled(False)
         self.Selection2.setChecked(False)
@@ -469,21 +470,21 @@ class MeasureUI():
         # draw annotation in the GUI window
         self.bLabel = QtGui.QCheckBox()
         self.bLabel.setObjectName("bLabel")
-        self.bLabel.setToolTip("Enable extra Label")
-        self.bLabel.setText("Show Label in 3D view")
+        self.bLabel.setToolTip(App.Qt.translate("Assembly", "Enable extra Label"))
+        self.bLabel.setText(App.Qt.translate("Assembly", "Show Label in 3D view"))
         self.bLabel.setChecked(True)
         self.mainLayout.addWidget(self.bLabel)
 
         # draw X-Y-Z components
         self.Components = QtGui.QCheckBox()
         self.Components.setObjectName("Components")
-        self.Components.setToolTip("Show all dimension components")
-        self.Components.setText("Show Components")
+        self.Components.setToolTip(App.Qt.translate("Assembly", "Show all dimension components"))
+        self.Components.setText(App.Qt.translate("Assembly", "Show Components"))
         self.Components.setChecked(False)
         self.mainLayout.addWidget(self.Components)
 
         # Results
-        self.mainLayout.addWidget(QtGui.QLabel('Results'))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Assembly", 'Results')))
         self.resultText = QtGui.QTextEdit()
         self.resultText.setMinimumSize(200, 200)
         self.resultText.setReadOnly(True)
@@ -558,37 +559,9 @@ class selectionObserver():
             #Faces or Edges
             if len(selEx[0].SubObjects)>0:
                 subShape = selEx[0].SubObjects[0]
-                # we have selected an LCS, this needs special treatment
+                # we have selected an LCS
                 if selObj.TypeId == 'PartDesign::CoordinateSystem':
-                    globalPlacement = App.Placement()
-                    '''
-                    # get the selection hierarchy
-                    ( obj, tree ) = Asm4.getSelectionTree()
-                    # double-check, should always be true
-                    if selObj == obj:
-                        # first object is always in the current document
-                        doc = App.ActiveDocument
-                        # we parse the tree and cumulate the Placements
-                        for objName in tree:
-                            obj = doc.getObject(objName)
-                            # Groups don't have Placement properties, ignore
-                            if hasattr(obj,'Placement'):
-                                globalPlacement *= obj.Placement
-                            # if *this* object is a link to an *external* document, switch to that document
-                            # necessary because links can be in the *current* document also
-                            if obj.isDerivedFrom('App::Link') and obj.LinkedObject.Document != App.ActiveDocument:
-                                doc = obj.LinkedObject.Document
-                            # else, keep the same document
-                            else:
-                                pass
-                    '''
-                    # from https://forum.freecad.org/viewtopic.php?p=569083#p569083
-                    # retType=3 returns the placement. Check the doc string for more info
-                    # simplyfied version for single selection
-                    path = selEx[0].SubElementNames[0]
-                    globalPlacement = selEx[0].Object.getSubObject(path, retType=3) 
-                    # create a point at the origin of the LCS
-                    base = globalPlacement.Base
+                    base = selObj.Placement.Base
                     PtS  = self.drawPoint( App.Vector(base.x,base.y,base.z) )
                     subShape = PtS.Shape
                 # if valid selection
@@ -650,10 +623,10 @@ class selectionObserver():
                                     self.measureLine( self.Shp1 )
                                 # dunno what that stuff is
                                 else:
-                                    self.printResult("Can't measure\n"+str(self.Shp1))
+                                    self.printResult(App.Qt.translate("Assembly", "Can't measure\n")+str(self.Shp1))
                             # dunno what that stuff is
                             else:
-                                self.printResult("Can't measure\n"+str(subShape))
+                                self.printResult(App.Qt.translate("Assembly", "Can't measure\n")+str(subShape))
                             # unset first selection
                             self.Sel1 is None
                         # if not rbRadius, launch the selection of the second element
@@ -705,10 +678,10 @@ class selectionObserver():
                                 if self.Sel1=='shape' and self.Sel2=='shape':
                                     self.angleShapes( self.Shp1, self.Shp2 )
                                 else:
-                                    self.printResult( 'Select only faces or lines' )
+                                    self.printResult(App.Qt.translate("Assembly", 'Select only faces or lines' ))
                         # some problem
                         else:
-                            self.printResult( 'ERROR 44\n'+str(self.Shp2) )
+                            self.printResult(App.Qt.translate("Assembly", 'ERROR 44\n')+str(self.Shp2) )
                 # not valid selection
                 else:
                     self.printResult('ERROR 40\n'+str(subShape))
@@ -719,7 +692,7 @@ class selectionObserver():
         global taskUI
         if shape1.isValid() and shape2.isValid():
             Gui.Selection.clearSelection()
-            self.printResult( 'Measuring angles' )
+            self.printResult(App.Qt.translate("Assembly", 'Measuring angles' ))
             # Datum object
             if shape1.BoundBox.DiagonalLength > 1e+10:
                 pt1 = shape1.Placement.Base
@@ -757,9 +730,9 @@ class selectionObserver():
                 except:
                     pass
             else:
-                self.printResult('Ivalid directions')
+                self.printResult(App.Qt.translate("Assembly", 'Ivalid directions'))
         else:
-            self.printResult('Ivalid shapes')
+            self.printResult(App.Qt.translate("Assembly", 'Ivalid shapes'))
 
     # uses BRepExtrema_DistShapeShape to calculate the distance between 2 shapes
     def distShapes( self, shape1, shape2 ):
@@ -769,13 +742,13 @@ class selectionObserver():
             measure = shape1.distToShape(shape2)
             if measure and self.isVector(measure[1][0][0]) and self.isVector(measure[1][0][1]):
                 dist = measure[0]
-                self.printResult('Minimum Distance :\n  '+str(dist))
+                self.printResult(App.Qt.translate("Assembly", 'Minimum Distance :\n  ')+str(dist))
                 if dist > 1.0e-9:
                     pt1   = measure[1][0][0]
                     pt2   = measure[1][0][1]
                     self.measurePoints(pt1,pt2)
         else:
-            self.printResult('Ivalid shapes')
+            self.printResult(App.Qt.translate("Assembly", 'Ivalid shapes'))
 
     # measure a straight line
     def measureLine(self, line ):
@@ -804,7 +777,7 @@ class selectionObserver():
                     anno = ['L = '+self.render_distance(length)]
                 self.drawAnnotation( mid, anno )
         else:
-            self.printResult( 'Not a valid Line\n'+str(line) )
+            self.printResult(App.Qt.translate("Assembly", 'Not a valid Line\n')+str(line) )
 
     # measure distance between 2 points
     def measurePoints(self, pt1, pt2 ):
@@ -831,7 +804,7 @@ class selectionObserver():
                     anno = ['D = '+self.render_distance(dist)]
                 self.drawAnnotation( mid, anno )
         else:
-            self.printResult( 'Not valid Points' )
+            self.printResult(App.Qt.translate("Assembly", 'Not valid Points') )
 
     # measure radius of a circle
     def measureCircle(self, circle):
@@ -842,10 +815,10 @@ class selectionObserver():
             axis   = circle.Curve.Axis
             Gui.Selection.clearSelection()
             self.drawCircle( radius, center, axis )
-            text = 'Radius : '+self.render_distance(radius)+"\n"
+            text = App.Qt.translate("Assembly", 'Radius : ')+self.render_distance(radius)+"\n"
             # if annotation is checked, show label with R = radius
-            text += "Diameter : "+self.render_distance(radius*2)+"\n"
-            text += 'Center : \n'
+            text += App.Qt.translate("Assembly", "Diameter : ")+self.render_distance(radius*2)+"\n"
+            text += App.Qt.translate("Assembly", 'Center : \n')
             text += '  ( '+self.arrondi(center.x)+", "+self.arrondi(center.y)+", "+self.arrondi(center.z)+" )\n"
             text += 'Axis : \n'
             text += "  ( "+self.arrondi(axis.x)+", "+self.arrondi(axis.y)+", "+self.arrondi(axis.z)+" )"
@@ -857,7 +830,7 @@ class selectionObserver():
             else:
                 PtS = self.drawPoint(center)
         else:
-            self.printResult('Not a valid circle\n'+str(circle))
+            self.printResult(App.Qt.translate("Assembly", 'Not a valid circle\n')+str(circle))
 
 
     # figure out the direction of a shape, be it a line, a surface or a circle
@@ -899,7 +872,7 @@ class selectionObserver():
             elif hasattr(shape,'BoundBox'):
                 point = shape.BoundBox.Center
         else:
-            self.printResult('Invalid shape\n'+str(shape))
+            self.printResult(App.Qt.translate("Assembly", 'Invalid shape\n')+str(shape))
         return point
 
     # measure the coordinates of a single point
@@ -917,7 +890,7 @@ class selectionObserver():
         if point:
             #self.printResult( 'Measuring coordinates of\n'+str(vertex) )
             anno = ['Coordinates :', 'X : '+self.arrondi(point.x), 'Y : '+self.arrondi(point.y), 'Z : '+self.arrondi(point.z)]
-            text =  'Coordinates :\n'
+            text =  App.Qt.translate("Assembly", 'Coordinates :\n')
             text += "X : "+str(point.x)+"\n"
             text += 'Y : '+str(point.y)+'\n'
             text += 'Z : '+str(point.z)
@@ -929,11 +902,11 @@ class selectionObserver():
     def measureArea(self, face ):
         if face.isValid() and hasattr(face,'Area'):
             if self.isFlatFace(face):
-                self.printResult('Flat face\nArea : '+str(face.Area)+'\n')
+                self.printResult(App.Qt.translate("Assembly", 'Flat face\nArea : ')+str(face.Area)+'\n')
             else:
-                self.printResult('Area : '+str(face.Area)+"\n")
+                self.printResult(App.Qt.translate("Assembly", 'Area : ')+str(face.Area)+"\n")
         else:
-            self.printResult('Not a valid surface\n'+str(face) )
+            self.printResult(App.Qt.translate("Assembly", 'Not a valid surface\n')+str(face) )
 
 
     def printDims(self, ds, dx, dy, dz, dimType='Distance'):
@@ -944,9 +917,9 @@ class selectionObserver():
     def printAngle(self, angle, distance=-1 ):
         global taskUI
         taskUI.resultText.clear()
-        text = 'Angle : '+str(angle)+'°\n'
+        text = App.Qt.translate("Assembly", 'Angle : ')+str(angle)+'°\n'
         if distance != -1:
-            text += 'Distance // '+str(distance)
+            text += App.Qt.translate("Assembly", 'Distance // ')+str(distance)
         taskUI.resultText.setPlainText(text)
 
     # print the result in the text field of the UI
@@ -997,7 +970,7 @@ class selectionObserver():
             sep.addChild(lines)
 
             #add separator to sceneGraph
-            sg = FreeCADGui.ActiveDocument.ActiveView.getSceneGraph()
+            sg = Gui.ActiveDocument.ActiveView.getSceneGraph()
             sg.addChild(sep)
 
 
@@ -1038,7 +1011,7 @@ class selectionObserver():
         if distance == -1 or taskUI.Components.isChecked()==False :
             anno.LabelText = [self.arrondi(angle)+'°']
         else:
-            anno.LabelText = ['Angle: '+self.arrondi(angle)+'°', 'Distance // '+self.arrondi(distance)]
+            anno.LabelText = [App.Qt.translate("Assembly", 'Angle: ')+self.arrondi(angle)+'°', App.Qt.translate("Assembly", 'Distance // ')+self.arrondi(distance)]
         annoG = Gui.ActiveDocument.getObject(anno.Name)
         annoG.FontSize = annoFontSize
         self.addToDims(anno)
