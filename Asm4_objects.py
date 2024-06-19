@@ -2,23 +2,22 @@
 # coding: utf-8
 #
 # Asm4_objects.py
-# 
+#
 # LGPL
 # Copyright HUBERT Zoltán
-
 
 
 import os
 from math import radians
 import re
 
+from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
 from PySide import QtGui, QtCore
 import FreeCADGui as Gui
 import FreeCAD as App
 from FreeCAD import Console as FCC
 
 import Asm4_libs as Asm4
-
 
 
 """
@@ -47,24 +46,26 @@ var = App.ActiveDocument.addObject("Part::FeaturePython", 'varLink', VariantLink
 tmpDoc = App.newDocument( 'TmpDoc', hidden=True, temp=True )
 tmpDoc.addObject('App::Part
 """
-class VariantLink( object ):
+
+
+class VariantLink(object):
     def __init__(self):
-        FCC.PrintMessage('Initialising ...\n')
+        FCC.PrintMessage(_atr("Asm4_objects", 'Initialising ...\n'))
         self.Object = None
-    
+
     def __getstate__(self):
         return
 
-    def __setstate__(self,_state):
+    def __setstate__(self, _state):
         return
-    
+
     # new Python API for overriding C++ view provider of the binding object
-    def getViewProviderName(self,_obj):
+    def getViewProviderName(self, _obj):
         return 'Gui::ViewProviderLinkPython'
 
     # returns True only of the object has been successfully restored
-    def isLoaded(self,obj):
-        if hasattr(obj,'SourceObject') and obj.SourceObject is not None:
+    def isLoaded(self, obj):
+        if hasattr(obj, 'SourceObject') and obj.SourceObject is not None:
             return obj.SourceObject.isValid()
         return False
 
@@ -80,7 +81,7 @@ class VariantLink( object ):
                 sourceProps = variantVariables.PropertiesList
                 for prop in variantProps:
                     if prop in sourceProps and obj.getGroupOfProperty(prop) == 'VariantVariables':
-                        setattr( variantVariables, prop, getattr( obj, prop ))
+                        setattr(variantVariables, prop, getattr(obj, prop))
                 variantVariables.recompute()
                 obj.LinkedObject.recompute()
                 obj.LinkedObject.Document.recompute()
@@ -94,15 +95,16 @@ class VariantLink( object ):
         # create a new, empty, hidden, temporary document
         tmpDocName = 'varTmpDoc_'
         i = 1
-        while i<100 and tmpDocName+str(i) in App.listDocuments():
+        while i < 100 and tmpDocName+str(i) in App.listDocuments():
             i += 1
-        if i<100:
+        if i < 100:
             tmpDocName = 'varTmpDoc_'+str(i)
-            tmpDoc = App.newDocument( tmpDocName, hidden=True, temp=True )
+            tmpDoc = App.newDocument(tmpDocName, hidden=True, temp=True)
             # deep-copy the source object and link it back
-            obj.LinkedObject = tmpDoc.copyObject( obj.SourceObject, True )
+            obj.LinkedObject = tmpDoc.copyObject(obj.SourceObject, True)
         else:
-            FCC.PrintWarning('100 temporary variant documents are already in use, not creating a new one.\n')
+            FCC.PrintWarning(_atr(
+                "Asm4", '100 temporary variant documents are already in use, not creating a new one.\n'))
         return
 
     # Python API called after the document is restored
@@ -115,7 +117,7 @@ class VariantLink( object ):
             # update obj
             self.makeVarLink(obj)
             self.fillVarProperties(obj)
-            obj.Type='Asm4::VariantLink'
+            obj.Type = 'Asm4::VariantLink'
             self.restorePlacementEE(obj)
             self.execute(obj)
             ViewProviderVariant(obj.ViewObject)
@@ -124,53 +126,56 @@ class VariantLink( object ):
     # make the Asm4EE according to the properties stored in the varLink object
     # this is necessary because the placement refers to the LinkedObject's document *name*,
     # which is a temporary document, and this document may be different on restore
-    def restorePlacementEE( self, obj ):
+    def restorePlacementEE(self, obj):
         # only attempt this on fully restored objects
         if self.isLoaded(obj) and obj.LinkedObject.isValid():
             # if it's indeed an Asm4 object
             # LCS_Origin.Placement * AttachmentOffset * varTmpDoc_3#LCS_Origin.Placement ^ -1
-            if Asm4.isAsm4EE(obj) and ( obj.SolverId=='Asm4EE' or obj.SolverId=='Placement::ExpressionEngine' ):
+            if Asm4.isAsm4EE(obj) and (obj.SolverId == 'Asm4EE' or obj.SolverId == 'Placement::ExpressionEngine'):
                 # retrieve the info from the object's properties
-                (a_Link,sep,a_LCS) = obj.AttachedTo.partition('#')
-                if a_Link=='Parent Assembly':
+                (a_Link, sep, a_LCS) = obj.AttachedTo.partition('#')
+                if a_Link == 'Parent Assembly':
                     a_Part = None
                 else:
-                    a_Part = obj.Document.getObject(a_Link).LinkedObject.Document.Name
+                    a_Part = obj.Document.getObject(
+                        a_Link).LinkedObject.Document.Name
                 l_Part = obj.LinkedObject.Document.Name
                 l_LCS = obj.AttachedBy[1:]
                 # build the expression
-                expr = Asm4.makeExpressionPart( a_Link, a_Part, a_LCS, l_Part, l_LCS )
+                expr = Asm4.makeExpressionPart(
+                    a_Link, a_Part, a_LCS, l_Part, l_LCS)
                 # set the expression
-                obj.setExpression('Placement', expr )
+                obj.setExpression('Placement', expr)
 
-    # find all 'Variables' in the original part, 
+    # find all 'Variables' in the original part,
     # and create corresponding properties in the variant
-    def fillVarProperties(self,obj):
+    def fillVarProperties(self, obj):
         variables = obj.SourceObject.getObject('Variables')
         if variables is None:
-            FCC.PrintVarning('No \"Variables\" container in source object\n')
-        else: 
+            FCC.PrintVarning(
+                _atr("Asm4_objects", 'No \"Variables\" container in source object\n'))
+        else:
             for prop in variables.PropertiesList:
                 # fetch all properties in the Variables group
                 if variables.getGroupOfProperty(prop) == 'Variables':
                     # if the corresponding variables doesn't yet exist
-                    if not hasattr(obj,prop):
+                    if not hasattr(obj, prop):
                         # create a same property with same value in the variant
                         propType = variables.getTypeIdOfProperty(prop)
-                        obj.addProperty(propType,prop,'VariantVariables')
-                        setattr( obj, prop, getattr( variables, prop ))
+                        obj.addProperty(propType, prop, 'VariantVariables')
+                        setattr(obj, prop, getattr(variables, prop))
 
     # new Python API called when the object is newly created
-    def attach(self,obj):
-        FCC.PrintMessage('Attaching VariantLink ...\n')
+    def attach(self, obj):
+        FCC.PrintMessage(_atr("Asm4_objects", 'Attaching VariantLink ...\n'))
         # the source object for the variant object
-        obj.addProperty("App::PropertyXLink","SourceObject"," Link",
-                        'Original object from which this variant is derived')
+        obj.addProperty("App::PropertyXLink", "SourceObject", " Link",
+                        _atr("Asm4_objects", 'Original object from which this variant is derived'))
         # the actual linked object property with a customized name
-        obj.addProperty("App::PropertyXLink","LinkedObject"," Link",
-                        'Link to the modified object')
+        obj.addProperty("App::PropertyXLink", "LinkedObject", " Link",
+                        _atr("Asm4_objects", 'Link to the modified object'))
         # the actual linked object property with a customized name
-        obj.addProperty("App::PropertyString","Type")
+        obj.addProperty("App::PropertyString", "Type")
 
         # install the actual extension
         obj.addExtension('App::LinkExtensionPython')
@@ -178,17 +183,17 @@ class VariantLink( object ):
         self.linkSetup(obj)
 
     # helper function for both initialization (attach()) and restore (onDocumentRestored())
-    def linkSetup(self,obj):
-        assert getattr(obj,'Proxy',None)==self
+    def linkSetup(self, obj):
+        assert getattr(obj, 'Proxy', None) == self
         self.Object = obj
         # Tell LinkExtension which additional properties are available.
-        # This information is not persistent, so the following function must 
+        # This information is not persistent, so the following function must
         # be called by at both attach(), and restore()
-        obj.configLinkProperty( 'Placement', LinkedObject='LinkedObject')
+        obj.configLinkProperty('Placement', LinkedObject='LinkedObject')
         # hide the scale properties
-        if hasattr( obj, 'Scale' ):
+        if hasattr(obj, 'Scale'):
             obj.setPropertyStatus('Scale', 'Hidden')
-        if hasattr( obj, 'ScaleList' ):
+        if hasattr(obj, 'ScaleList'):
             obj.setPropertyStatus('ScaleList', 'Hidden')
         return
 
@@ -204,46 +209,47 @@ class VariantLink( object ):
     # this is never actually called
     # see https://forum.freecadweb.org/viewtopic.php?f=10&t=72728&p=634441#p634361
     def onSettingDocument(self, obj):
-        FCC.PrintMessage('Triggered onSettingDocument() in VariantLink\n')
+        FCC.PrintMessage(
+            _atr("Asm4_objects", 'Triggered onSettingDocument() in VariantLink\n'))
         obj.LinkedObject = obj.SourceObject
         return
 
     # this is never actually called
     def onLostLinkToObject(self, obj):
-        FCC.PrintMessage('Triggered onLostLinkToObject() in VariantLink\n')
+        FCC.PrintMessage(
+            _atr("Asm4_objects", 'Triggered onLostLinkToObject() in VariantLink\n'))
         obj.LinkedObject = obj.SourceObject
         return
 
     # this is never actually called
     def setupObject(self, obj):
-        FCC.PrintMessage('Triggered by setupObject() in VariantLink\n')
+        FCC.PrintMessage(
+            _atr("Asm4_objects", 'Triggered by setupObject() in VariantLink\n'))
         obj.LinkedObject = obj.SourceObject
 
 
 # variantLink viewprovider
 class ViewProviderVariant(object):
-    def __init__( self, vobj ):
+    def __init__(self, vobj):
         vobj.Proxy = self
         self.attach(vobj)
 
-    def attach(self,vobj):
+    def attach(self, vobj):
         self.ViewObject = vobj
         self.Object = vobj.Object
 
     # return an icon corresponding to the variant link type
     def getIcon(self):
-        iconPath = os.path.join( Asm4.iconPath, 'Variant_Link.svg' )
-        if hasattr( self.Object.Type, 'Type' ) and self.Object.Type == 'Asm4::VariantLink':
-            iconPath = os.path.join( Asm4.iconPath, 'Variant_Link.svg' )
+        iconPath = os.path.join(Asm4.iconPath, 'Variant_Link.svg')
+        if hasattr(self.Object.Type, 'Type') and self.Object.Type == 'Asm4::VariantLink':
+            iconPath = os.path.join(Asm4.iconPath, 'Variant_Link.svg')
         return iconPath
-                
+
     def __getstate__(self):
         return None
 
     def __setstate__(self, _state):
         return None
-    
-
 
 
 """
@@ -256,18 +262,20 @@ class ViewProviderVariant(object):
 from Asm4_objects import LinkArray
 la = App.ActiveDocument.addObject("Part::FeaturePython", 'linkArray', LinkArray(),None,True)
 """
-class LinkArray( object ):
+
+
+class LinkArray(object):
     def __init__(self):
         self.Object = None
-    
+
     def __getstate__(self):
         return
 
-    def __setstate__(self,_state):
+    def __setstate__(self, _state):
         return
-    
+
     # new Python API for overriding C++ view provider of the binding object
-    def getViewProviderName(self,_obj):
+    def getViewProviderName(self, _obj):
         return 'Gui::ViewProviderLinkPython'
 
     # Python API called on document restore
@@ -275,48 +283,49 @@ class LinkArray( object ):
         self.linkSetup(obj)
 
     # new Python API called when the object is newly created
-    def attach(self,obj):
+    def attach(self, obj):
         # the actual link property with a customized name
-        obj.addProperty("App::PropertyLink",   "SourceObject", "Array", 'The object to array')
+        obj.addProperty("App::PropertyLink",   "SourceObject",
+                        "Array",  _atr("Asm4_objects", 'The object to array'))
         # the following two properties are required to support link array
         obj.addProperty("App::PropertyBool",   "ShowElement",  "Array", '')
-        obj.addProperty("App::PropertyInteger","Count",        "Array",
-                        'Total number of elements in the array')
-        obj.Count=1
+        obj.addProperty("App::PropertyInteger", "Count",        "Array",
+                        _atr("Asm4_objects", 'Total number of elements in the array'))
+        obj.Count = 1
         # install the actual extension
         obj.addExtension('App::LinkExtensionPython')
         # initiate the extension
         self.linkSetup(obj)
 
     # helper function for both initialization (attach()) and restore (onDocumentRestored())
-    def linkSetup(self,obj):
-        assert getattr(obj,'Proxy',None)==self
+    def linkSetup(self, obj):
+        assert getattr(obj, 'Proxy', None) == self
         self.Object = obj
         # Tell LinkExtension which additional properties are available.
-        # This information is not persistent, so the following function must 
+        # This information is not persistent, so the following function must
         # be called by at both attach(), and restore()
-        obj.configLinkProperty("ShowElement", 'Placement', ElementCount='Count', LinkedObject='SourceObject')
+        obj.configLinkProperty("ShowElement", 'Placement',
+                               ElementCount='Count', LinkedObject='SourceObject')
         # hide the scale properties
-        if hasattr( obj, 'Scale' ):
+        if hasattr(obj, 'Scale'):
             obj.setPropertyStatus('Scale', 'Hidden')
-        if hasattr( obj, 'ScaleList' ):
+        if hasattr(obj, 'ScaleList'):
             obj.setPropertyStatus('ScaleList', 'Hidden')
 
-
     # Execute when a property changes.
+
     def onChanged(self, obj, prop):
         # this allows to move individual elements by the user
-        if prop == 'ShowElement': # set the PlacementList for user to change
+        if prop == 'ShowElement':  # set the PlacementList for user to change
             if hasattr(obj, 'PlacementList'):
                 if obj.ShowElement:
-                    obj.setPropertyStatus('PlacementList','-ReadOnly')
+                    obj.setPropertyStatus('PlacementList', '-ReadOnly')
                 else:
                     obj.setPropertyStatus('PlacementList', 'ReadOnly')
         # you cannot have less than 1 elements in an array
         elif prop == 'Count':
             if obj.Count < 1:
-                obj.Count=1
-
+                obj.Count = 1
 
 
 """
@@ -324,12 +333,14 @@ class LinkArray( object ):
     |                   ViewProvider                |
     +-----------------------------------------------+
 """
+
+
 class ViewProviderArray(object):
-    def __init__( self, vobj ):
+    def __init__(self, vobj):
         vobj.Proxy = self
         self.attach(vobj)
 
-    def attach(self,vobj):
+    def attach(self, vobj):
         self.ViewObject = vobj
         self.Object = vobj.Object
 
@@ -343,25 +354,25 @@ class ViewProviderArray(object):
     # return an icon corresponding to the array type
     def getIcon(self):
         iconFile = None
-        if hasattr(self.Object,"ArrayType"):
+        if hasattr(self.Object, "ArrayType"):
             tp = self.Object.ArrayType
-            if tp=='Circular Array':
-                iconFile = os.path.join( Asm4.iconPath, 'Asm4_PolarArray.svg')
-            elif tp=='Linear Array':
-                iconFile = os.path.join( Asm4.iconPath, 'Asm4_LinearArray.svg')
-            elif tp=='Mirror Array':
-                iconFile = os.path.join( Asm4.iconPath, 'Asm4_Mirror.svg')
-            elif tp=='Expression Array':
-                iconFile = os.path.join( Asm4.iconPath, 'Asm4_ExpressionArray.svg')
+            if tp == 'Circular Array':
+                iconFile = os.path.join(Asm4.iconPath, 'Asm4_PolarArray.svg')
+            elif tp == 'Linear Array':
+                iconFile = os.path.join(Asm4.iconPath, 'Asm4_LinearArray.svg')
+            elif tp == 'Mirror Array':
+                iconFile = os.path.join(Asm4.iconPath, 'Asm4_Mirror.svg')
+            elif tp == 'Expression Array':
+                iconFile = os.path.join(
+                    Asm4.iconPath, 'Asm4_ExpressionArray.svg')
         if iconFile:
             return iconFile
-                
+
     def __getstate__(self):
         return None
 
     def __setstate__(self, _state):
         return None
-    
 
 
 """
@@ -446,10 +457,12 @@ array.setExpression('.Placer.Rotation.Angle', '180 * (Index % 2) + floor(Index /
 array.setExpression('Scaler', '1 - 2 * (Index % 2)')'
 """
 
+
 class ExpressionArray(LinkArray):
 
     def raiseError(self, obj, message):
-        App.Console.PrintError(f'{type(self).__name__} {obj.Label}: {message}\n')
+        App.Console.PrintError(
+            f'{type(self).__name__} {obj.Label}: {message}\n')
         raise RuntimeError
 
     def onDocumentRestored(self, obj):
@@ -457,7 +470,7 @@ class ExpressionArray(LinkArray):
         if obj.getTypeIdOfProperty('Axis') == 'App::PropertyLink':
             axisObj = obj.Axis
             obj.removeProperty('Axis')
-            obj.addProperty("App::PropertyLinkSub","Axis","Array","")
+            obj.addProperty("App::PropertyLinkSub", "Axis", "Array", "")
             if hasattr(obj, "AxisXYZ"):
                 subnameList = [obj.AxisXYZ]
                 obj.removeProperty('AxisXYZ')
@@ -465,25 +478,28 @@ class ExpressionArray(LinkArray):
                 subnameList = []
             obj.Axis = (axisObj, subnameList)
         if not hasattr(obj, "Scaler"):
-            obj.addProperty('App::PropertyFloat',     'Scaler',        'Array','')
+            obj.addProperty('App::PropertyFloat',
+                            'Scaler',        'Array', '')
             obj.Scaler = 1.0
         if not hasattr(obj, "AxisPlacement"):
-            obj.addProperty('App::PropertyPlacement', 'AxisPlacement', 'Array','')
+            obj.addProperty('App::PropertyPlacement',
+                            'AxisPlacement', 'Array', '')
         if not hasattr(obj, "Placer"):
-            obj.addProperty('App::PropertyPlacement', 'Placer',         'Array','')
+            obj.addProperty('App::PropertyPlacement',
+                            'Placer',         'Array', '')
             if hasattr(obj, "ElementPlacement"):
                 obj.Placer = obj.ElementPlacement
-                def pnrepl(s): return s.replace('ElementPlacement','Placer')
+                def pnrepl(s): return s.replace('ElementPlacement', 'Placer')
                 for k, ex in obj.ExpressionEngine:
                     obj.setExpression(pnrepl(k), pnrepl(ex))
                     if 'ElementPlacement' in k:
                         obj.setExpression(k, None)
                 obj.removeProperty('ElementPlacement')
         if not hasattr(obj, "AngleStep") and hasattr(obj, "IntervalAngle"):
-            obj.addProperty('App::PropertyAngle', 'AngleStep', 'Array','')
+            obj.addProperty('App::PropertyAngle', 'AngleStep', 'Array', '')
             obj.AngleStep = obj.IntervalAngle
             for k, ex in obj.ExpressionEngine:
-                obj.setExpression(k, ex.replace('IntervalAngle','AngleStep'))
+                obj.setExpression(k, ex.replace('IntervalAngle', 'AngleStep'))
             obj.setExpression('IntervalAngle', None)
             obj.removeProperty('IntervalAngle')
         obj.setPropertyStatus('Index',         '-Immutable')
@@ -495,19 +511,23 @@ class ExpressionArray(LinkArray):
     # Set up the properties when the object is attached.
     def attach(self, obj):
         super().attach(obj)
-        obj.addProperty('App::PropertyString',      'ArrayType',        'Array', '')
-        obj.addProperty('App::PropertyPlacement',   'Placer',           'Array', 
-                        'Calculates element placements in relation to the Axis.\n'
-                        'Each element is assigned an Index starting from 0\n'
-                        'The Index can be used in expressions calculating this Placement or its sub-properties\n'
-                        'Expression examples:\n'
-                        'on Angle: Index%2==0?30:-30\n'
-                        'on Position.X: Index*30')
-        obj.addProperty('App::PropertyInteger',     'Index',            'Array', '')
+        obj.addProperty('App::PropertyString',
+                        'ArrayType',        'Array', '')
+        obj.addProperty('App::PropertyPlacement',   'Placer',           'Array',
+                        _atr("Asm4_objects", 'Calculates element placements in relation to the Axis.\n'
+                             'Each element is assigned an Index starting from 0\n'
+                             'The Index can be used in expressions calculating this Placement or its sub-properties\n'
+                             'Expression examples:\n'
+                             'on Angle: Index%2==0?30:-30\n'
+                             'on Position.X: Index*30'))
+        obj.addProperty('App::PropertyInteger',
+                        'Index',            'Array', '')
         obj.addProperty('App::PropertyLinkSub',     'Axis',             'Array',
                         'The axis, direction or plane the Placer relates to')
-        obj.addProperty('App::PropertyPlacement',   'AxisPlacement',     'Array','')
-        obj.addProperty('App::PropertyFloat',       'Scaler',            'Array','')
+        obj.addProperty('App::PropertyPlacement',
+                        'AxisPlacement',     'Array', '')
+        obj.addProperty('App::PropertyFloat',
+                        'Scaler',            'Array', '')
         obj.Scaler = 1.0
         obj.Index = 1
         obj.setPropertyStatus('Index',         'Hidden')
@@ -525,19 +545,23 @@ class ExpressionArray(LinkArray):
 
         # Source Object
         if not obj.SourceObject:
-            self.raiseError(obj, "Missing Source Object")
+            self.raiseError(obj,  _atr(
+                "Asm4_objects", "Missing Source Object"))
         sObj = obj.SourceObject
         # we only deal with objects that are in a parent container because we'll put the array there
         parent = sObj.getParentGeoFeatureGroup()
         if not parent:
-            self.raiseError(obj, "Source Object must reside inside a Part")
+            self.raiseError(obj,  _atr(
+                "Asm4_objects", "Source Object must reside inside a Part"))
         # find placement of axis
         if obj.Axis:
             if parent != obj.Axis[0].getParentGeoFeatureGroup():
-                self.raiseError(obj, 'Source Object and Axis must have the same parent Part')
+                self.raiseError(obj,  _atr(
+                    "Asm4_objects", 'Source Object and Axis must have the same parent Part'))
             obj.AxisPlacement = findAxisPlacement(*obj.Axis)
             if obj.AxisPlacement is None:
-                self.raiseError(obj, 'The type of the selected axis is not supported')
+                self.raiseError(obj,  _atr(
+                    "Asm4_objects", 'The type of the selected axis is not supported'))
         else:
             obj.AxisPlacement = obj.SourceObject.Placement
         # preparing calculations
@@ -552,13 +576,13 @@ class ExpressionArray(LinkArray):
             for pn in evalList:
                 ps = 'obj.'+pn.lstrip('.')
                 nv = type(eval(ps))(obj.evalExpression(expDict[pn]))
-                o,a = ps.rsplit('.',1)
+                o, a = ps.rsplit('.', 1)
                 if a == 'Angle' and type(eval(o)) == App.Rotation:
                     nv = radians(nv)
                 # must set entire rotation axis at once.
                 # Related discussion: https://forum.freecad.org/viewtopic.php?t=73898
                 if o.endswith('.Axis') and a in 'xyz':
-                    axv = eval(o.replace('.Axis','.RawAxis'))
+                    axv = eval(o.replace('.Axis', '.RawAxis'))
                     setattr(axv, a, nv)
                     exec(o + ' = axv')
                     continue
@@ -566,7 +590,7 @@ class ExpressionArray(LinkArray):
             placementList.append(obj.AxisPlacement * obj.Placer * pmt1)
             s = obj.Scaler
             scaleList.append(App.Vector(s, s, s))
-        # Resetting Index to 1 because we get more useful preview results 
+        # Resetting Index to 1 because we get more useful preview results
         # in the expression editor
         obj.Index = 1
         if obj.ShowElement:
@@ -583,6 +607,7 @@ class ExpressionArray(LinkArray):
             obj.PlacementList = placementList
             obj.ScaleList = scaleList
         return
+
 
 def findAxisPlacement(axisObj, subnameList):
     if subnameList:
@@ -607,26 +632,29 @@ def findAxisPlacement(axisObj, subnameList):
             return axisObj.Placement
         return None
     # on origin axes we want the X axis
-    if axisObj.TypeId == 'App::Line' and hasattr(axisObj,'Role'):
+    if axisObj.TypeId == 'App::Line' and hasattr(axisObj, 'Role'):
         return axisObj.Placement * App.Rotation(Asm4.VEC_T, 120)
-    if axisObj.TypeId == 'App::Plane' and hasattr(axisObj,'Role'):
+    if axisObj.TypeId == 'App::Plane' and hasattr(axisObj, 'Role'):
         return axisObj.Placement
     if axisObj.TypeId in ('PartDesign::CoordinateSystem', 'PartDesign::Plane'):
-        return axisObj.Placement        
+        return axisObj.Placement
     # Arbitary object as axis is rejected for now
     return None
 
 # To find evaluation order of expressions. The builtin can't handle a placement internal properties
+
+
 def _findParam(p_name, expression):
     if p_name in expression:
         if p_name[0] == '.':
-            exp = expression.replace(p_name,'a'+p_name)
-            a = "\\b{}\\b(?![.])".format('a'+p_name.replace('.',r'\.'))
+            exp = expression.replace(p_name, 'a'+p_name)
+            a = "\\b{}\\b(?![.])".format('a'+p_name.replace('.', r'\.'))
         else:
             exp = expression
             a = "\\b{}\\b(?![.])".format(p_name)
         return bool(re.search(a, exp))
     return False
+
 
 _placerProps = [
     '.Placer.Rotation',
@@ -643,6 +671,8 @@ _placerProps = [
     '.Placer.Base.y',
     '.Placer.Base.z',
 ]
+
+
 def _expandEdge(edge):
     if edge.startswith('.Placer.'):
         ie = []
@@ -650,30 +680,33 @@ def _expandEdge(edge):
             if s.startswith(edge):
                 ie.append(s)
         while True:
-            edge = edge.rsplit('.',1)[0]
+            edge = edge.rsplit('.', 1)[0]
             if edge == '.Placer':
                 break
             ie.append(edge)
         return ie
     return [edge]
 
+
 def _evalOrder(exDict):
     unresolved = []
     resolved = []
+
     def dep_resolve(node, resolved, unresolved):
         unresolved.append(node)
         nodes = _expandEdge(node)
         for edge in exDict.keys():
             for n in nodes:
-                if edge == n: continue
+                if edge == n:
+                    continue
                 if _findParam(n, exDict[edge]):
                     if edge not in resolved:
                         if edge in unresolved:
-                            raise RuntimeError('Circular reference detected: {} -> {}'.format(n, edge))
+                            raise RuntimeError(
+                                _atr("Asm4_objects", 'Circular reference detected: {} -> {}').format(n, edge))
                         dep_resolve(edge, resolved, unresolved)
         resolved.append(node)
         unresolved.remove(node)
     dep_resolve('Index', resolved, unresolved)
     resolved.pop()
     return list(reversed(resolved))
-

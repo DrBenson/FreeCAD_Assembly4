@@ -11,6 +11,7 @@
 import os
 
 from PySide import QtGui, QtCore
+from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
 import FreeCADGui as Gui
 import FreeCAD as App
 from FreeCAD import Console as FCC
@@ -18,28 +19,28 @@ from FreeCAD import Console as FCC
 import Asm4_libs as Asm4
 
 
-
-
 """
     +-----------------------------------------------+
     |    a circular link array class and command    |
     +-----------------------------------------------+
 """
+
+
 class makeShapeBinder():
     def __init__(self):
         pass
 
     def GetResources(self):
-        tooltip  = "Create a reference to an external shape\n"
-        tooltip += "This creates a SubShapeBinder of the selected shapes\n"
-        tooltip += "(face, edge, point) in the root assembly\n"
-        tooltip += "Only shapes belonging to the same part can be imported in a single step"
-        iconFile = os.path.join( Asm4.iconPath, 'Asm4_shapeBinder.svg' )
-        return {"MenuText": "Create a shape binder", "ToolTip":  tooltip, "Pixmap": iconFile}
+        tooltip = _atr("Asm4_shapeBinder", "Create a reference to an external shape\n"
+                       + "This creates a SubShapeBinder of the selected shapes\n"
+                       + "(face, edge, point) in the root assembly\n"
+                       + "Only shapes belonging to the same part can be imported in a single step")
+        iconFile = os.path.join(Asm4.iconPath, 'Asm4_shapeBinder.svg')
+        return {"MenuText": _atr("Asm4_shapeBinder", "Create a shape binder"), "ToolTip":  tooltip, "Pixmap": iconFile}
 
     def IsActive(self):
         # only do this for assembly objects and all selected shapes must be in the same part
-        if Asm4.getAssembly() and len(Gui.Selection.getSelection())==1:
+        if Asm4.getAssembly() and len(Gui.Selection.getSelection()) == 1:
             return True
         else:
             return False
@@ -49,7 +50,7 @@ class makeShapeBinder():
         # get the selected objects
         selEx = Gui.Selection.getSelectionEx("", 0)[0].SubElementNames
         for sel in selEx:
-            (objName,dot,shape) = sel.partition('.')
+            (objName, dot, shape) = sel.partition('.')
             # the first element should be the name of a child in the assembly
             if objName+'.' in rootAssembly.getSubObjects():
                 # get the object where the selected shapes are
@@ -68,13 +69,13 @@ class makeShapeBinder():
                             shape_name += '__'+objName
                     '''
                     # now create the SubShapeBinder
-                    binder  = rootAssembly.newObject('PartDesign::SubShapeBinder', shape_name)
+                    binder = rootAssembly.newObject(
+                        'PartDesign::SubShapeBinder', shape_name)
                     binder.Label = shape_name
                     binder.Support = [(obj, (shape,))]
                     binder.MakeFace = False
-                    binder.ViewObject.LineColor = (0.,1.,0.)
-                    binder.recompute()                   
-
+                    binder.ViewObject.LineColor = (0., 1., 0.)
+                    binder.recompute()
 
 
 """
@@ -86,8 +87,6 @@ binder = App.ActiveDocument.Model.newObject('PartDesign::SubShapeBinder', 'Shape
 support = [ (sel.Object, sel.SubElementNames) for sel in Gui.Selection.getSelectionEx('', 1) ]
 
 """
-
-
 
 
 # add the command to the workbench

@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# 
+#
 # insertLinkCmd.py
 #
 # LGPL
 # Copyright HUBERT Zoltán
 
 
-
-
-import os, re
+import os
+import re
 
 from PySide import QtGui, QtCore
+from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
 import FreeCADGui as Gui
 import FreeCAD as App
 
 import Asm4_libs as Asm4
-
 
 
 """
@@ -24,30 +23,30 @@ import Asm4_libs as Asm4
     |                  main class                   |
     +-----------------------------------------------+
 """
+
+
 class insertLink():
     "My tool object"
 
     def __init__(self):
-        super(insertLink,self).__init__()
+        super(insertLink, self).__init__()
         # the GUI objects are defined later down
         # self.UI = QtGui.QDialog()
         # self.drawUI()
 
-
     def GetResources(self):
-        tooltip  = "<p>Insert a Part into the assembly. "
-        tooltip += "This will create a dynamic link to the part, "
-        tooltip += "which can be in this document or in another document "
-        tooltip += "that is open in the current session</p>"
-        tooltip += "<p><b>Usage</b>: the part must be open in the current session</p>"
-        tooltip += "<p>This command also enables to repair broken/missing links. "
-        tooltip += "Select the broken link, launch this command, and select a new target part in the list</p>"
+        tooltip = _atr("Asm4_insertLink", "<p>Insert a Part into the assembly. "
+                       + "This will create a dynamic link to the part, "
+                       + "which can be in this document or in another document "
+                       + "that is open in the current session</p>"
+                       + "<p><b>Usage</b>: the part must be open in the current session</p>"
+                       + "<p>This command also enables to repair broken/missing links. "
+                       + "Select the broken link, launch this command, and select a new target part in the list</p>")
         iconFile = 'Link_Part.svg'
-        return {"MenuText" : "Insert Part", 
-                "ToolTip"  : tooltip, 
-                "Pixmap"   : os.path.join( Asm4.iconPath , iconFile )
+        return {"MenuText": _atr("Asm4_insertLink", "Insert Part"),
+                "ToolTip": tooltip,
+                "Pixmap": os.path.join(Asm4.iconPath, iconFile)
                 }
-
 
     def IsActive(self):
         # if an App::Link is selected, even a broken one
@@ -58,31 +57,31 @@ class insertLink():
             return True
         return False
 
-
     """
     +-----------------------------------------------+
     |                 the real stuff                |
     +-----------------------------------------------+
     """
+
     def Activated(self):
         # This function is executed when the command is activated
         self.UI = QtGui.QDialog()
         self.drawUI()
 
         # initialise stuff
-        self.activeDoc    = App.ActiveDocument
+        self.activeDoc = App.ActiveDocument
         self.rootAssembly = None
-        self.origLink     = None
-        self.brokenLink   = False
+        self.origLink = None
+        self.brokenLink = False
         #self.allParts = []
         #self.partsDoc = []
         self.filterPartList.clear()
-        #self.partList.clear()
+        # self.partList.clear()
         self.linkNameInput.clear()
 
         # if an Asm4 Assembly is present, that's where we put the link
         if Asm4.getAssembly():
-            self.rootAssembly  = Asm4.getAssembly()
+            self.rootAssembly = Asm4.getAssembly()
         # an App::Part at the root of the document is selected, we insert the link there
         elif Asm4.getSelectedRootPart():
             self.rootAssembly = Asm4.getSelectedRootPart()
@@ -95,7 +94,7 @@ class insertLink():
                 self.rootAssembly = parent
                 self.origLink = selObj
         # if a broken link is selected
-        elif len(Gui.Selection.getSelection())==1 :
+        elif len(Gui.Selection.getSelection()) == 1:
             selObj = Gui.Selection.getSelection()[0]
             if selObj.isDerivedFrom('App::Link') and selObj.LinkedObject is None:
                 parent = selObj.getParentGeoFeatureGroup()
@@ -104,13 +103,16 @@ class insertLink():
                     self.brokenLink = True
                     self.rootAssembly = parent
                     self.origLink = selObj
-                    self.UI.setWindowTitle('Re-link broken link')
-                    self.insertButton.setText('Replace')
+                    self.UI.setWindowTitle(
+                        _atr("Asm4_insertLink", 'Re-link broken link'))
+                    self.insertButton.setText(
+                        _atr("Asm4_insertLink", 'Replace'))
                     self.linkNameInput.setText(Asm4.labelName(selObj))
                     self.linkNameInput.setEnabled(False)
 
         if self.rootAssembly is None:
-            Asm4.warningBox( 'Please create an Assembly' )
+            Asm4.warningBox(
+                _atr("Asm4_insertLink", 'Please create an Assembly'))
             return
 
         # build the list of available parts
@@ -120,9 +122,11 @@ class insertLink():
         if self.origLink and not self.brokenLink:
             origPart = self.origLink.LinkedObject
             # try to find the original part of the selected link
-            origPartText = origPart.Document.Name +"#"+ Asm4.labelName(origPart)
+            origPartText = origPart.Document.Name + \
+                "#" + Asm4.labelName(origPart)
             # MatchExactly, MatchContains, MatchEndsWith, MatchStartsWith ...
-            partFound = self.partList.findItems( origPartText, QtCore.Qt.MatchExactly )
+            partFound = self.partList.findItems(
+                origPartText, QtCore.Qt.MatchExactly)
             if partFound:
                 self.partList.setCurrentItem(partFound[0])
                 # self.onItemClicked(partFound[0])
@@ -130,22 +134,24 @@ class insertLink():
                 origName = self.origLink.Label
                 lastChar = origName[-1]
                 if lastChar.isnumeric():
-                    (rootName,sep,num) = origName.rpartition('_')
-                    if rootName=="":
+                    (rootName, sep, num) = origName.rpartition('_')
+                    if rootName == "":
                         rootName = origName[:-3]
-                    proposedLinkName = Asm4.nextInstance(rootName,startAtOne=True)
+                    proposedLinkName = Asm4.nextInstance(
+                        rootName, startAtOne=True)
                 # else we take the next instance
                 else:
-                    proposedLinkName = Asm4.nextInstance(origName,startAtOne=False)
+                    proposedLinkName = Asm4.nextInstance(
+                        origName, startAtOne=False)
                 # set the proposed name in the entry field
-                self.linkNameInput.setText( proposedLinkName )
+                self.linkNameInput.setText(proposedLinkName)
 
         # show the UI
         self.UI.show()
 
     # Search for all App::Parts and PartDesign::Body in all open documents
     # Also store the document of the part
-    def lookForParts( self, doc=None ):
+    def lookForParts(self, doc=None):
         self.allParts = []
         self.partsDoc = []
         if doc is None:
@@ -156,29 +162,29 @@ class insertLink():
             # don't consider temporary documents. Guard against older versions of FreeCad
             # which don't have the Temporary attribute
             try:
-                docTemporary = doc.Temporary 
+                docTemporary = doc.Temporary
             except AttributeError:
                 docTemporary = False
-                
+
             if not docTemporary:
                 for obj in doc.findObjects("App::Part"):
                     # we don't want to link to itself to the 'Model' object
-                    # other App::Part in the same document are OK 
+                    # other App::Part in the same document are OK
                     # but only those at top level (not nested inside other containers)
                     if obj != self.rootAssembly and obj.getParentGeoFeatureGroup() is None:
-                        self.allParts.append( obj )
-                        self.partsDoc.append( doc )
+                        self.allParts.append(obj)
+                        self.partsDoc.append(doc)
 
                 for obj in doc.findObjects("PartDesign::Body"):
                     # but only those at top level (not nested inside other containers)
                     if obj.getParentGeoFeatureGroup() is None:
-                        self.allParts.append( obj )
-                        self.partsDoc.append( doc )
+                        self.allParts.append(obj)
+                        self.partsDoc.append(doc)
         # build the list
         self.partList.clear()
         for part in self.allParts:
             newItem = QtGui.QListWidgetItem()
-            newItem.setText( part.Document.Name +"#"+ Asm4.labelName(part) )
+            newItem.setText(part.Document.Name + "#" + Asm4.labelName(part))
             newItem.setIcon(part.ViewObject.Icon)
             self.partList.addItem(newItem)
 
@@ -189,20 +195,20 @@ class insertLink():
             item = self.partList.item(x)
 
             # check the items's text match the filter ignoring the case
-            matchStr =  re.search(filterStr, item.text(), flags=re.IGNORECASE)
+            matchStr = re.search(filterStr, item.text(), flags=re.IGNORECASE)
             if filterStr and not matchStr:
                 item.setHidden(True)
             else:
                 item.setHidden(False)
 
-
     # from A2+
+
     def openFile(self):
         filename = None
         importDoc = None
         importDocIsOpen = False
-        dialog = QtGui.QFileDialog( QtGui.QApplication.activeWindow(),
-                                    "Select FreeCAD document to import part from" )
+        dialog = QtGui.QFileDialog(QtGui.QApplication.activeWindow(),
+                                   _atr("Asm4_insertLink",  "Select FreeCAD document to import part from"))
         # set option "DontUseNativeDialog"=True, as native Filedialog shows
         # misbehavior on Unbuntu 18.04 LTS. It works case sensitively, what is not wanted...
         '''
@@ -211,7 +217,8 @@ class insertLink():
         else:
             dialog.setOption(QtGui.QFileDialog.DontUseNativeDialog, True)
         '''
-        dialog.setNameFilter("Supported Formats *.FCStd *.fcstd (*.FCStd *.fcstd);;All files (*.*)")
+        dialog.setNameFilter(_atr(
+            "Asm4_insertLink", "Supported Formats *.FCStd *.fcstd (*.FCStd *.fcstd);;All files (*.*)"))
         if dialog.exec_():
             filename = str(dialog.selectedFiles()[0])
             # look only for filenames, not paths, as there are problems on WIN10 (Address-translation??)
@@ -220,30 +227,30 @@ class insertLink():
             for d in App.listDocuments().values():
                 recentFile = os.path.split(d.FileName)[1]
                 if requestedFile == recentFile:
-                    importDoc = d # file is already open...
+                    importDoc = d  # file is already open...
                     importDocIsOpen = True
                     break
             # if not, open it
             if not importDocIsOpen:
                 if filename.lower().endswith('.fcstd'):
                     importDoc = App.openDocument(filename)
-                    App.setActiveDocument( self.activeDoc.Name )
+                    App.setActiveDocument(self.activeDoc.Name)
                     # update the part list
                     self.lookForParts(importDoc)
         return
-
 
     """
     +-----------------------------------------------+
     |         the real stuff happens here           |
     +-----------------------------------------------+
     """
+
     def onCreateLink(self):
-        # parse the selected items 
+        # parse the selected items
         selectedPart = []
         for selected in self.partList.selectedIndexes():
             # get the selected part
-            selectedPart = self.allParts[ selected.row() ]
+            selectedPart = self.allParts[selected.row()]
 
         # get the name of the link (as it should appear in the tree)
         linkName = self.linkNameInput.text()
@@ -254,17 +261,19 @@ class insertLink():
             self.UI.close()
             # highlight the link ...
             Gui.Selection.clearSelection()
-            Gui.Selection.addSelection( self.activeDoc.Name, self.rootAssembly.Name, self.origLink.Name+'.' )
+            Gui.Selection.addSelection(
+                self.activeDoc.Name, self.rootAssembly.Name, self.origLink.Name+'.')
             # ... and launch the placement of the inserted part if we're in an Asm4 Assembly
             if self.rootAssembly == Asm4.getAssembly():
-                Gui.runCommand( 'Asm4_placeLink' )
+                Gui.runCommand('Asm4_placeLink')
         # only create link if there is a Part object and a name
         elif self.rootAssembly and selectedPart and linkName:
             # check that the current document had been saved
             # or that it's the same document as that of the selected part
-            if App.ActiveDocument.FileName!='' or App.ActiveDocument==selectedPart.Document:
+            if App.ActiveDocument.FileName != '' or App.ActiveDocument == selectedPart.Document:
                 # create the App::Link with the user-provided name
-                createdLink = self.rootAssembly.newObject( 'App::Link', linkName )
+                createdLink = self.rootAssembly.newObject(
+                    'App::Link', linkName)
                 createdLink.Label = linkName
                 # assign the user-selected part to it
                 createdLink.LinkedObject = selectedPart
@@ -276,24 +285,25 @@ class insertLink():
                 createdLink.recompute()
                 # close the dialog UI...
                 self.UI.close()
-                # highlight the link 
+                # highlight the link
                 Gui.Selection.clearSelection()
-                Gui.Selection.addSelection( self.activeDoc.Name, self.rootAssembly.Name, createdLink.Name+'.' )
+                Gui.Selection.addSelection(
+                    self.activeDoc.Name, self.rootAssembly.Name, createdLink.Name+'.')
                 # ... and launch the placement of the inserted part if we're in an Asm4 Assembly
                 if self.rootAssembly == Asm4.getAssembly():
-                    Gui.runCommand( 'Asm4_placeLink' )
+                    Gui.runCommand('Asm4_placeLink')
             else:
-                Asm4.warningBox('The current document must be saved before inserting an external part')
+                Asm4.warningBox(_atr(
+                    "Asm4_insertLink", 'The current document must be saved before inserting an external part'))
                 return
         # if still open, close the dialog UI
         self.UI.close()
 
-
-    def onItemClicked( self, item ):
+    def onItemClicked(self, item):
         for selected in self.partList.selectedIndexes():
             # get the selected part
-            part = self.allParts[ selected.row() ]
-            doc  = self.partsDoc[ selected.row() ]
+            part = self.allParts[selected.row()]
+            doc = self.partsDoc[selected.row()]
             # by default, the link shall have the same name as the original part
             proposedLinkName = part.Label
             # if it's a sub-assembly
@@ -303,28 +313,27 @@ class insertLink():
                     proposedLinkName = part.Document.Name
             # set the proposed name into the text field, unless it's a broken link
             if not self.brokenLink:
-                self.linkNameInput.setText( proposedLinkName )
-
+                self.linkNameInput.setText(proposedLinkName)
 
     def onCancel(self):
         self.UI.close()
-
-
 
     """
     +-----------------------------------------------+
     |     defines the UI, only static elements      |
     +-----------------------------------------------+
     """
+
     def drawUI(self):
         # Our main window is a QDialog
         # make this dialog stay above the others, always visible
-        self.UI.setWindowFlags( QtCore.Qt.WindowStaysOnTopHint )
+        self.UI.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
         self.UI.setModal(False)
-        self.UI.setWindowTitle('Insert a Part')
-        self.UI.setWindowIcon( QtGui.QIcon( os.path.join( Asm4.iconPath , 'FreeCad.svg' ) ) )
+        self.UI.setWindowTitle(_atr("Asm4_insertLink", 'Insert a Part'))
+        self.UI.setWindowIcon(QtGui.QIcon(
+            os.path.join(Asm4.iconPath, 'FreeCad.svg')))
         self.UI.setMinimumSize(400, 500)
-        self.UI.resize(400,500)
+        self.UI.resize(400, 500)
 
         # Define the individual widgets
         # Create a line for filtering the parts list
@@ -334,20 +343,26 @@ class insertLink():
         # Create a line that will contain the name of the link (in the tree)
         self.linkNameInput = QtGui.QLineEdit(self.UI)
         # Cancel button
-        self.cancelButton = QtGui.QPushButton('Cancel', self.UI)
+        self.cancelButton = QtGui.QPushButton(
+            _atr("Asm4_insertLink", 'Cancel'), self.UI)
         # Cancel button
-        self.openFileButton = QtGui.QPushButton('Open file', self.UI)
+        self.openFileButton = QtGui.QPushButton(
+            _atr("Asm4_insertLink", 'Open file'), self.UI)
         # Insert Link button
-        self.insertButton = QtGui.QPushButton('Insert', self.UI)
+        self.insertButton = QtGui.QPushButton(
+            _atr("Asm4_insertLink", 'Insert'), self.UI)
         self.insertButton.setDefault(True)
 
         # Place the widgets with layouts
         self.mainLayout = QtGui.QVBoxLayout(self.UI)
-        self.mainLayout.addWidget(QtGui.QLabel("Filter :"))
+        self.mainLayout.addWidget(QtGui.QLabel(
+            _atr("Asm4_insertLink", "Filter :")))
         self.mainLayout.addWidget(self.filterPartList)
-        self.mainLayout.addWidget(QtGui.QLabel("Select Part to be inserted :"))
+        self.mainLayout.addWidget(QtGui.QLabel(
+            _atr("Asm4_insertLink", "Select Part to be inserted :")))
         self.mainLayout.addWidget(self.partList)
-        self.mainLayout.addWidget(QtGui.QLabel("Name for the link :"))
+        self.mainLayout.addWidget(QtGui.QLabel(
+            _atr("Asm4_insertLink", "Name for the link :")))
         self.mainLayout.addWidget(self.linkNameInput)
         self.mainLayout.addWidget(QtGui.QLabel(' '))
         self.buttonsLayout = QtGui.QHBoxLayout()
@@ -363,7 +378,7 @@ class insertLink():
         self.cancelButton.clicked.connect(self.onCancel)
         self.openFileButton.clicked.connect(self.openFile)
         self.insertButton.clicked.connect(self.onCreateLink)
-        self.partList.itemClicked.connect( self.onItemClicked)
+        self.partList.itemClicked.connect(self.onItemClicked)
         self.filterPartList.textChanged.connect(self.onFilterChange)
 
 
@@ -372,5 +387,4 @@ class insertLink():
     |       add the command to the workbench        |
     +-----------------------------------------------+
 """
-Gui.addCommand( 'Asm4_insertLink', insertLink() )
-
+Gui.addCommand('Asm4_insertLink', insertLink())

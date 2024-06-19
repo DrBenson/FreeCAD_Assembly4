@@ -4,20 +4,18 @@
 # LGPL
 # Copyright HUBERT Zoltán
 #
-# newPartCmd.py 
-
-
+# newPartCmd.py
 
 
 import os
 
 from PySide import QtGui, QtCore
+from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
 import FreeCADGui as Gui
 import FreeCAD as App
 from FreeCAD import Console as FCC
 
 import Asm4_libs as Asm4
-
 
 
 """
@@ -26,18 +24,20 @@ import Asm4_libs as Asm4
     |         App::Part or PartDesign::Body         |
     +-----------------------------------------------+
 """
+
+
 class mirrorPartCmd:
 
     def __init__(self):
-        super(mirrorPartCmd,self).__init__()
+        super(mirrorPartCmd, self).__init__()
         self.UI = QtGui.QDialog()
         self.drawUI()
 
     def GetResources(self):
-        tooltip  = 'Create a mirrored part of a part. Use only on individual parts, not assemblies\n'
-        tooltip += 'You must re-create the attachment datums in the resulting part'
-        iconFile = os.path.join( Asm4.iconPath , 'Asm4_Mirror.svg') 
-        return {"MenuText" : 'Create symmetric of part', "ToolTip" : tooltip, "Pixmap" : iconFile }
+        tooltip = _atr("Asm4_mirrorPart", 'Create a mirrored part of a part. Use only on individual parts, not assemblies\n'
+                       + 'You must re-create the attachment datums in the resulting part')
+        iconFile = os.path.join(Asm4.iconPath, 'Asm4_Mirror.svg')
+        return {"MenuText": _atr("Asm4_mirrorPart", 'Create symmetric of part'), "ToolTip": tooltip, "Pixmap": iconFile}
 
     def IsActive(self):
         # this works on Parts and Bodies, and links to such
@@ -61,18 +61,18 @@ class mirrorPartCmd:
             self.mirroredPartName.setText(proposedName)
             self.UI.show()
 
-        
     def onOK(self):
         if self.mirroredPartName != '':
             # the mirrored object's name
             symPartName = self.mirroredPartName.text()
-            symObjName  = self.selObj.Label+'_mirrored'
+            symObjName = self.selObj.Label+'_mirrored'
             linkObjName = self.selObj.Label+'_link'
             # create Part
-            symPart = App.ActiveDocument.addObject( 'App::Part', symPartName )
+            symPart = App.ActiveDocument.addObject('App::Part', symPartName)
             # add an LCS at the root of the Part, and attach it to the 'Origin'
-            lcs = symPart.newObject('PartDesign::CoordinateSystem','LCS_'+symPart.Name)
-            lcs.Support = [(symPart.Origin.OriginFeatures[0],'')]
+            lcs = symPart.newObject(
+                'PartDesign::CoordinateSystem', 'LCS_'+symPart.Name)
+            lcs.Support = [(symPart.Origin.OriginFeatures[0], '')]
             lcs.MapMode = 'ObjectXY'
             lcs.MapReversed = False
             # if there is a Parts group, put the symmetrical part there
@@ -80,67 +80,72 @@ class mirrorPartCmd:
             if partsGroup:
                 partsGroup.addObject(symPart)
             # create a link to the original
-            link = symPart.newObject('App::Link',linkObjName)
+            link = symPart.newObject('App::Link', linkObjName)
             link.LinkedObject = self.selObj
-            link.Label        = linkObjName
-            link.Visibility   = False
+            link.Label = linkObjName
+            link.Visibility = False
             # create the mirrored object
-            symObj = symPart.newObject('Part::Mirroring',symObjName)
+            symObj = symPart.newObject('Part::Mirroring', symObjName)
             symObj.Source = link
             # set the symmetry plane
             if self.symPlane.currentText() == 'X-Y':
-                symObj.Normal = App.Vector(0,0,1)
+                symObj.Normal = App.Vector(0, 0, 1)
             elif self.symPlane.currentText() == 'X-Z':
-                symObj.Normal = App.Vector(0,1,0)
+                symObj.Normal = App.Vector(0, 1, 0)
             elif self.symPlane.currentText() == 'Y-Z':
-                symObj.Normal = App.Vector(1,0,0)
+                symObj.Normal = App.Vector(1, 0, 0)
             else:
-                FCC.PrintMessage("ERROR : You shouldn't see this message from mirrorPartCmd()\n")
+                FCC.PrintMessage(_atr(
+                    "Asm4_mirrorPart", "ERROR : You shouldn't see this message from mirrorPartCmd()\n"))
             # recompute
             symPart.recompute()
             App.ActiveDocument.recompute()
         self.UI.close()
 
-
     def onCancel(self):
         self.UI.close()
 
-
     # defines the UI, only static elements
+
     def drawUI(self):
         # Our main window will be a QDialog
         # make this dialog stay above the others, always visible
-        self.UI.setWindowFlags( QtCore.Qt.WindowStaysOnTopHint )
-        self.UI.setWindowTitle('Create mirrored Part')
-        self.UI.setWindowIcon( QtGui.QIcon( os.path.join( Asm4.iconPath , 'FreeCad.svg' ) ) )
+        self.UI.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
+        self.UI.setWindowTitle(_atr("Asm4_mirrorPart", 'Create mirrored Part'))
+        self.UI.setWindowIcon(QtGui.QIcon(
+            os.path.join(Asm4.iconPath, 'FreeCad.svg')))
         self.UI.setMinimumWidth(300)
         self.UI.setModal(False)
         # the layout for the main window is vertical (top to down)
         self.mainLayout = QtGui.QVBoxLayout(self.UI)
-        
+
         # the selected (original) part
-        self.mainLayout.addWidget(QtGui.QLabel("Selected Part :"))
+        self.mainLayout.addWidget(QtGui.QLabel(
+            _atr("Asm4_mirrorPart", "Selected Part :")))
         self.selectedPart = QtGui.QLineEdit()
         self.selectedPart.setReadOnly(True)
         self.mainLayout.addWidget(self.selectedPart)
-        
+
         # the symmetry plane
-        self.mainLayout.addWidget(QtGui.QLabel("Select the symmetry plane :"))
+        self.mainLayout.addWidget(QtGui.QLabel(
+            _atr("Asm4_mirrorPart", "Select the symmetry plane :")))
         self.symPlane = QtGui.QComboBox()
         self.symPlane.addItem('X-Y')
         self.symPlane.addItem('X-Z')
         self.symPlane.addItem('Y-Z')
-        self.symPlane.setCurrentIndex( 1 )
+        self.symPlane.setCurrentIndex(1)
         self.mainLayout.addWidget(self.symPlane)
 
         # the mirrored part's name
-        self.mainLayout.addWidget(QtGui.QLabel("Mirrored part's name :"))
+        self.mainLayout.addWidget(QtGui.QLabel(
+            _atr("Asm4_mirrorPart", "Mirrored part's name :")))
         self.mirroredPartName = QtGui.QLineEdit()
         self.mainLayout.addWidget(self.mirroredPartName)
 
         # Buttons
-        self.CancelButton = QtGui.QPushButton('Cancel')
-        self.OkButton = QtGui.QPushButton('OK')
+        self.CancelButton = QtGui.QPushButton(
+            _atr("Asm4_mirrorPart", 'Cancel'))
+        self.OkButton = QtGui.QPushButton(_atr("Asm4_mirrorPart", 'OK'))
         self.OkButton.setDefault(True)
         # the button layout
         self.buttonLayout = QtGui.QHBoxLayout()
@@ -158,5 +163,4 @@ class mirrorPartCmd:
 
 
 # add the command to the workbench
-Gui.addCommand( 'Asm4_mirrorPart', mirrorPartCmd() )
-
+Gui.addCommand('Asm4_mirrorPart', mirrorPartCmd())

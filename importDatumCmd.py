@@ -10,6 +10,7 @@
 import os
 
 from PySide import QtGui, QtCore
+from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
 import FreeCADGui as Gui
 import FreeCAD as App
 from FreeCAD import Console as FCC
@@ -17,26 +18,26 @@ from FreeCAD import Console as FCC
 import Asm4_libs as Asm4
 
 
-
-
 """
     +-----------------------------------------------+
     |                  The command                  |
     +-----------------------------------------------+
 """
+
+
 class importDatumCmd():
     def __init__(self):
-        super(importDatumCmd,self).__init__()
+        super(importDatumCmd, self).__init__()
 
     def GetResources(self):
-        tooltip  = "Imports the selected Datum object(s) from a sub-part into the root assembly.\n"
-        tooltip += "This creates a new datum of the same type, and with the same global placement\n\n"
-        tooltip += "This command can also be used to override the placement of an existing datum :\n"
-        tooltip += "select a second datum in the same root container as the first selected datum"
-        iconFile = os.path.join( Asm4.iconPath , 'Import_Datum.svg')
-        return {"MenuText": "Import Datum object",
-                "ToolTip" : tooltip,
-                "Pixmap"  : iconFile }
+        tooltip = _atr("Asm4_importDatum", "Imports the selected Datum object(s) from a sub-part into the root assembly.\n"
+                       + "This creates a new datum of the same type, and with the same global placement\n\n"
+                       + "This command can also be used to override the placement of an existing datum :\n"
+                       + "select a second datum in the same root container as the first selected datum")
+        iconFile = os.path.join(Asm4.iconPath, 'Import_Datum.svg')
+        return {"MenuText": _atr("Asm4_importDatum", "Import Datum object"),
+                "ToolTip": tooltip,
+                "Pixmap": iconFile}
 
     def IsActive(self):
         if App.ActiveDocument and self.getSelectedDatums():
@@ -59,21 +60,23 @@ class importDatumCmd():
     |                 the real stuff                |
     +-----------------------------------------------+
     """
+
     def Activated(self):
-        ( selDatum, selTree ) = Asm4.getSelectionTree()
+        (selDatum, selTree) = Asm4.getSelectionTree()
         if selTree:
             # the root parent container is the first in the selection tree
             rootContainer = App.ActiveDocument.getObject(selTree[0])
             selection = self.getSelectedDatums()
-            
+
             # special case where 2 objects are selected in order to update the placement of the second one
-            if len(selection)==2 and selection[0].getParentGeoFeatureGroup() == rootContainer:
+            if len(selection) == 2 and selection[0].getParentGeoFeatureGroup() == rootContainer:
                 confirm = False
                 selDatum = selection[0]
-                ( targetDatum, selTree ) = Asm4.getSelectionTree(1)
+                (targetDatum, selTree) = Asm4.getSelectionTree(1)
                 # target datum is free
                 if selDatum.MapMode == 'Deactivated':
-                    message = 'This will superimpose '+Asm4.labelName(selDatum)+' in '+Asm4.labelName(rootContainer)+' on:\n\n'
+                    message = _atr("Asm4_importDatum", 'This will superimpose ')+Asm4.labelName(
+                        selDatum)+' in '+Asm4.labelName(rootContainer)+_atr("Asm4_importDatum", ' on:\n\n')
                     for objName in selTree[1:-1]:
                         message += '> '+objName+'\n'
                     message += '> '+Asm4.labelName(selDatum)
@@ -81,27 +84,31 @@ class importDatumCmd():
                     confirm = True
                 # selected datum is attached
                 else:
-                    message = Asm4.labelName(selDatum)+' in '+Asm4.labelName(rootContainer)+' is already attached to some geometry. '
-                    message += 'This will superimpose its Placement on:\n\n'
+                    message = Asm4.labelName(selDatum)+_atr("Asm4_importDatum", ' in ')+Asm4.labelName(rootContainer)+_atr(
+                        "Asm4_importDatum", ' is already attached to some geometry. This will superimpose its Placement on:\n\n')
                     for objName in selTree[1:-1]:
                         message += '> '+objName+'\n'
                     message += '> '+Asm4.labelName(selDatum)
                     confirm = Asm4.confirmBox(message)
                 if confirm:
-                    self.setupTargetDatum(selDatum, self.getDatumExpression(selTree))
+                    self.setupTargetDatum(
+                        selDatum, self.getDatumExpression(selTree))
                     # hide initial datum
                     targetDatum.Visibility = False
                     # select the newly created datum
                     Gui.Selection.clearSelection()
-                    Gui.Selection.addSelection( App.ActiveDocument.Name, rootContainer.Name, selDatum.Name+'.' )
+                    Gui.Selection.addSelection(
+                        App.ActiveDocument.Name, rootContainer.Name, selDatum.Name+'.')
                     # recompute assembly
                     rootContainer.recompute(True)
                 # Done with the special case, no need to continue with the normal process
                 return
 
             # the selected datum is not deep enough
-            if len(selTree)<3:
-                message = selDatum.Name + ' is already at the top-level and cannot be imported'
+            if len(selTree) < 3:
+                message = selDatum.Name + \
+                    _atr("Asm4_importDatum",
+                         ' is already at the top-level and cannot be imported')
                 Asm4.warningBox(message)
                 return
 
@@ -110,62 +117,66 @@ class importDatumCmd():
         proposedName = selTree[-2]+'_'+selDatum.Label
 
         if len(selection) == 1:
-            message = 'Create a new '+selDatum.TypeId+' in '+Asm4.labelName(rootContainer)+' \nsuperimposed on:\n\n'
+            message = _atr("Asm4_importDatum", 'Create a new ')+selDatum.TypeId+_atr("Asm4_importDatum",
+                                                                                     ' in ')+Asm4.labelName(rootContainer)+_atr("Asm4_importDatum", ' \nsuperimposed on:\n\n')
             for objName in selTree[1:]:
                 message += '> '+objName+'\n'
-            message += '\nEnter name for this datum :'+' '*40
-            userSpecifiedName,confirm = QtGui.QInputDialog.getText(None,'Import Datum',
-                    message, text = proposedName)
+            message += _atr("Asm4_importDatum",
+                            '\nEnter name for this datum :')+' '*40
+            userSpecifiedName, confirm = QtGui.QInputDialog.getText(None, 'Import Datum',
+                                                                    message, text=proposedName)
         else:
-            message = str(len(selection)) + " selected datum objects will be imported into the root assembly\n"
-            message += "with their default names such as:\n"
+            message = str(len(selection)) + _atr("Asm4_importDatum",
+                                                 " selected datum objects will be imported into the root assembly\nwith their default names such as: \n")
             message += proposedName
             confirm = Asm4.confirmBox(message)
 
         if confirm:
             for index in range(len(selection)):
-                ( selDatum, selTree ) = Asm4.getSelectionTree(index)
+                (selDatum, selTree) = Asm4.getSelectionTree(index)
                 # create a new datum object
                 if len(selection) == 1:
                     proposedName = userSpecifiedName
                 else:
                     proposedName = selTree[-2]+'_'+selDatum.Label
 
-                targetDatum = rootContainer.newObject(selDatum.TypeId, proposedName)
+                targetDatum = rootContainer.newObject(
+                    selDatum.TypeId, proposedName)
                 targetDatum.Label = proposedName
                 # apply existing view properties if applicable
-                if hasattr(selDatum,'ResizeMode') and selDatum.ResizeMode == 'Manual':
+                if hasattr(selDatum, 'ResizeMode') and selDatum.ResizeMode == 'Manual':
                     targetDatum.ResizeMode = 'Manual'
-                    if hasattr(selDatum,'Length'):
+                    if hasattr(selDatum, 'Length'):
                         targetDatum.Length = selDatum.Length
-                    if hasattr(selDatum,'Width'):
+                    if hasattr(selDatum, 'Width'):
                         targetDatum.Width = selDatum.Width
-                targetDatum.ViewObject.ShapeColor   = selDatum.ViewObject.ShapeColor
+                targetDatum.ViewObject.ShapeColor = selDatum.ViewObject.ShapeColor
                 targetDatum.ViewObject.Transparency = selDatum.ViewObject.Transparency
 
-                self.setupTargetDatum(targetDatum, self.getDatumExpression(selTree))
+                self.setupTargetDatum(
+                    targetDatum, self.getDatumExpression(selTree))
 
                 # hide initial datum
                 selDatum.Visibility = False
 
             # select the last created datum
             Gui.Selection.clearSelection()
-            Gui.Selection.addSelection( App.ActiveDocument.Name, rootContainer.Name, targetDatum.Name+'.' )
+            Gui.Selection.addSelection(
+                App.ActiveDocument.Name, rootContainer.Name, targetDatum.Name+'.')
 
         # recompute assembly
         rootContainer.recompute(True)
-
 
     def setupTargetDatum(self, targetDatum, expression):
         # unset Attachment
         targetDatum.MapMode = 'Deactivated'
         targetDatum.Support = None
         # Set Asm4 properties
-        Asm4.makeAsmProperties( targetDatum, reset=True )
+        Asm4.makeAsmProperties(targetDatum, reset=True)
         targetDatum.AttachedBy = 'Origin'
-        targetDatum.SolverId   = 'Asm4EE'
+        targetDatum.SolverId = 'Asm4EE'
         # set the Placement's ExpressionEngine
-        targetDatum.setExpression( 'Placement', expression )
+        targetDatum.setExpression('Placement', expression)
         targetDatum.Visibility = True
 
         # recompute the object to apply the placement:
@@ -179,7 +190,7 @@ class importDatumCmd():
         # Some idiot will certainly make 15 levels of Groups
         first = 1
         firstObj = App.ActiveDocument.getObject(selTree[first])
-        while not hasattr(firstObj,'Placement'):
+        while not hasattr(firstObj, 'Placement'):
             first += 1
             firstObj = App.ActiveDocument.getObject(selTree[first])
         expression = selTree[first]+'.Placement'
@@ -192,7 +203,7 @@ class importDatumCmd():
         for objName in selTree[first+1:]:
             obj = doc.getObject(objName)
             # Groups don't have Placement properties, ignore
-            if hasattr(obj,'Placement'):
+            if hasattr(obj, 'Placement'):
                 # the *previous* object was a link to doc
                 if doc == App.ActiveDocument:
                     expression += ' * '+objName+'.Placement'
@@ -208,10 +219,9 @@ class importDatumCmd():
         return expression
 
 
-
 """
     +-----------------------------------------------+
     |       add the command to the workbench        |
     +-----------------------------------------------+
 """
-Gui.addCommand( 'Asm4_importDatum', importDatumCmd() )
+Gui.addCommand('Asm4_importDatum', importDatumCmd())

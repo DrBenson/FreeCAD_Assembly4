@@ -18,6 +18,8 @@ import FreeCADGui as Gui
     |                  main class                   |
     +-----------------------------------------------+
 """
+
+
 class Asm4Help():
 
     def GetResources(self):
@@ -29,13 +31,14 @@ class Asm4Help():
     def IsActive(self):
         return True
 
-
     def Activated(self):
-        webbrowser.open('https://github.com/Zolko-123/FreeCAD_Assembly4/blob/master/INSTRUCTIONS.md')
+        webbrowser.open(
+            'https://github.com/Zolko-123/FreeCAD_Assembly4/blob/master/INSTRUCTIONS.md')
+
 
 """
     +-----------------------------------------------+
     |       add the command to the workbench        |
     +-----------------------------------------------+
 """
-Gui.addCommand( 'Asm4_Help', Asm4Help() )
+Gui.addCommand('Asm4_Help', Asm4Help())

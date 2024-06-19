@@ -9,9 +9,8 @@ import FreeCADGui as Gui
 import FreeCAD as App
 
 import Asm4_libs as Asm4
+
 from Asm4_Translate import QT_TRANSLATE_NOOP as Qtranslate
-
-
 
 
 """
@@ -19,10 +18,12 @@ from Asm4_Translate import QT_TRANSLATE_NOOP as Qtranslate
     |                    Show                       |
     +-----------------------------------------------+
 """
+
+
 class showLcsCmd:
 
     def __init__(self):
-        super(showLcsCmd,self).__init__()
+        super(showLcsCmd, self).__init__()
 
     def GetResources(self):
         return {"MenuText": Qtranslate("Asm4_showLcs", "Show LCS"),
@@ -41,15 +42,16 @@ class showLcsCmd:
         showHide(True)
 
 
-
 """
     +-----------------------------------------------+
     |                      Hide                     |
     +-----------------------------------------------+
 """
+
+
 class hideLcsCmd:
     def __init__(self):
-        super(hideLcsCmd,self).__init__()
+        super(hideLcsCmd, self).__init__()
 
     def GetResources(self):
         return {"MenuText": Qtranslate("Asm4_hideLcs", "Hide LCS"),
@@ -74,7 +76,9 @@ class hideLcsCmd:
     |   the provided object and all its children    |
     +-----------------------------------------------+
 """
-def showHide( show ):
+
+
+def showHide(show):
     # reset processed links cache
     processedLinks = []
     # if something is selected
@@ -84,12 +88,14 @@ def showHide( show ):
                 showChildLCSs(sel, show, processedLinks)
             elif sel.TypeId in Asm4.containerTypes:
                 for objName in sel.getSubObjects(1):
-                    showChildLCSs(sel.getSubObject(objName, 1), show, processedLinks)
+                    showChildLCSs(sel.getSubObject(
+                        objName, 1), show, processedLinks)
     # if not, apply it to the assembly
     elif Asm4.getAssembly():
         asm = Asm4.getAssembly()
         for objName in asm.getSubObjects(1):
             showChildLCSs(asm.getSubObject(objName, 1), show, processedLinks)
+
 
 def showChildLCSs(obj, show, processedLinks):
     #global processedLinks
@@ -103,13 +109,12 @@ def showChildLCSs(obj, show, processedLinks):
             linkedObj = obj.LinkedObject.Document.getObject(objName[0:-1])
             showChildLCSs(linkedObj, show, processedLinks)
     # if it's a container or a group
-    elif obj.TypeId in Asm4.containerTypes or obj.TypeId=='App::DocumentObjectGroup':
+    elif obj.TypeId in Asm4.containerTypes or obj.TypeId == 'App::DocumentObjectGroup':
         for subObjName in obj.getSubObjects(1):
-            subObj = obj.getSubObject(subObjName, 1)    # 1 for returning the real object
+            # 1 for returning the real object
+            subObj = obj.getSubObject(subObjName, 1)
             if subObj != None:
                 showChildLCSs(subObj, show, processedLinks)
-
-
 
 
 """
@@ -117,6 +122,5 @@ def showChildLCSs(obj, show, processedLinks):
     |       add the command to the workbench        |
     +-----------------------------------------------+
 """
-Gui.addCommand( 'Asm4_showLcs', showLcsCmd() )
-Gui.addCommand( 'Asm4_hideLcs', hideLcsCmd() )
-
+Gui.addCommand('Asm4_showLcs', showLcsCmd())
+Gui.addCommand('Asm4_hideLcs', hideLcsCmd())

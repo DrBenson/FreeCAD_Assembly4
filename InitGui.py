@@ -22,30 +22,39 @@
 ###################################################################################
 
 
+import selectionFilter
 import os
 from Asm4_Translate import _atr, QT_TRANSLATE_NOOP
+import FreeCAD
+import FreeCADGui as Gui
 
 import Asm4_locator
 global Asm4_icon, Asm4_path
-Asm4_path = os.path.dirname( Asm4_locator.__file__ )
-Asm4_icon = os.path.join( Asm4_path , 'Resources/icons/Assembly4.svg' )
+Asm4_path = os.path.dirname(Asm4_locator.__file__)
+Asm4_icon = os.path.join(Asm4_path, 'Resources/icons/Assembly4.svg')
 
 # I don't like this being here
-import selectionFilter
 
+if FreeCAD.GuiUp:
+    from PySide.QtCore import QT_TRANSLATE_NOOP
+    from DraftGui import translate
+
+Gui.updateLocale()
 
 """
     +-----------------------------------------------+
     |            Initialize the workbench           |
     +-----------------------------------------------+
 """
+
+
 class Assembly4Workbench(Workbench):
 
     global Asm4_icon
     global selectionFilter
-    global _atr, QT_TRANSLATE_NOOP
-    MenuText = "Assembly 4"
-    ToolTip = "Assembly 4 workbench"
+    global _atr, QT_TRANSLATE_NOOP, translate
+    MenuText = translate("Workbench", "Assembly 4")
+    ToolTip = translate("Workbench", "Assembly 4 workbench")
     Icon = Asm4_icon
 
     def __init__(self):
@@ -60,7 +69,7 @@ class Assembly4Workbench(Workbench):
         mainwin = Gui.getMainWindow()
         sf_tb = None
         for tb in mainwin.findChildren(QtGui.QToolBar):
-            if tb.objectName()=='Selection Filter':
+            if tb.objectName() == 'Selection Filter':
                 sf_tb = tb
         # make all buttons except last one (clear selection filter) checkable
         if sf_tb is not None:
@@ -83,13 +92,14 @@ class Assembly4Workbench(Workbench):
     |        This is where all is defined           |
     +-----------------------------------------------+
         """
+
     def Initialize(self):
         # Assembly4 version info
         # with file package.xml (FreeCAD ≥0.21)
-        packageFile  = os.path.join( Asm4_path, 'package.xml' )
+        packageFile = os.path.join(Asm4_path, 'package.xml')
         try:
-            metadata     = FreeCAD.Metadata(packageFile)
-            Asm4_date    = metadata.Date
+            metadata = FreeCAD.Metadata(packageFile)
+            Asm4_date = metadata.Date
             Asm4_version = metadata.Version
         # with file VERSION (FreeCAD ≤0.20)
         except:
@@ -105,15 +115,16 @@ class Assembly4Workbench(Workbench):
             message     += "Some functionality of latest versions might be missing\n"
             FreeCAD.Console.PrintMessage(message)
             '''
-            versionPath  = os.path.join( Asm4_path, 'VERSION' )
-            versionFile  = open(versionPath,"r")
+            versionPath = os.path.join(Asm4_path, 'VERSION')
+            versionFile = open(versionPath, "r")
             # read second line
             version = versionFile.readlines()[1]
             versionFile.close()
             # remove trailing newline
-            Asm4_version = version[:-1]    
-        
-        FreeCAD.Console.PrintMessage(_atr("Asm4", "Initializing Assembly4 workbench")+ ' ('+Asm4_version+') .')
+            Asm4_version = version[:-1]
+
+        FreeCAD.Console.PrintMessage(
+            _atr("Asm4", "Initializing Assembly4 workbench") + ' ('+Asm4_version+') .')
         FreeCADGui.updateGui()
         # import all stuff
         import newAssemblyCmd    # created an App::Part container called 'Assembly'
@@ -126,17 +137,23 @@ class Assembly4Workbench(Workbench):
         self.dot()
         import insertLinkCmd       # inserts an App::Link to a 'Model' in another file
         self.dot()
-        import placeLinkCmd        # places a linked part by snapping LCS (in the Part and in the Assembly)
+        # places a linked part by snapping LCS (in the Part and in the Assembly)
+        import placeLinkCmd
         self.dot()
-        import importDatumCmd      # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        import importDatumCmd
         self.dot()
-        import releaseAttachmentCmd# creates an LCS in assembly and attaches it to an LCS relative to an external file
+        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        import releaseAttachmentCmd
         self.dot()
-        import makeBinderCmd       # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        import makeBinderCmd
         self.dot()
-        import VariablesLib        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        import VariablesLib
         self.dot()
-        import AnimationLib        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        # creates an LCS in assembly and attaches it to an LCS relative to an external file
+        import AnimationLib
         self.dot()
         import updateAssemblyCmd   # updates all parts and constraints in the assembly
         self.dot()
@@ -158,7 +175,7 @@ class Assembly4Workbench(Workbench):
         self.dot()
         import showHideLcsCmd      # shows/hides all the LCSs
         self.dot()
-        import configurationEngine # save/restore configuration
+        import configurationEngine  # save/restore configuration
         self.dot()
 
         # Fasteners
@@ -172,14 +189,15 @@ class Assembly4Workbench(Workbench):
             self.FastenersCmd = 'Asm4_insertScrew'
         self.dot()
 
-
         # Define Menus
         # commands to appear in the Assembly4 menu 'Assembly'
-        self.appendMenu(QT_TRANSLATE_NOOP("Workbench", "&Assembly"), self.assemblyMenuItems())
+        self.appendMenu(QT_TRANSLATE_NOOP(
+            "Workbench", "&Assembly"), self.assemblyMenuItems())
         self.dot()
 
         # put all constraints related commands in a separate menu
-        self.appendMenu("&Constraints", self.constraintsMenuItems())
+        self.appendMenu(QT_TRANSLATE_NOOP(
+            "Workbench", "&Constraints"), self.constraintsMenuItems())
         self.dot()
 
         # self.appendMenu("&Geometry",["Asm4_newPart"])
@@ -190,11 +208,13 @@ class Assembly4Workbench(Workbench):
 
         # Define Toolbars
         # commands to appear in the Assembly4 toolbar
-        self.appendToolbar(_atr("Asm4", "Assembly"), self.assemblyToolbarItems())
+        self.appendToolbar(_atr("Asm4", "Assembly"),
+                           self.assemblyToolbarItems())
         self.dot()
 
         # build the selection toolbar
-        self.appendToolbar(_atr("Asm4", "Selection Filter"), self.selectionToolbarItems())
+        self.appendToolbar(_atr("Asm4", "Selection Filter"),
+                           self.selectionToolbarItems())
         self.dot()
 
         # self.appendToolbar("Geometry",["Asm4_newPart"])
@@ -206,155 +226,156 @@ class Assembly4Workbench(Workbench):
     +-----------------------------------------------+
         """
 
-
-
     """
     +-----------------------------------------------+
     |            Assembly Menu & Toolbar            |
     +-----------------------------------------------+
     """
+
     def assemblyMenuItems(self):
-        commandList = [ "Asm4_newAssembly",
-                        "Asm4_newPart",
-                        "Asm4_newBody",
-                        "Asm4_newGroup",
-                        "Asm4_newSketch",
-                        'Asm4_createDatum',
-                        self.FastenersCmd,
-                        "Separator",
-                        "Asm4_insertLink",
-                        "Asm4_mirrorArray",
-                        "Asm4_linearArray",
-                        "Asm4_circularArray",
-                        "Asm4_expressionArray",
-                        "Asm4_variantLink",
-                        "Separator",
-                        "Asm4_cloneFastenersToAxes",
-                        "Asm4_importDatum",
-                        "Asm4_shapeBinder",
-                        "Separator",
-                        "Asm4_infoPart",
-                        "Asm4_makeLocalBOM",
-                        "Asm4_makeBOM",
-                        "Asm4_listLinkedFiles",
-                        "Asm4_checkInterference",
-                        "Asm4_Measure",
-                        'Asm4_showLcs',
-                        'Asm4_hideLcs',
-                        "Asm4_addVariable",
-                        "Asm4_delVariable",
-                        "Asm4_Animate",
-                        "Asm4_openConfigurations"
-                        ]
+        commandList = ["Asm4_newAssembly",
+                       "Asm4_newPart",
+                       "Asm4_newBody",
+                       "Asm4_newGroup",
+                       "Asm4_newSketch",
+                       'Asm4_createDatum',
+                       self.FastenersCmd,
+                       "Separator",
+                       "Asm4_insertLink",
+                       "Asm4_mirrorArray",
+                       "Asm4_linearArray",
+                       "Asm4_circularArray",
+                       "Asm4_expressionArray",
+                       "Asm4_variantLink",
+                       "Separator",
+                       "Asm4_cloneFastenersToAxes",
+                       "Asm4_importDatum",
+                       "Asm4_shapeBinder",
+                       "Separator",
+                       "Asm4_infoPart",
+                       "Asm4_makeLocalBOM",
+                       "Asm4_makeBOM",
+                       "Asm4_listLinkedFiles",
+                       "Asm4_checkInterference",
+                       "Asm4_Measure",
+                       'Asm4_showLcs',
+                       'Asm4_hideLcs',
+                       "Asm4_addVariable",
+                       "Asm4_delVariable",
+                       "Asm4_Animate",
+                       "Asm4_openConfigurations"
+                       ]
         return commandList
 
     def constraintsMenuItems(self):
-        commandList = [ "Asm4_placeLink",
-                        "Asm4_releaseAttachment",
-                        "Separator",
-                        "Asm4_updateAssembly",
-                        "Separator",
-                        ]
+        commandList = ["Asm4_placeLink",
+                       "Asm4_releaseAttachment",
+                       "Separator",
+                       "Asm4_updateAssembly",
+                       "Separator",
+                       ]
         return commandList
 
     def assemblyToolbarItems(self):
-        commandList = [ "Asm4_newAssembly",
-                        "Asm4_newPart",
-                        "Asm4_newBody",
-                        "Asm4_newGroup",
-                        "Asm4_infoPart",
-                        "Asm4_insertLink",
-                        "Asm4_variantLink",
-                        self.FastenersCmd,
-                        "Separator",
-                        "Asm4_newSketch",
-                        'Asm4_createDatum',
-                        "Asm4_importDatum",
-                        "Asm4_shapeBinder",
-                        "Separator",
-                        "Asm4_placeLink",
-                        "Asm4_releaseAttachment",
-                        "Asm4_updateAssembly",
-                        "Separator",
-                        "Asm4_mirrorArray",
-                        "Asm4_linearArray",
-                        "Asm4_circularArray",
-                        "Asm4_expressionArray",
-                        "Asm4_variablesCmd",
-                        "Separator",
-                        "Asm4_Animate",
-                        "Asm4_Measure",
-                        "Asm4_makeBOM",
-                        "Asm4_listLinkedFiles",
-                        'Asm4_showLcs',
-                        'Asm4_hideLcs',
-                        "Asm4_checkInterference",
-                        "Asm4_openConfigurations"
-                        ]
+        commandList = ["Asm4_newAssembly",
+                       "Asm4_newPart",
+                       "Asm4_newBody",
+                       "Asm4_newGroup",
+                       "Asm4_infoPart",
+                       "Asm4_insertLink",
+                       "Asm4_variantLink",
+                       self.FastenersCmd,
+                       "Separator",
+                       "Asm4_newSketch",
+                       'Asm4_createDatum',
+                       "Asm4_importDatum",
+                       "Asm4_shapeBinder",
+                       "Separator",
+                       "Asm4_placeLink",
+                       "Asm4_releaseAttachment",
+                       "Asm4_updateAssembly",
+                       "Separator",
+                       "Asm4_mirrorArray",
+                       "Asm4_linearArray",
+                       "Asm4_circularArray",
+                       "Asm4_expressionArray",
+                       "Asm4_variablesCmd",
+                       "Separator",
+                       "Asm4_Animate",
+                       "Asm4_Measure",
+                       "Asm4_makeBOM",
+                       "Asm4_listLinkedFiles",
+                       'Asm4_showLcs',
+                       'Asm4_hideLcs',
+                       "Asm4_checkInterference",
+                       "Asm4_openConfigurations"
+                       ]
         return commandList
-
 
     """
     +-----------------------------------------------+
     |                 Selection Toolbar             |
     +-----------------------------------------------+
     """
+
     def selectionToolbarItems(self):
         # commands to appear in the Selection toolbar
-        commandList =  ["Asm4_SelectionFilterVertexCmd",
-                        "Asm4_SelectionFilterEdgeCmd",
-                        "Asm4_SelectionFilterFaceCmd",
-                        "Asm4_selObserver3DViewCmd" ,
-                        "Asm4_SelectionFilterClearCmd"]
+        commandList = ["Asm4_SelectionFilterVertexCmd",
+                       "Asm4_SelectionFilterEdgeCmd",
+                       "Asm4_SelectionFilterFaceCmd",
+                       "Asm4_selObserver3DViewCmd",
+                       "Asm4_SelectionFilterClearCmd"]
         return commandList
-
 
     """
     +-----------------------------------------------+
     |                Contextual Menus               |
     +-----------------------------------------------+
     """
+
     def ContextMenu(self, recipient):
         # This is executed whenever the user right-clicks on screen"
         # "recipient" will be either "view" or "tree"
-        contextMenu  = ['Asm4_gotoDocument'  ,
-                        'Asm4_showLcs'       ,
-                        'Asm4_hideLcs'       ]
+        contextMenu = ['Asm4_gotoDocument',
+                       'Asm4_showLcs',
+                       'Asm4_hideLcs']
         # commands to appear in the 'Assembly' sub-menu in the contextual menu (right-click)
-        assemblySubMenu =[ "Asm4_insertLink" ,
-                        "Asm4_placeLink"     ,
-                        "Asm4_importDatum"   ,
-                        'Asm4_FSparameters'  ,
-                        'Separator'          ,
-                        'Asm4_applyConfiguration']
+        assemblySubMenu = ["Asm4_insertLink",
+                           "Asm4_placeLink",
+                           "Asm4_importDatum",
+                           'Asm4_FSparameters',
+                           'Separator',
+                           'Asm4_applyConfiguration']
         # commands to appear in the 'Create' sub-menu in the contextual menu (right-click)
-        createSubMenu =["Asm4_newSketch",
-                        "Asm4_newBody",
-                        "Asm4_newLCS",
-                        "Asm4_newAxis",
-                        "Asm4_newPlane",
-                        "Asm4_newPoint",
-                        "Asm4_newHole",
-                        "Asm4_insertScrew",
-                        "Asm4_insertNut",
-                        "Asm4_insertWasher",
-                        'Separator',
-                        'Asm4_newConfiguration']
+        createSubMenu = ["Asm4_newSketch",
+                         "Asm4_newBody",
+                         "Asm4_newLCS",
+                         "Asm4_newAxis",
+                         "Asm4_newPlane",
+                         "Asm4_newPoint",
+                         "Asm4_newHole",
+                         "Asm4_insertScrew",
+                         "Asm4_insertNut",
+                         "Asm4_insertWasher",
+                         'Separator',
+                         'Asm4_newConfiguration']
 
         self.appendContextMenu("", "Separator")
-        self.appendContextMenu("", contextMenu)  # add commands to the context menu
-        self.appendContextMenu(_atr("Asm4", "Assembly"), assemblySubMenu)  # add commands to the context menu
-        self.appendContextMenu(_atr("Asm4", "Create"), createSubMenu)  # add commands to the context menu
+        # add commands to the context menu
+        self.appendContextMenu("", contextMenu)
+        # add commands to the context menu
+        self.appendContextMenu(_atr("Asm4", "Assembly"), assemblySubMenu)
+        # add commands to the context menu
+        self.appendContextMenu(_atr("Asm4", "Create"), createSubMenu)
         self.appendContextMenu("", "Separator")
-
-
 
     """
     +-----------------------------------------------+
     |               helper functions                |
     +-----------------------------------------------+
     """
-    def checkWorkbench( self, workbench ):
+
+    def checkWorkbench(self, workbench):
         # checks whether the specified workbench (a 'string') is installed
         listWB = Gui.listWorkbenches()
         hasWB = False
