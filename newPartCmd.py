@@ -17,7 +17,14 @@ import FreeCAD as App
 import Part
 
 import Asm4_libs as Asm4
+import Asm4_locator
+global Asm4_icon, Asm4_path, Asm4_trans
+Asm4_path = os.path.dirname( Asm4_locator.__file__ )
+Asm4_icon = os.path.join( Asm4_path , 'Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "Resources/translations")
 
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 
 """
     +-----------------------------------------------+

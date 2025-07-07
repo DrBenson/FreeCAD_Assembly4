@@ -31,6 +31,8 @@ Asm4_path = os.path.dirname( Asm4_locator.__file__ )
 Asm4_icon = os.path.join( Asm4_path , 'Resources/icons/Assembly4.svg' )
 Asm4_trans = os.path.join(Asm4_path, "Resources/translations")
 
+FreeCADGui.addLanguagePath(Asm4_trans)
+FreeCADGui.updateLocale()
 
 # I don't like this being here
 import selectionFilter
