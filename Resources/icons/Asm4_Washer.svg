@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="48"
-   height="48"
-   viewBox="0 0 48.000001 48.000001"
+   width="40.967594"
+   height="32.398411"
+   viewBox="0 0 40.967595 32.398411"
    id="svg15825"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="ISO7093.svg">
+   sodipodi:docname="Asm4_Washer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs15827" />
   <sodipodi:namedview
@@ -36,7 +36,19 @@
      inkscape:window-height="787"
      inkscape:window-x="184"
      inkscape:window-y="87"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="0"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="40.967594"
+       height="32.398411"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
   <metadata
      id="metadata15830">
     <rdf:RDF>
@@ -45,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -53,7 +65,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-1004.3622)">
+     transform="translate(-3.5954105,-1011.0964)">
     <g
        id="g7653"
        transform="translate(6.2574257,9.029703)">
@@ -120,5 +132,10 @@
          d="m 24.706925,1018.8219 a 7.0423229,5.1640156 5.3305994 0 0 -13.761956,-1.2845"
          style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
+    <path
+       d="m 19.409339,1035.2922 -3.299996,-8.5507 q -0.146667,-0.3813 -0.308,-0.88 -0.161333,-0.5133 -0.307999,-1.0853 -0.308,1.188 -0.630666,1.98 l -3.299997,8.536 z m 5.925327,7.8026 h -2.199998 q -0.381333,0 -0.615999,-0.1906 -0.234667,-0.1907 -0.352,-0.484 l -1.965331,-5.0747 h -9.430656 l -1.9653308,5.0747 q -0.088,0.264 -0.3373329,0.4693 -0.2493331,0.2053 -0.6159993,0.2053 H 5.6520215 l 8.4039905,-21.0173 h 2.874663 z m 10.794654,-7.5826 v -8.668 q 0,-0.3813 0.02933,-0.836 0.02933,-0.4547 0.088,-0.924 l -7.655992,10.428 z m 5.470661,0 v 1.496 q 0,0.2347 -0.146667,0.396 -0.131999,0.1613 -0.425332,0.1613 h -2.610664 v 5.5293 H 36.12932 v -5.5293 h -9.327989 q -0.293333,0 -0.513333,-0.1613 -0.205333,-0.176 -0.263999,-0.4253 l -0.264,-1.3347 10.222655,-13.5667 h 2.434664 v 13.4347 z"
+       id="A4"
+       style="font-size:29.3333px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';text-align:center;text-anchor:middle;opacity:0.7;fill:#ff0000;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-linejoin:round"
+       aria-label="A4" />
   </g>
 </svg>

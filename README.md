@@ -1,6 +1,12 @@
-# FreeCAD Assembly 4 workbench
+# Assembly4 workbench for FreeCAD
 
-Current version 0.50.18
+Current version 0.60.2
+
+## New FreeCAD hosting
+
+We are pleased to announce that FreeCAD version 0.21 is maintained again, and is hosted at European git hosting provider [CodeBerg](https://codeberg.org/). Please visit us and don't hesitate to contribute:
+
+[https://codeberg.org/xCAD/FreeCAD21](https://codeberg.org/xCAD/FreeCAD21)
 
 
 ## Overview
@@ -28,45 +34,53 @@ Assembly 4 is available through the FreeCAD Addon Manager (menu **Tools > Addon 
 
 **Important Note:** Assembly4 recommends to use the stable FreeCAD v0.21 branch
 
+**Important Note:** Assembly4 has been removed from the Microsoft-owned and USA-based GitHub forge, and is now located on the non-profit [codeberg.org](https://codeberg.org/) forge, located in Europe (Germany)
+
 
 
 ### Manual Installation
 
-It is possible to install this workbench manually into FreeCAD's local workbench directory. See [user instructions](INSTRUCTIONS.md)
+It is possible to install this workbench manually into FreeCAD's local workbench directory. See the [user manual](USER_MANUAL.md)
 
 
 ## Getting Started
 
 Assembly4 uses extensively FreeCAD's built-in `Part::Attacher`, and you can find documentation [following this link](https://wiki.freecad.org/Part_EditAttachment). It is recommended to be familiar with this function to get best usage of this workbebch.
 
-You can get more information in the [user instructions](INSTRUCTIONS.md), the [technical manual](TECHMANUAL.md), and you can use the provided [example assemblies](https://github.com/Zolko-123/FreeCAD_Examples) to experiment with this workbench's features. There are also online tutorials :
+## Documentation
 
-* [a quick assembly from scratch](https://github.com/Zolko-123/FreeCAD_Examples/blob/master/Asm4_Tutorial1/README.md)
-* [a cinematic assembly in one file, using a master sketch](https://github.com/Zolko-123/FreeCAD_Examples/blob/master/Asm4_Tutorial2/README.md)
-* [a Lego assembly](https://github.com/Zolko-123/FreeCAD_Examples/blob/master/Asm4_Tutorial3/README.md)
-* [Some examples to play with](https://github.com/Zolko-123/FreeCAD_Examples)
+* Please read the [User Manual](USER_MANUAL.md), 
+* Or the more in-depth [Technical Manual](TECH_MANUAL.md)
+* You are invited to follow a tutorial for [a quick assembly from scratch](TUTORIAL_1.md)
+* You can learn about the use of a master sketch and animation of assemblies by building [a cinematic assembly in one file](TUTORIAL_2.md)
+* For advanced user, you can read how to use variant links with the tutorial of the [Theo Jansen sandwalker](TUTORIAL_3.md)
 
 
 ## Discussion
-Please offer feedback or connect with the developers in the [Discussions](https://github.com/Zolko-123/FreeCAD_Assembly4/discussions) section.
+Please offer feedback or connect with the developers in the [issues section](https://codeberg.org/Zolko/Assembly4/issues) section.
 
 
 ## Addon Repository
-This addon is hosted on a [GitHub repository](https://github.com/Zolko-123/FreeCAD_Assembly4).
+This addon is hosted on a [codeberg repository](https://codeberg.org/Zolko/Assembly4).
 
 
 ## Release notes
-Release notes can be found in the [CHANGELOG.md](CHANGELOG.md) file.
+Release notes can be found in the [CHANGELOG](CHANGELOG.md) file.
 
 
 ## License
 Assembly4 is released under the open-source license LGPLv2.1 (see [LICENSE](LICENSE))
 
 
-<!-- ## Support -->
-<!-- This tool is an external addon to FreeCAD and is not related in any way to the FreeCAD organisation. You can provide your financial support for the continuing development of this open-source workbench: -->
-<!-- 
+## Support
+This tool is an external addon to FreeCAD and is not related in any way to the FreeCAD organisation. You can provide your financial support for the continuing development of this open-source workbench :
+
 <a href="https://www.paypal.com/donate/?hosted_button_id=LBA6ZAV9QSQT8" target="_blank"><img src="Resources/media/PayPal_Donate.svg" height="36" alt="PayPal Donate"/></a>
 <a href="https://liberapay.com/Zolko/donate" target="_blank"><img src="Resources/media/LiberaPay_donate.svg" height="36" alt="LiberaPay Donate"></a>
 <a href="https://www.patreon.com/c/Zolko_123" target="_blank"><img src="Resources/media/Patreon_Donate.svg" height="36" alt="Patreon Donate"></a>
- -->
+
+
+
+
+
+

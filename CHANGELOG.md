@@ -2,6 +2,21 @@
 
 ## Release notes
 
+* 2025.07.27 (**0.60.2**) :  
+Moved all Python code (including the init files) to the Code subdirectory (thanx leoheck)  
+Moved all the documentation and tutorials back into the main repo  
+Renamed HoleAxis function to CircleAxis (because that's what it is)  
+
+* 2025.07.04 (**0.60.1**) :  
+Announced new FreeCAD v0.21 hosting provider : codeberg.org, located in Germany  
+
+* 2025.06.25 (**0.60.0**) :  
+Moved to a new hosting provider : codeberg.org, located in Germany  
+Moved all code into its subdirectory "Code" for cleanup  
+Removed obsolete libAsm4.py  
+This should be functionally identical to previous version 0.50.18  
+Documentation has been moved into its own repository (https://codeberg.org/Zolko/Asm4_documentation)  
+
 * 2025.03.11 (**0.50.18**) :  
 Removed NumPy dependency on Measurements and Animation (not in AnimationExporter though)  
 Some improvements in insertLink,newBody, newDatum__

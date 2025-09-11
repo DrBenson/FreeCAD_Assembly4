@@ -1,0 +1,2759 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: zh_TW\n"
+"X-Source-Language: en_US\n"
+"X-Qt-Contexts: true\n"
+
+msgctxt "App::Property|"
+msgid "The hintfield for the animation dialog"
+msgstr "動畫對話框的提示欄位"
+
+msgctxt "Asm4|"
+msgid "&Assembly"
+msgstr "零件組合(&A)"
+
+msgctxt "Asm4|"
+msgid "&Constraints"
+msgstr "約束(&C)"
+
+msgctxt "Asm4|"
+msgid "Assembly"
+msgstr "零件組合"
+
+msgctxt "Asm4|"
+msgid "Selection Filter"
+msgstr "選擇篩選器"
+
+msgctxt "Asm4|"
+msgid "Create"
+msgstr "建立"
+
+msgctxt "Asm4|"
+msgid "Measure"
+msgstr "測量"
+
+msgctxt "Asm4|"
+msgid "Measure Tool"
+msgstr "測量工具"
+
+msgctxt "Asm4|"
+msgid "This Part contains an incompatible \"Variables\" object, "
+msgstr "此零件包含不相容的\"變量\"物體， "
+
+msgctxt "Asm4|"
+msgid "this could lead to unexpected results\n"
+msgstr "這可能會導致意想不到的結果\n"
+
+msgctxt "Asm4|"
+msgid ""
+"Found legacy AssemblyType property, adding new empty SolverId property\n"
+msgstr "找到舊的 \"零件組合類型\" 屬性，新增新的空白 求解ID 屬性\n"
+
+msgctxt "Asm4|"
+msgid "FreeCAD Warning"
+msgstr "FreeCAD 警示"
+
+msgctxt "Asm4|"
+msgid "Are you sure you want to proceed ?"
+msgstr "您確定要繼續嗎?"
+
+msgctxt "Asm4|"
+msgid "Initialising variantLink ...\n"
+msgstr "初始化 變數連結 ...\n"
+
+msgctxt "Asm4|"
+msgid ""
+"100 temporary variant documents are already in use, not creating a new one.\n"
+msgstr "100 個臨時變數文件已在使用中，未建立新文件.\n"
+
+msgctxt "Asm4|"
+msgid "Original object from which this variant is derived"
+msgstr "衍生此變數的原始物體"
+
+msgctxt "Asm4|"
+msgid "Link to the modified object"
+msgstr "連結到修改後的物體"
+
+msgctxt "Asm4|"
+msgid "Triggered onSettingDocument() in VariantLink\n"
+msgstr "由變數連結中的 onSettingDocument() 觸發\n"
+
+msgctxt "Asm4|"
+msgid "Triggered onLostLinkToObject() in VariantLink\n"
+msgstr "由變數連結中的 onLostLinkToObject() 觸發\n"
+
+msgctxt "Asm4|"
+msgid "Triggered by setupObject() in VariantLink\n"
+msgstr "由變數連結中的 setupObject() 觸發\n"
+
+msgctxt "Asm4|"
+msgid "The object to array"
+msgstr "要陣列的物體"
+
+msgctxt "Asm4|"
+msgid "Total number of elements in the array"
+msgstr "陣列中元素的總數"
+
+#, qt-format
+msgctxt "Asm4|"
+msgid ""
+"Calculates element placements in relation to the Axis.\n"
+"Each element is assigned an Index starting from 0\n"
+"The Index can be used in expressions calculating this Placement or its "
+"sub-properties\n"
+"Expression examples:\n"
+"on Angle: Index%2==0?30:-30\n"
+"on Position.X: Index*30"
+msgstr ""
+"計算相對於軸的元素放置.\n"
+"每個元素分配一個從0開始的索引(Index)\n"
+"索引可用於計算此 '放置位置' 或其子屬性的表達式中\n"
+"表達範例:\n"
+"角度: Index%2==0?30:-30\n"
+"在位置.X: Index*30"
+
+#: ../../Asm4_objects.py:535
+msgctxt "Asm4|"
+msgid "The axis, direction or plane the Placer relates to"
+msgstr "位置相關的軸、方向或平面"
+
+msgctxt "Asm4|"
+msgid "No \"Variables\" container in source object\n"
+msgstr "來源物體中沒有\"變數\"容器\n"
+
+msgctxt "Asm4|"
+msgid "Attaching VariantLink ...\n"
+msgstr "附加變數連結 ...\n"
+
+msgctxt "Asm4|"
+msgid " done\n"
+msgstr " 完成\n"
+
+msgctxt "Asm4|"
+msgid "closing ... "
+msgstr "關閉中... "
+
+msgctxt "Asm4|"
+msgid "Initializing Assembly4 workbench"
+msgstr "初始化 零件組合四 工作台"
+
+msgctxt "Asm4|"
+msgid "&Help"
+msgstr "求助說明(&H)"
+
+msgctxt "Asm4|"
+msgid "done"
+msgstr "完成"
+
+msgctxt "Asm4|"
+msgid "Activating Assembly4 WorkBench"
+msgstr "啟用 零件組合四 工作台"
+
+msgctxt "Asm4|"
+msgid "Leaving Assembly4 WorkBench"
+msgstr "離開 零件組合四 工作台"
+
+msgctxt "Asm4|"
+msgid "- Select Document -"
+msgstr "- 選取文件 -"
+
+msgctxt "Asm4|"
+msgid "- Select Variable (only float) -"
+msgstr "- 選擇變量 (只有浮動) -"
+
+msgctxt "Asm4_Animate|"
+msgid "Export failed for \""
+msgstr "匯出失敗于 \""
+
+msgctxt "Asm4_Animate|"
+msgid "\". Using another container type can help.\n"
+msgstr "\". 使用另一種容器類型會有所幫助.\n"
+
+msgctxt "Asm4_Animate|"
+msgid "Capturing and Exporting..."
+msgstr "擷取和匯出..."
+
+msgctxt "Asm4_Animate|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_Animate|"
+msgid "Animation Export Preview"
+msgstr "動畫匯出預覽"
+
+msgctxt "Asm4_Animate|"
+msgid "Preview"
+msgstr "預覽"
+
+msgctxt "Asm4_Animate|"
+msgid "TheImageLabel"
+msgstr "圖形標籤"
+
+msgctxt "Asm4_Animate|"
+msgid "Preview Scale:"
+msgstr "預覽縮放:"
+
+#: ../../AnimationExportLib.py:483
+msgctxt "Asm4_Animate|"
+msgid "Output"
+msgstr "輸出"
+
+msgctxt "Asm4_Animate|"
+msgid ""
+"Choose a file\n"
+"Supported extensions are *.gif *.mp4 *.avi *.mov *.mkv"
+msgstr ""
+"選擇一個檔案\n"
+"支援的副檔名格式有 *.gif *.mp4 *.avi *.mov *.mkv"
+
+msgctxt "Asm4_Animate|"
+msgid "Width:"
+msgstr "寬度:"
+
+msgctxt "Asm4_Animate|"
+msgid "Height:"
+msgstr "高度:"
+
+msgctxt "Asm4_Animate|"
+msgid "FPS:"
+msgstr "影格/秒:"
+
+msgctxt "Asm4_Animate|"
+msgid "Loops:"
+msgstr "循環:"
+
+msgctxt "Asm4_Animate|"
+msgid "Smoothen:"
+msgstr "平滑:"
+
+#: ../../AnimationExportLib.py:531
+msgctxt "Asm4_Animate|"
+msgid "Background"
+msgstr "背景"
+
+msgctxt "Asm4_Animate|"
+msgid ""
+"Choose an image file\n"
+"Supported extensions are *.png *.jpg *.jpeg *.gif"
+msgstr ""
+"選擇圖片檔案\n"
+"支援的副檔名格式有 *.png *.jpg *.jpeg *.gif"
+
+#: ../../AnimationExportLib.py:547
+msgctxt "Asm4_Animate|"
+msgid "Logo"
+msgstr "徽標"
+
+msgctxt "Asm4_Animate|"
+msgid "X-Offset:"
+msgstr "偏移 X:"
+
+msgctxt "Asm4_Animate|"
+msgid "Y-Offset:"
+msgstr "偏移 Y:"
+
+msgctxt "Asm4_Animate|"
+msgid "Close"
+msgstr "關閉"
+
+msgctxt "Asm4_Animate|"
+msgid "Refresh Preview"
+msgstr "重新整理預覽"
+
+msgctxt "Asm4_Animate|"
+msgid "Create and Save"
+msgstr "建立並儲存"
+
+msgctxt "Asm4_Animate|"
+msgid "Dummy"
+msgstr "模擬"
+
+msgctxt "Asm4_Animate|"
+msgid "File:"
+msgstr "檔案:"
+
+msgctxt "Asm4_Animate|"
+msgid "Select"
+msgstr "選擇"
+
+msgctxt "Asm4_Animate|"
+msgid "Select File"
+msgstr "選擇一個檔案"
+
+msgctxt "Asm4_Animate|"
+msgid "Image Files (*.png *.jpg *.jpeg *.gif)"
+msgstr "圖片檔案 (*.png *.jpg *.jpeg *.gif)"
+
+msgctxt "Asm4_Animate|"
+msgid "Supported Files (*.mp4 *.avi *.mov *.mkv *.gif *.png)"
+msgstr "支援的檔案格式 (*.mp4 *.avi *.mov *.mkv *.gif *.png)"
+
+msgctxt "Asm4_Animate|"
+msgid "Color:"
+msgstr "顏色:"
+
+msgctxt "Asm4_Animate|"
+msgid "Variable name invalid"
+msgstr "變量名稱無效"
+
+msgctxt "Asm4_Animate|"
+msgid "The selected variable name \""
+msgstr "選定的變數名稱 \""
+
+msgctxt "Asm4_Animate|"
+msgid "\" is not valid. "
+msgstr "\" 不是有效的. "
+
+#: ../../AnimationLib.py:94
+msgctxt "Asm4_Animate|"
+msgid "Please select an existing variable."
+msgstr "請選擇一個現有變數."
+
+#: ../../AnimationLib.py:495
+msgctxt "Asm4_Animate|"
+msgid "The Python module \"OpenCV\" (cv2) is not installed"
+msgstr "Python 模組\"OpenCV\" (cv2) 未安裝"
+
+#: ../../AnimationLib.py:640
+msgctxt "Asm4_Animate|"
+msgid "Save this sequence as video"
+msgstr "將此序列儲存為影片"
+
+#: ../../AnimationLib.py:644
+msgctxt "Asm4_Animate|"
+msgid "Stop"
+msgstr "停止"
+
+#: ../../AnimationLib.py:656
+msgctxt "Asm4_Animate|"
+msgid "Plot"
+msgstr "影像輸出"
+
+#: ../../AnimationLib.py:667
+msgctxt "Asm4_Animate|"
+msgid "Plot trajectories in this sequence"
+msgstr "繪製此序列中的軌跡"
+
+#: ../../AnimationLib.py:671
+msgctxt "Asm4_Animate|"
+msgid "Run"
+msgstr "執行"
+
+#: ../../AnimationLib.py:686
+msgctxt "Asm4_Animate|"
+msgid ""
+"Run this sequence in the 3D window\n"
+"\n"
+"If the model is large and complex,\n"
+"it is advisable to try with 10 frames"
+msgstr ""
+"在 3D 檢視中執行此序列\n"
+"\n"
+"如果模型龐大且複雜，\n"
+"建議嘗試 10 幀"
+
+msgctxt "Asm4_Animate|"
+msgid "Animate Assembly"
+msgstr "零件組合動畫"
+
+msgctxt "Asm4_Animate|"
+msgid "- Select Document -"
+msgstr "- 選取文件 -"
+
+msgctxt "Asm4_Animate|"
+msgid "- Select Variable (only float) -"
+msgstr "- 選擇變量 (只有浮動) -"
+
+msgctxt "Asm4_Animate|"
+msgid "Unknown State/Transition"
+msgstr "未知狀態/轉換"
+
+msgctxt "Asm4_Animate|"
+msgid "Document"
+msgstr "文件"
+
+msgctxt "Asm4_Animate|"
+msgid "Variable"
+msgstr "變量"
+
+msgctxt "Asm4_Animate|"
+msgid "Range Begin"
+msgstr "範圍開始"
+
+msgctxt "Asm4_Animate|"
+msgid "Range End"
+msgstr "範圍結束"
+
+msgctxt "Asm4_Animate|"
+msgid "Step Size"
+msgstr "步進大小"
+
+msgctxt "Asm4_Animate|"
+msgid "Sleep (s)"
+msgstr "暫停(秒)"
+
+msgctxt "Asm4_Animate|"
+msgid "Current Value:"
+msgstr "目前值:"
+
+msgctxt "Asm4_Animate|"
+msgid "Begin"
+msgstr "開始"
+
+msgctxt "Asm4_Animate|"
+msgid "End"
+msgstr "結束"
+
+msgctxt "Asm4_Animate|"
+msgid ""
+"The last reachable variable value with the given stepping. Flagged red in "
+"case this is not equal to the intended value. The last step of the animation "
+"will be reduced to stay inside the configured limits."
+msgstr "具有給定步進的最後一個可到達變數值. 如果此值不等於預期值，則標記為紅色. 動畫的最後一步將被減少，以保持在設定的限制內."
+
+msgctxt "Asm4_Animate|"
+msgid "Options Box"
+msgstr "選項對話框"
+
+msgctxt "Asm4_Animate|"
+msgid "Options"
+msgstr "選項"
+
+msgctxt "Asm4_Animate|"
+msgid "Force GUI to update on every step."
+msgstr "強制 GUI 到每一步更新動作."
+
+msgctxt "Asm4_Animate|"
+msgid "Force-render every step"
+msgstr "強制渲染每一步動作"
+
+msgctxt "Asm4_Animate|"
+msgid "Infinite Loop"
+msgstr "無限循環"
+
+msgctxt "Asm4_Animate|"
+msgid "Loop"
+msgstr "循環"
+
+msgctxt "Asm4_Animate|"
+msgid "Back-and-forth pendulum"
+msgstr "來回擺動"
+
+msgctxt "Asm4_Animate|"
+msgid "Pendulum"
+msgstr "擺動"
+
+msgctxt "Asm4_Animate|"
+msgid "Exit"
+msgstr "結束離開"
+
+msgctxt "Asm4_Animate|"
+msgid "Save"
+msgstr "儲存"
+
+msgctxt "Asm4_Animate|"
+msgid "animationProvider.nextFrame not implemented."
+msgstr "animationProvider.nextFrame 未達成."
+
+msgctxt "Asm4_Animate|"
+msgid "read"
+msgstr "讀取"
+
+msgctxt "Asm4_Animate|"
+msgid "save"
+msgstr "儲存"
+
+msgctxt "Asm4_Animate|"
+msgid "\" is not valid. Please select an existing variable."
+msgstr "\" 是無效的. 請選擇一個現有變數."
+
+msgctxt "Asm4_Animate|"
+msgid "The Python module \"OpenCV\" is not installed"
+msgstr "Python模組 \"OpenCV\" 尚未安裝"
+
+msgctxt "Asm4_Animate|"
+msgid "optionsGroup"
+msgstr "選項群組"
+
+msgctxt "Asm4_Animate|"
+msgid "The hintfield for the animation dialog"
+msgstr "動畫對話框的提示欄位"
+
+msgctxt "Asm4_Animate|"
+msgid ""
+"The selected variable name \"{0}\" is not valid. Please select an existing "
+"variable."
+msgstr "所選變數名稱\"{0}\"無效. 請選擇一個現有變數."
+
+msgctxt "Asm4_Animate|"
+msgid "Select Variable (only float)"
+msgstr "選擇變量 (只有浮動)"
+
+msgctxt "Asm4_Animate|"
+msgid "Export"
+msgstr "匯出"
+
+msgctxt "Asm4_Configurations|"
+msgid "No assembly container here, quitting\n"
+msgstr "這裡沒有組合容器，退出\n"
+
+msgctxt "Asm4_Configurations|"
+msgid "Apply configuration"
+msgstr "套用參數設定"
+
+msgctxt "Asm4_Configurations|"
+msgid ""
+"Applies selected configuration\n"
+"Configurations allow to set visibilities and offsets of parts"
+msgstr ""
+"套用選定的參數設定\n"
+"參數設定允許設定零件的可見性和偏移"
+
+msgctxt "Asm4_Configurations|"
+msgid "Open configurations panel"
+msgstr "開啟參數設定面板"
+
+msgctxt "Asm4_Configurations|"
+msgid "Configurations allow to set visibilities and offsets of parts"
+msgstr "參數設定允許設定零件的可見性和偏移"
+
+msgctxt "Asm4_Configurations|"
+msgid "Assembly Configurations"
+msgstr "零件組合參數設定"
+
+msgctxt "Asm4_Configurations|"
+msgid "Please select a configuration in the list"
+msgstr "請在列表中選擇一個參數設定"
+
+msgctxt "Asm4_Configurations|"
+msgid "This will delete configuration \""
+msgstr "這將刪除參數設定 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "Configuration \""
+msgstr "參數設定 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "\" not touched\n"
+msgstr "\" 沒有被觸及\n"
+
+msgctxt "Asm4_Configurations|"
+msgid "Object \""
+msgstr "物體 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "\" is not a valid Assembly4 configuration, leaving untouched\n"
+msgstr "\" 不是有效的零件組合四參數設定，保持不變\n"
+
+msgctxt "Asm4_Configurations|"
+msgid "Available configurations:"
+msgstr "可用參數設定:"
+
+msgctxt "Asm4_Configurations|"
+msgid "Description:"
+msgstr "內容描述:"
+
+msgctxt "Asm4_Configurations|"
+msgid "New"
+msgstr "新增"
+
+msgctxt "Asm4_Configurations|"
+msgid "Delete"
+msgstr "刪除"
+
+msgctxt "Asm4_Configurations|"
+msgid "Overwrite"
+msgstr "覆蓋"
+
+msgctxt "Asm4_Configurations|"
+msgid "New configuration"
+msgstr "新增參數設定"
+
+msgctxt "Asm4_Configurations|"
+msgid "Create a new configuration of the assembly"
+msgstr "新增此零件組合參數設定"
+
+msgctxt "Asm4_Configurations|"
+msgid "Please specify configuration name!"
+msgstr "請指定參數設定名稱!"
+
+msgctxt "Asm4_Configurations|"
+msgid "Create a new assembly configuration"
+msgstr "新增零件組合參數設定"
+
+msgctxt "Asm4_Configurations|"
+msgid "Enter configuration name:"
+msgstr "輸入參數設定名稱:"
+
+msgctxt "Asm4_Configurations|"
+msgid "Description (optional):"
+msgstr "描述 (選項):"
+
+msgctxt "Asm4_Configurations|"
+msgid "Existing configurations:"
+msgstr "現有參數設定:"
+
+msgctxt "Asm4_Configurations|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_Configurations|"
+msgid "OK"
+msgstr "確定"
+
+msgctxt "Asm4_Configurations|"
+msgid "Saving configuration to \""
+msgstr "儲存新增參數設定到 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "This will overwrite existing configuration \""
+msgstr "這將覆蓋現有參數設定 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "Cancel save of configuration \""
+msgstr "取消儲存參數設定 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "Restoring configuration \""
+msgstr "恢復參數設定 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "No data for object \""
+msgstr "沒有物體的資料 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "\" in configuration \""
+msgstr "\" 於參數設定 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "Unknown AssemblyType \""
+msgstr "未知零件組合類型 \""
+
+msgctxt "Asm4_Configurations|"
+msgid "\" for object \""
+msgstr "\" 於物體 \""
+
+#: ../../exportFiles.py:52
+msgctxt "Asm4_Export|"
+msgid "Structure tree of the assembly"
+msgstr "零件組合的結構樹"
+
+#: ../../exportFiles.py:55
+msgctxt "Asm4_Export|"
+msgid ""
+"<p>Show the hierarchical tree structure of parts and sub-assemblies in the "
+"assembly. The tree is displayed with ASCII art</p><p><b>Usage</b>: select an "
+"entity and click the command</p>"
+msgstr "<p>顯示組合件中零件和子組合件的層次樹結構. 結構樹以ASCII方式顯示</p><p><b>用法</b>: 選擇一個實體並點選指令</p>"
+
+msgctxt "Asm4_Export|"
+msgid "Oups, you shouldn't see this message, something went wrong"
+msgstr "哎呀，您不應該看到此訊息，出了點問題"
+
+msgctxt "Asm4_Export|"
+msgid "Copied to clipboard"
+msgstr "複製到剪貼簿"
+
+msgctxt "Asm4_Export|"
+msgid "Tree structure of the selected object"
+msgstr "所選物體的樹狀結構"
+
+msgctxt "Asm4_Export|"
+msgid "Copy to clipboard"
+msgstr "複製到剪貼簿"
+
+msgctxt "Asm4_Export|"
+msgid "Close"
+msgstr "關閉"
+
+msgctxt "Asm4_Export|"
+msgid "Tree of Linked Files"
+msgstr "連結檔案樹"
+
+msgctxt "Asm4_Export|"
+msgid ""
+"<p>Show the hierarchical tree structure of parts in the selected container. "
+"The tree is displayed with ASCII art</p><p><b>Usage</b>: select an entity "
+"and click the command</p>"
+msgstr "<p>顯示所選容器中零件的層次樹結構. 樹以ASCII方式顯示</p><p><b>用法</b>: 選擇一個實體並點選指令</p>"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Insert Screw"
+msgstr "插入螺絲"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Insert Nut"
+msgstr "插入螺母"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Insert Washer"
+msgstr "插入墊圈"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Insert threaded rod"
+msgstr "插入螺桿"
+
+msgctxt "Asm4_Fasteners|"
+msgid ""
+"FastenersWorkbench is not installed.\n"
+" \n"
+"You can install it with the FreeCAD AddonsManager:\n"
+"Menu Tools > Addon Manager > fasteners"
+msgstr ""
+"緊固件工作台尚未安裝.\n"
+"\n"
+"您可以使用 FreeCAD 附加元件管理員 安裝它:\n"
+"功能表工具 > 附加元件管理器 > fasteners"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Edit Attachment of a Fastener"
+msgstr "編輯緊固件的連接"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Change Fastener parameters"
+msgstr "更改緊固件參數"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Clone Fastener to Axes"
+msgstr "將緊固件複製到軸"
+
+msgctxt "Asm4_Fasteners|"
+msgid ""
+"<p>Insert a Screw into the Assembly</p><p>If another fastener is selected, a "
+"new fastener of the same type is created in the same assembly.If an axis or "
+"LCS is selected, the new fastener will be attached to it.If an assembly is "
+"selected, the new fastener will be inside that assembly.</p>"
+msgstr ""
+"<p>將螺絲插入緊固件</p><p>如果選擇了另一個緊固件，則會在同一緊固件中建立相同類型的新緊固件。如果選擇了軸或區域座標系統(LCS)，如果選擇了某個緊固件則會附加新緊固件，新的緊固件將位於該緊固件內.</p>"
+
+msgctxt "Asm4_Fasteners|"
+msgid ""
+"<p>Insert a Nut into the Assembly</p><p>If another fastener is selected, a "
+"new fastener of the same type is created in the same assembly.If an axis or "
+"LCS is selected, the new fastener will be attached to it.If an assembly is "
+"selected, the new fastener will be inside that assembly.</p>"
+msgstr ""
+"<p>將螺帽插入零件組合</p><p>如果選擇了另一個緊固件，則會在同一零件組合中建立相同類型的新緊固件。如果選擇了軸或LCS，如果選擇了某個零件組合則會附加新緊固件，新的緊固件將位於該零件組合內.</p>"
+
+msgctxt "Asm4_Fasteners|"
+msgid ""
+"<p>Insert a Washer into the Assembly</p><p>If another fastener is selected, "
+"a new fastener of the same type is created in the same assembly.If an axis "
+"or LCS is selected, the new fastener will be attached to it.If an assembly "
+"is selected, the new fastener will be inside that assembly.</p>"
+msgstr ""
+"<p>將墊圈插入零件組合</p><p>如果選擇了另一個緊固件，則會在同一零件組合中建立相同類型的新緊固件。如果選擇了軸或LCS，如果選擇了某個零件組合則會附加新緊固件，新的緊固件將位於該零件組合內.</p>"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Selected object doesn't seem to be a valid fastener, ignoring\n"
+msgstr "所選物體似乎不是有效的緊固件，忽略\n"
+
+msgctxt "Asm4_Fasteners|"
+msgid "Length \""
+msgstr "長度 \""
+
+msgctxt "Asm4_Fasteners|"
+msgid "\" is not available, ignoring\n"
+msgstr "\" 不可用，忽略\n"
+
+msgctxt "Asm4_Fasteners|"
+msgid "unknown fastener type \""
+msgstr "未知緊固件類型 \""
+
+msgctxt "Asm4_Fasteners|"
+msgid "\", ignoring\n"
+msgstr "\" 忽略\n"
+
+msgctxt "Asm4_Help|"
+msgid "Help for Assembly4"
+msgstr "零件組合四 求助說明"
+
+msgctxt "Asm4_Help|"
+msgid "Show basic usage for FreeCAD and Assembly4"
+msgstr "顯示 FreeCAD 和 零件組合四 的基本用法"
+
+msgctxt "Asm4_InfoPart|"
+msgid "File Name"
+msgstr "檔案名稱"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Base Part ID:"
+msgstr "基礎零件ID:"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Revision:"
+msgstr "修訂版本:"
+
+msgctxt "Asm4_InfoPart|"
+msgid "BomKey"
+msgstr "物料清單索引"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Document or File name"
+msgstr "文件或檔案名稱"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Document Revision"
+msgstr "文件修訂版本"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Part ID"
+msgstr "零件ID"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Part Description"
+msgstr "零件描述"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Fastener diameter"
+msgstr "緊固件直徑"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Fastener length"
+msgstr "緊固件長度"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Fastener type"
+msgstr "緊固件類型"
+
+msgctxt "Asm4_InfoPart|"
+msgid "We have an assembly"
+msgstr "已有一個零件組合"
+
+msgctxt "Asm4_InfoPart|"
+msgid ""
+"<p>Edit Part information</p><p>User-supplied information can be added to a "
+"part</p>"
+msgstr "<p>編輯零件資訊</p><p>可以將使用者提供的資訊加入零件中</p>"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Edit Part Information"
+msgstr "編輯零件資訊"
+
+msgctxt "Asm4_InfoPart|"
+msgid "The Part Info field has been cleared"
+msgstr "零件資訊欄位已被清除"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Configure fields"
+msgstr "參數設定欄位"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Edit fields"
+msgstr "編輯欄位"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Reset fields"
+msgstr "重置欄位"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Autofill data"
+msgstr "自動填入數據資料"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Autofill fields"
+msgstr "自動填入欄位"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Fields Name cannot be blank. You must disable or delete it"
+msgstr "欄位名稱不能為空. 您必須停用或刪除它"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Field"
+msgstr "欄位"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Name"
+msgstr "名稱"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Add"
+msgstr "新增"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Delete"
+msgstr "刪除"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Update automatic input field"
+msgstr "更新自動輸入欄位"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Update"
+msgstr "更新"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Function not implemented yet"
+msgstr "功能尚未實現"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Multi Body Part(Not implemented)"
+msgstr "多重實體零件(未實現)"
+
+msgctxt "Asm4_InfoPart|"
+msgid ""
+"Need to develop logic for something that is neither a part or an assembly"
+msgstr "需要為既不是零件也不是零件組合的開發邏輯"
+
+msgctxt "Asm4_InfoPart|"
+msgid "Part does not contain a single PartDesign::Body."
+msgstr "零件不包含單一零件設計實體(PartDesign::Body)."
+
+msgctxt "Asm4_InfoPart|"
+msgid "Active"
+msgstr "啟用"
+
+msgctxt "Asm4_Measure|"
+msgid "Measure"
+msgstr "測量"
+
+msgctxt "Asm4_Measure|"
+msgid "Observer started\n"
+msgstr "已啟動觀測\n"
+
+#: ../../Asm4_Measure.py:176
+msgctxt "Asm4_Measure|"
+msgid "closing ... "
+msgstr "關閉中... "
+
+#: ../../Asm4_Measure.py:179
+msgctxt "Asm4_Measure|"
+msgid "done\n"
+msgstr "完成\n"
+
+msgctxt "Asm4_Measure|"
+msgid "was not able to remove observer\n"
+msgstr "無法刪除觀測\n"
+
+msgctxt "Asm4_Measure|"
+msgid "Removing all measurements ..."
+msgstr "清除全部量測標注 ..."
+
+#: ../../Asm4_Measure.py:214
+msgctxt "Asm4_Measure|"
+msgid " done\n"
+msgstr " 完成\n"
+
+#: ../../Asm4_Measure.py:223
+msgctxt "Asm4_Measure|"
+msgid "Report view"
+msgstr "報告檢視"
+
+msgctxt "Asm4_Measure|"
+msgid "Controls"
+msgstr "控制"
+
+msgctxt "Asm4_Measure|"
+msgid ""
+"Measure Radius of Arc or Circle\n"
+"Measure Length of Edge"
+msgstr ""
+"測量圓弧或圓的半徑\n"
+"測量邊長"
+
+msgctxt "Asm4_Measure|"
+msgid "Measure Distance"
+msgstr "測量距離"
+
+msgctxt "Asm4_Measure|"
+msgid "Measure Angle"
+msgstr "測量角度"
+
+msgctxt "Asm4_Measure|"
+msgid "Snap to EndPoint, MiddlePoint, Center"
+msgstr "捕捉到端點、中間點、中心"
+
+msgctxt "Asm4_Measure|"
+msgid "Select Shape"
+msgstr "選取造型"
+
+msgctxt "Asm4_Measure|"
+msgid "Selection 1"
+msgstr "選擇 1"
+
+msgctxt "Asm4_Measure|"
+msgid "Select First Element"
+msgstr "選擇第一個元素"
+
+msgctxt "Asm4_Measure|"
+msgid "Selection 2"
+msgstr "選擇 2"
+
+msgctxt "Asm4_Measure|"
+msgid "Select Second Element"
+msgstr "選擇第二個元素"
+
+msgctxt "Asm4_Measure|"
+msgid "Enable extra Label"
+msgstr "啟用額外標籤"
+
+msgctxt "Asm4_Measure|"
+msgid "Show Label in 3D view"
+msgstr "在 3D 視圖中顯示標籤"
+
+msgctxt "Asm4_Measure|"
+msgid "Show all dimension components"
+msgstr "顯示所有維度組件"
+
+msgctxt "Asm4_Measure|"
+msgid "Show Components"
+msgstr "顯示元件"
+
+msgctxt "Asm4_Measure|"
+msgid "Results"
+msgstr "結果"
+
+msgctxt "Asm4_Measure|"
+msgid "Can't measure\n"
+msgstr "無法測量\n"
+
+#: ../../Asm4_Measure.py:744
+msgctxt "Asm4_Measure|"
+msgid "Select only faces or lines"
+msgstr "僅選擇面或線段"
+
+msgctxt "Asm4_Measure|"
+msgid "Measuring angles"
+msgstr "量測角度"
+
+msgctxt "Asm4_Measure|"
+msgid "Ivalid directions"
+msgstr "方向無效"
+
+msgctxt "Asm4_Measure|"
+msgid "Ivalid shapes"
+msgstr "非有效形狀"
+
+msgctxt "Asm4_Measure|"
+msgid ""
+"Minimum Distance :\n"
+"  "
+msgstr ""
+"最小距離:\n"
+"  "
+
+msgctxt "Asm4_Measure|"
+msgid "Length = "
+msgstr "長度 = "
+
+msgctxt "Asm4_Measure|"
+msgid "Not a valid Line\n"
+msgstr "非有效線段\n"
+
+msgctxt "Asm4_Measure|"
+msgid "Distance = "
+msgstr "距離 = "
+
+msgctxt "Asm4_Measure|"
+msgid "Not valid Points"
+msgstr "非有效端點"
+
+msgctxt "Asm4_Measure|"
+msgid "Radius : "
+msgstr "半徑: "
+
+msgctxt "Asm4_Measure|"
+msgid "Diameter : "
+msgstr "直徑: "
+
+msgctxt "Asm4_Measure|"
+msgid "Center : \n"
+msgstr "中心: \n"
+
+msgctxt "Asm4_Measure|"
+msgid "Axis : \n"
+msgstr "軸座標: \n"
+
+msgctxt "Asm4_Measure|"
+msgid "Not a valid circle\n"
+msgstr "非有效圓形\n"
+
+msgctxt "Asm4_Measure|"
+msgid "Invalid shape\n"
+msgstr "非有效形狀\n"
+
+msgctxt "Asm4_Measure|"
+msgid "Not a valid point\n"
+msgstr "非有效端點\n"
+
+#: ../../Asm4_Measure.py:919
+msgctxt "Asm4_Measure|"
+msgid "Coordinates :"
+msgstr "座標軸 :"
+
+msgctxt "Asm4_Measure|"
+msgid "Coordinates :\n"
+msgstr "座標軸:\n"
+
+msgctxt "Asm4_Measure|"
+msgid ""
+"Flat face\n"
+"Area : "
+msgstr ""
+"平面\n"
+"區域: "
+
+msgctxt "Asm4_Measure|"
+msgid "Area : "
+msgstr "區域: "
+
+msgctxt "Asm4_Measure|"
+msgid "Not a valid surface\n"
+msgstr "不是有效表面\n"
+
+msgctxt "Asm4_Measure|"
+msgid "Angle : "
+msgstr "角度: "
+
+msgctxt "Asm4_Measure|"
+msgid "Distance // "
+msgstr "距離 // "
+
+msgctxt "Asm4_Measure|"
+msgid "Angle: "
+msgstr "角度: "
+
+msgctxt "Asm4_Measure|"
+msgid "Distance"
+msgstr "距離"
+
+msgctxt "Asm4_Measure|"
+msgid "Measure Tool"
+msgstr "測量工具"
+
+msgctxt "Asm4_Plot|"
+msgid ""
+"Plot trajectories of Points\n"
+"\n"
+"Only visible Datum Points are shown"
+msgstr ""
+"繪製點的軌跡\n"
+"\n"
+"僅顯示可見基準點"
+
+msgctxt "Asm4_Plot|"
+msgid "Plot Animation"
+msgstr "繪製動畫"
+
+msgctxt "Asm4_Plot|"
+msgid "Unrecognized assembly type, this might not work"
+msgstr "無法識別的零件組合類型，有可能不起作用"
+
+msgctxt "Asm4_Plot|"
+msgid "This Model deosn't seem to have compatible Variables"
+msgstr "這個模型似乎沒有相容的變數"
+
+msgctxt "Asm4_Plot|"
+msgid "# Running animation sequence on variable \""
+msgstr "# 在變數上執行動畫序列 \""
+
+msgctxt "Asm4_Plot|"
+msgid "\", please wait... \n"
+msgstr "\", 請稍後... \n"
+
+#: ../../AnimationPlotLib.py:87
+msgctxt "Asm4_Plot|"
+msgid "# CVS output"
+msgstr "# CVS 輸出"
+
+#: ../../AnimationPlotLib.py:88
+msgctxt "Asm4_Plot|"
+msgid "Iter;Variable;"
+msgstr "Iter; 變數;"
+
+#: ../../AnimationPlotLib.py:98
+msgctxt "Asm4_Plot|"
+msgid "Finished "
+msgstr "已完成 "
+
+#: ../../AnimationPlotLib.py:98
+msgctxt "Asm4_Plot|"
+msgid " iterations"
+msgstr " 動作"
+
+#: ../../AnimationPlotLib.py:163
+msgctxt "Asm4_Plot|"
+msgid "# CVS output \n"
+msgstr "# CVS 輸出 \n"
+
+#: ../../AnimationPlotLib.py:165
+msgctxt "Asm4_Plot|"
+msgid "All trajectories calculated"
+msgstr "所有繪圖軌跡已計算"
+
+msgctxt "Asm4_Plot|"
+msgid "Plot trajectories of the animation"
+msgstr "動畫的繪圖軌跡"
+
+msgctxt "Asm4_Plot|"
+msgid ""
+"Animation Plotter: this tool plots the values of all the variables and the "
+"X,Y,Z coordinates of each *visible* Datum Point for each step of the "
+"animation sequence"
+msgstr "動畫繪圖器: 此工具繪製動畫序列每個步驟的所有變數的值和每個*可見*基準點的 X、Y、Z 座標"
+
+msgctxt "Asm4_Plot|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_Plot|"
+msgid "Remove trajectories and Exit"
+msgstr "刪除軌跡並退出"
+
+msgctxt "Asm4_Plot|"
+msgid "Refresh"
+msgstr "重新整理"
+
+msgctxt "Asm4_Plot|"
+msgid "Recalculate animation sequence"
+msgstr "重新計算動畫序列"
+
+msgctxt "Asm4_Plot|"
+msgid "Export"
+msgstr "匯出"
+
+msgctxt "Asm4_Plot|"
+msgid "Save data as plain text *.CSV file"
+msgstr "將資料另存為純文字 *.CSV 檔案"
+
+msgctxt "Asm4_Plot|"
+msgid "OK"
+msgstr "確定"
+
+msgctxt "Asm4_Plot|"
+msgid "Close animation widget and keep plots"
+msgstr "關閉動畫工具並保留繪圖"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Clear all selection filters"
+msgstr "清除所有選擇過濾器"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "All selection filters cleared\n"
+msgstr "已清除所有選擇過濾器\n"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Select only Vertices"
+msgstr "僅選擇頂點"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Select only Edges"
+msgstr "僅選擇邊緣"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Select only Faces"
+msgstr "僅選擇平面"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Enable/Disable 3D View selection mode"
+msgstr "啟用/禁用 3D視圖連結選擇模式"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid ""
+"Enable/Disable 3D View selection mode\n"
+"\n"
+"Allows to select a Link object in the 3D view\n"
+"window instead of the Model tree"
+msgstr ""
+"啟用/停用 3D 視圖選擇模式\n"
+"\n"
+"允許在 3D 視圖視窗中選擇連結物體而不是模型樹"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Asm4 3D view selection mode is now ENABLED\n"
+msgstr "零件組合 3D視圖連結選擇模式現已啟用\n"
+
+msgctxt "Asm4_SelectionFilter|"
+msgid "Asm4 3D view selection mode is now DISABLED\n"
+msgstr "零件組合 3D視圖連結選擇模式現已停用\n"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Check Intereferences"
+msgstr "檢查交叉引用"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Check interferences among assembled objects (may take time)"
+msgstr "檢查零件組合物體之間的干涉(可能需要點時間)"
+
+#: ../../checkInterference.py:107
+msgctxt "Asm4_checkInterference|"
+msgid "The {} has {} objects. (with fasteners)"
+msgstr "{} 共有 {} 個物件. (含緊固件)"
+
+#: ../../checkInterference.py:109
+msgctxt "Asm4_checkInterference|"
+msgid "The {} has {} objects."
+msgstr "{} 共有 {} 個物件."
+
+#: ../../checkInterference.py:125
+msgctxt "Asm4_checkInterference|"
+msgid "Totaling {} possible comparisons (with fasteners)"
+msgstr "總計有 {} 種可能的比較 (含緊固件)"
+
+#: ../../checkInterference.py:127
+msgctxt "Asm4_checkInterference|"
+msgid "Totaling {} possible comparisons"
+msgstr "總計有 {} 種可能的比較"
+
+#: ../../checkInterference.py:128
+msgctxt "Asm4_checkInterference|"
+msgid "Interferences check may take time."
+msgstr "干涉檢查可能需要一些時間."
+
+#: ../../checkInterference.py:135
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+"Elapsed time: {:.2f} ms"
+msgstr ""
+"\n"
+"佔用時間: {:.2f} 毫秒"
+
+#: ../../checkInterference.py:135 ../../checkInterference.py:137
+#: ../../checkInterference.py:139 ../../checkInterference.py:141
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+"Elapsed time:"
+msgstr ""
+"\n"
+"佔用時間:"
+
+#: ../../checkInterference.py:137
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+"Elapsed time: {:.2f} s"
+msgstr ""
+"\n"
+"佔用時間: {:.2f} 秒"
+
+#: ../../checkInterference.py:139
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+"Elapsed time: {:.2f} min"
+msgstr ""
+"\n"
+"佔用時間: {:.2f} 分鐘"
+
+#: ../../checkInterference.py:141
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+"Elapsed time: {:.2f} h"
+msgstr ""
+"\n"
+"佔用時間: {:.2f} 小時"
+
+#: ../../checkInterference.py:154
+msgctxt "Asm4_checkInterference|"
+msgid "Checked items:"
+msgstr "已檢查項目:"
+
+#: ../../checkInterference.py:170
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">>> Starting to check for interferences... <<<"
+msgstr ""
+"\n"
+">>> 開始檢查交叉引用干涉... <<<"
+
+#: ../../checkInterference.py:189
+msgctxt "Asm4_checkInterference|"
+msgid "Interferences"
+msgstr "交叉引用干涉"
+
+#: ../../checkInterference.py:199
+msgctxt "Asm4_checkInterference|"
+msgid "Intersections"
+msgstr "交叉引用干涉"
+
+#: ../../checkInterference.py:307
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">>> No interferences were found. The {} is clean! <<<"
+msgstr ""
+"\n"
+">>> 沒有發現干涉. {} 為正常! <<<"
+
+#: ../../checkInterference.py:312
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">>> Found {} interferences <<<"
+msgstr ""
+"\n"
+">>> 發現干涉物件 {} <<<"
+
+#: ../../checkInterference.py:343
+msgctxt "Asm4_checkInterference|"
+msgid "{}| {} does not have shape."
+msgstr "{}| {} 沒有形狀."
+
+#: ../../checkInterference.py:348
+msgctxt "Asm4_checkInterference|"
+msgid "{}| There are missing shape(s) (SKIPPING)."
+msgstr "{}| 缺少形狀(略過)."
+
+#: ../../checkInterference.py:476
+msgctxt "Asm4_checkInterference|"
+msgid "Minimum interference volume = {}"
+msgstr "最小干涉體積 = {}"
+
+#: ../../checkInterference.py:485
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">>> OPERATION HAS BEEN ABORTED <<<"
+msgstr ""
+"\n"
+">>> 操作已中止 <<<"
+
+#: ../../checkInterference.py:498
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+"Aborting the current processing..."
+msgstr ""
+"\n"
+"中止目前操作處理..."
+
+#: ../../checkInterference.py:521
+msgctxt "Asm4_checkInterference|"
+msgid "Allow faces touching = {}"
+msgstr "允許平面接觸 = {}"
+
+#: ../../checkInterference.py:530
+msgctxt "Asm4_checkInterference|"
+msgid "Check fasteners = {}"
+msgstr "檢查緊固件 = {}"
+
+#: ../../checkInterference.py:540
+msgctxt "Asm4_checkInterference|"
+msgid "Verbose = {}"
+msgstr "預覽 = {}"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Abort"
+msgstr "中止"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Close"
+msgstr "關閉"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Interference Checks"
+msgstr "檢查交叉引用"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Allow faces touching"
+msgstr "允許平面接觸"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Include fasteners"
+msgstr "包含緊固件"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Verbose"
+msgstr "預覽"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Minimum interference volume:"
+msgstr "最小干涉體積:"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Clear Checks"
+msgstr "清除檢查"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Check Interferences"
+msgstr "檢查交叉引用干涉"
+
+#: ../../checkInterference_lh.py:154
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">> USED PARTS:"
+msgstr ""
+"\n"
+">> 使用過的零件:"
+
+#: ../../checkInterference_lh.py:201
+msgctxt "Asm4_checkInterference|"
+msgid "{} | Collision detected"
+msgstr "{}| 偵測到碰撞"
+
+#: ../../checkInterference_lh.py:206
+msgctxt "Asm4_checkInterference|"
+msgid "{} | Touching faces (REMOVING)"
+msgstr "{} | 接觸平面(移除)"
+
+msgctxt "Asm4_checkInterference|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">> BUILDING PART LIST ..."
+msgstr ""
+"\n"
+">> 建立零件清單 ..."
+
+msgctxt "Asm4_checkInterference|"
+msgid "FOUND {} OBJECTS\n"
+msgstr "找到 {} 個物體\n"
+
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"\n"
+">> PROCESSING INTERSECTIONS ... "
+msgstr ""
+"\n"
+">> 處理交叉引用 ... "
+
+msgctxt "Asm4_checkInterference|"
+msgid "Not enough parts for intersections\n"
+msgstr "交叉引用零件不足\n"
+
+msgctxt "Asm4_checkInterference|"
+msgid ""
+"DONE. \n"
+"There seems to be some conflicts between parts\n"
+msgstr ""
+"完成.\n"
+"各零件之間似乎存在一些衝突\n"
+
+msgctxt "Asm4_checkInterference|"
+msgid "DONE. No conflicts found\n"
+msgstr "完成. 沒有發現衝突\n"
+
+msgctxt "Asm4_createDatum|"
+msgid "New Point"
+msgstr "新增點"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create a new Datum Point in a Part"
+msgstr "在零件中建立新的基準點"
+
+msgctxt "Asm4_createDatum|"
+msgid "New Axis"
+msgstr "新增軸"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create a new Datum Axis in a Part"
+msgstr "在零件中建立新的基準軸"
+
+msgctxt "Asm4_createDatum|"
+msgid "New Plane"
+msgstr "新增基準面"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create a new Datum Plane in a Part"
+msgstr "在零件中建立新的基準平面"
+
+msgctxt "Asm4_createDatum|"
+msgid "New Coordinate System"
+msgstr "新增座標系統"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create a new Coordinate System in a Part"
+msgstr "在零件中建立新座標系統"
+
+msgctxt "Asm4_createDatum|"
+msgid "New Sketch"
+msgstr "新增草圖"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create a new Sketch in a Part"
+msgstr "在零件中建立新的草圖"
+
+#: ../../newDatumCmd.py:130
+msgctxt "Asm4_createDatum|"
+msgid "Can't create a "
+msgstr "無法建立基準 "
+
+msgctxt "Asm4_createDatum|"
+msgid " with the current selections"
+msgstr " 與目前的選擇"
+
+msgctxt "Asm4_createDatum|"
+msgid "New Hole Axis"
+msgstr "新增圓孔軸"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create a Datum Axis attached to a hole"
+msgstr "建立附加到孔的基準軸"
+
+msgctxt "Asm4_createDatum|"
+msgid "Datum objects can only be created inside Part or Body containers"
+msgstr "基準物體只能在「零件」或「實體」容器內建立"
+
+msgctxt "Asm4_createDatum|"
+msgid "Create Datum Object"
+msgstr "建立基準物件"
+
+msgctxt "Asm4_createDatum|"
+msgid "I can't create a "
+msgstr "我無法建立一個 "
+
+msgctxt "Asm4_createDatum|"
+msgid "Create new "
+msgstr "建立一個新的 "
+
+msgctxt "Asm4_createDatum|"
+msgid "Enter "
+msgstr "輸入 "
+
+msgctxt "Asm4_createDatum|"
+msgid " name :"
+msgstr " 名稱 :"
+
+msgctxt "Asm4_gotoDocument|"
+msgid "Open Document"
+msgstr "開啟文件"
+
+msgctxt "Asm4_gotoDocument|"
+msgid "Activates the document of the selected linked part"
+msgstr "啟用所選連結零件的檔案"
+
+msgctxt "Asm4_hideLcs|"
+msgid "Hide LCS"
+msgstr "隱藏區域座標系統(LCS)"
+
+msgctxt "Asm4_hideLcs|"
+msgid "Hide LCS and Datums of selected part and its children"
+msgstr "隱藏所選零件及其子零件的區域座標系統和基準"
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+"Imports the selected Datum object(s) from a sub-part into the root "
+"assembly.\n"
+"This creates a new datum of the same type, and with the same global "
+"placement\n"
+"\n"
+"This command can also be used to override the placement of an existing datum "
+":\n"
+"select a second datum in the same root container as the first selected datum"
+msgstr ""
+"將選取的基準物體從子零件匯入到根組合體中.\n"
+"這將建立相同類型且具有相同全域位置的新基準\n"
+"\n"
+"此命令也可用於涵蓋現有基準的放置:\n"
+"在與第一個選定基準相同的根容器中選擇第二個基準"
+
+msgctxt "Asm4_importDatum|"
+msgid "Import Datum object"
+msgstr "匯入基準"
+
+msgctxt "Asm4_importDatum|"
+msgid "This will superimpose "
+msgstr "這將疊加 "
+
+msgctxt "Asm4_importDatum|"
+msgid " in "
+msgstr " 於 "
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+" on:\n"
+"\n"
+msgstr ""
+" 在:\n"
+"\n"
+
+#: ../../importDatumCmd.py:87
+msgctxt "Asm4_importDatum|"
+msgid " is already attached to some geometry. "
+msgstr " 已經附加到一些幾何體上. "
+
+#: ../../importDatumCmd.py:88
+msgctxt "Asm4_importDatum|"
+msgid ""
+"This will superimpose its Placement on:\n"
+"\n"
+msgstr ""
+"這會將其放置疊加在:\n"
+"\n"
+
+msgctxt "Asm4_importDatum|"
+msgid " is already at the top-level and cannot be imported"
+msgstr " 已經是頂層，無法匯入"
+
+msgctxt "Asm4_importDatum|"
+msgid "Create a new "
+msgstr "建立一個新的 "
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+" \n"
+"superimposed on:\n"
+"\n"
+msgstr ""
+" \n"
+"疊加於:\n"
+"\n"
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+"\n"
+"Enter name for this datum :"
+msgstr ""
+"\n"
+"輸入該基準資料的名稱:"
+
+msgctxt "Asm4_importDatum|"
+msgid "Import Datum"
+msgstr "匯入基準"
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+" selected datum objects will be imported into the root assembly\n"
+"with their default names such as:\n"
+msgstr " 選定的基準將以其預設名稱匯入到根零件組合中. 例如:\n"
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+" is already attached to some geometry. This will superimpose its Placement "
+"on:\n"
+"\n"
+msgstr ""
+" 已經附加到一些幾何體上. 這會將其放置疊加在:\n"
+"\n"
+
+msgctxt "Asm4_importDatum|"
+msgid "> "
+msgstr "> "
+
+msgctxt "Asm4_importDatum|"
+msgid ""
+" selected datum objects will be imported into the root assembly\n"
+"with their default names such as: \n"
+msgstr " 選定的基準將以其預設名稱匯入到根零件組合中，例如: \n"
+
+msgctxt "Asm4_infoPart|"
+msgid "BomKey"
+msgstr "物料清單索引"
+
+msgctxt "Asm4_insertLink|"
+msgid ""
+"<p>Insert a Part into the assembly. This will create a dynamic link to the "
+"part, which can be in this document or in another document that is open in "
+"the current session</p><p><b>Usage</b>: the part must be open in the current "
+"session</p><p>This command also enables to repair broken/missing links. "
+"Select the broken link, launch this command, and select a new target part in "
+"the list</p>"
+msgstr ""
+"<p>將零件插入組合件中。 "
+"這將建立到該零件的動態連結，該連結可以位於此文件中，也可以位於當前作業階段中打開的另一個文件中</p><p><b>用法</b>: "
+"該零件必須在目前作業階段</p><p>此命令還可以修復損壞/遺失的連結. 選擇損壞的連結，啟動此命令，然後在列表中選擇新的目標零件</p>"
+
+msgctxt "Asm4_insertLink|"
+msgid "Insert Part"
+msgstr "插入零件"
+
+msgctxt "Asm4_insertLink|"
+msgid "Re-link broken link"
+msgstr "重新連結損壞的連結"
+
+msgctxt "Asm4_insertLink|"
+msgid "Replace"
+msgstr "取代"
+
+msgctxt "Asm4_insertLink|"
+msgid "Please create an Assembly"
+msgstr "請先建立一個零件組合"
+
+msgctxt "Asm4_insertLink|"
+msgid "Select FreeCAD document to import part from"
+msgstr "選取 FreeCAD 文件匯入部分"
+
+msgctxt "Asm4_insertLink|"
+msgid "Supported Formats *.FCStd *.fcstd (*.FCStd *.fcstd);;All files (*.*)"
+msgstr "支援的檔案格式 *.FCStd *.fcstd (*.FCStd *.fcstd);;All files (*.*)"
+
+msgctxt "Asm4_insertLink|"
+msgid "The current document must be saved before inserting an external part"
+msgstr "插入外部零件之前必須儲存目前文件"
+
+msgctxt "Asm4_insertLink|"
+msgid "Insert a Part"
+msgstr "插入零件"
+
+msgctxt "Asm4_insertLink|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_insertLink|"
+msgid "Open file"
+msgstr "開啟檔案"
+
+msgctxt "Asm4_insertLink|"
+msgid "Insert"
+msgstr "插入"
+
+msgctxt "Asm4_insertLink|"
+msgid "Filter :"
+msgstr "篩選器 :"
+
+msgctxt "Asm4_insertLink|"
+msgid "Select Part to be inserted :"
+msgstr "選擇要插入的零件:"
+
+msgctxt "Asm4_insertLink|"
+msgid "Name for the link :"
+msgstr "連結的名稱:"
+
+msgctxt "Asm4_makeArray|"
+msgid "Create an expression driven Array"
+msgstr "建立表達式驅動陣列"
+
+msgctxt "Asm4_makeArray|"
+msgid ""
+"Create an array of the selected object where the placement of each element "
+"is calculated using expressions and an Index property.<br>\n"
+"        Select a source object to array and optionally an Axis that "
+"transformation will be related to.<br>\n"
+"        Without axis the transformations relates to the source object "
+"internal Z axis.<br>\n"
+"        <br>\n"
+"        <b>Count :</b> The amount of elements in the array.<br>\n"
+"        <b>Index :</b> Hidden but Placer use it in expressions to "
+"calculating the Placements. Increments for each element starting with "
+"0.<br>\n"
+"        <b>Placer :</b> Set an expression for the entire placement or its "
+"sub-properties.<br>\n"
+"           By opening Placer property in Tasks panel it is possible to set "
+"expressions for euler angles too.<br>\n"
+"        Also see tooltips in Property view\n"
+"        "
+msgstr ""
+"建立所選物件的陣列，其中使用表達式和 Index 屬性計算每個元素的位置.<br>\n"
+"         選擇要排列的來源對象，以及可選的與轉換相關的軸.<br>\n"
+"         如果沒有軸，變換與來源物件內部 Z 軸相關.<br>\n"
+"         <br>\n"
+"         <b>計數:</b>陣列中元素的數量。<br>\n"
+"         <b>索引:</b>隱藏，但 Placer 在表達式中使用它來計算展示位置。 每個元素的增量從 0 開始.<br>\n"
+"         <b>位置:</b>為整個展示位置或其子屬性設定表達式.<br>\n"
+"            透過在任務面板中開啟 位置 屬性，也可以設定歐拉角​​的表達式.<br>\n"
+"         另請參閱屬性檢視中的工具提示\n"
+"        "
+
+msgctxt "Asm4_makeArray|"
+msgid "Create a circular array"
+msgstr "建立一個圓形陣列"
+
+msgctxt "Asm4_makeArray|"
+msgid ""
+"<p>Create a circular (polar) array around an axis.\n"
+"                Supported axis objects are axis or plane from an origin, "
+"datum line, LCS axes, straight line segments, arcs and circles</p>\n"
+"                <p><b>Usage</b>: Select an object and the axis (hold CTRL "
+"key to select second object)</p>"
+msgstr ""
+"<p>圍繞軸建立圓形(極座標)陣列.\n"
+"                 支援的軸物件是從原點開始的軸或平面、基準線、LCS 軸、直線段、圓弧和圓</p>\n"
+"                 <p><b>用法</b>:選擇一個物件和軸(按住CTRL鍵選擇第二個物件)</p>"
+
+msgctxt "Asm4_makeArray|"
+msgid ""
+"The angle between two subsequent elements.\n"
+"Expression to place the last element at 180°: <code>180/(Count-1)</code>"
+msgstr ""
+"兩個後續元素之間的角度.\n"
+"將最後一個元素置於 180° 的表達式: <code>180/(Count-1)</code>"
+
+msgctxt "Asm4_makeArray|"
+msgid "Create a linear array"
+msgstr "建立線性陣列"
+
+msgctxt "Asm4_makeArray|"
+msgid ""
+"<p>Create a linear array along an axis.\n"
+"                Supported axis objects are axis or plane from an origin, "
+"datum line, LCS axes, straight line segments, arcs and circles</p>\n"
+"                <p><b>Usage</b>: Select an object and an axis for the "
+"direction (hold CTRL key to select second object)</p>"
+msgstr ""
+"<p>沿軸建立線性陣列.\n"
+"                 支援的軸物件是從原點開始的軸或平面、基準線、LCS 軸、直線段、圓弧和圓</p>\n"
+"                 <p><b>用法</b>:選擇一個物件和方向軸(按住 CTRL 鍵選擇第二個物件)</p>"
+
+msgctxt "Asm4_makeArray|"
+msgid ""
+"The length between two subsequent elements.\n"
+"Expression to place the last element at 100 mm: 100mm/(Count-1)"
+msgstr ""
+"兩個後續元素之間的長度.\n"
+"將最後一個元素放置在 100 mm 處的表達式: 100mm/(Count-1)"
+
+msgctxt "Asm4_makeArray|"
+msgid "Create mirror"
+msgstr "建立鏡像特徵"
+
+msgctxt "Asm4_makeArray|"
+msgid ""
+"<p>Create a mirror of a part.\n"
+"                Supported axis objects are axis or plane from an origin, "
+"datum line, LCS axes, straight line segments, arcs and circles</p>\n"
+"                <p><b>Usage</b>: Select a source object and a mirror plane "
+"or a normal to a plane (hold CTRL key to select second object)</p>"
+msgstr ""
+"<p>建立零件的鏡像.\n"
+"                 支援的軸物件是從原點開始的軸或平面、基準線、LCS 軸、直線段、圓弧和圓</p>\n"
+"                 <p><b>用法</b>:選擇來源物件和鏡像平面或平面法線(按住 CTRL 鍵選擇第二個物件)</p>"
+
+msgctxt "Asm4_makeBOM|"
+msgid "Bill of Materials"
+msgstr "材料清單"
+
+msgctxt "Asm4_makeBOM|"
+msgid "Create the Bill of Materials of the Assembly including sub-assemblies"
+msgstr "建立零件組合的材料清單，包括子零件組合"
+
+msgctxt "Asm4_makeBOM|"
+msgid "Local Bill of Materials"
+msgstr "區域材料清單"
+
+msgctxt "Asm4_makeBOM|"
+msgid "Create the Bill of Materials of the Assembly"
+msgstr "建立零件組合的材料清單"
+
+msgctxt "Asm4_makeBOM|"
+msgid "ASM4> BOM of the Assembly 4 Model"
+msgstr "ASM4> 零件組合四模型的物料清單(BOM)"
+
+msgctxt "Asm4_makeBOM|"
+msgid "ASM4> BOM of the legacy Assembly 4 Model"
+msgstr "ASM4> 舊版零件組合四模型的物料清單(BOM)"
+
+msgctxt "Asm4_makeBOM|"
+msgid "ASM4> BOM might not work with this file"
+msgstr "ASM4> 物料清單(BOM) 可能不適用於此文件"
+
+msgctxt "Asm4_makeBOM|"
+msgid "ASM4> BOM following sub-assemblies"
+msgstr "ASM4> 物料清單(BOM)跟隨子零件組合"
+
+msgctxt "Asm4_makeBOM|"
+msgid "ASM4> BOM local parts only"
+msgstr "ASM4> 物料清單(BOM)僅區域零件"
+
+msgctxt "Asm4_makeBOM|"
+msgid "Nothing Applied"
+msgstr "未套用任何項目"
+
+msgctxt "Asm4_makeBOM|"
+msgid "Parts List (BOM)"
+msgstr "零件清單\"物料清單(BOM)\""
+
+msgctxt "Asm4_makeBOM|"
+msgid ""
+"BOM generates bill of materials.\n"
+"\n"
+"It uses the Parts' info to generate entries on BOM, unless autofill is set.\n"
+msgstr ""
+"BOM 產生物料清單.\n"
+"\n"
+"它使用零件資訊在 BOM 上建立分錄，除非設定了自動填充.\n"
+
+msgctxt "Asm4_makeBOM|"
+msgid ""
+"Check <a "
+"href='https://github.com/Zolko-123/FreeCAD_Assembly4/tree/master/Examples/ConfigBOM/README.md'>BOM "
+"tutorial</a>"
+msgstr ""
+"檢視<a "
+"href='https://github.com/Zolko-123/FreeCAD_Assembly4/tree/master/Examples/ConfigBOM/README.md'>BOM "
+"教學</a>"
+
+msgctxt "Asm4_makeBOM|"
+msgid ""
+"\n"
+"\n"
+"Report:"
+msgstr ""
+"\n"
+"\n"
+"報表:"
+
+msgctxt "Asm4_makeBOM|"
+msgid "OK"
+msgstr "確定"
+
+msgctxt "Asm4_makeBOM|"
+msgid ""
+"-------------------------------------------------- remove after debugging"
+msgstr "-------------------------------------------------- 偵錯後移除"
+
+msgctxt "Asm4_makeBOM|"
+msgid "- object already added ("
+msgstr "- 物體已新增 ("
+
+msgctxt "Asm4_makeBOM|"
+msgid "- adding object (1)\n"
+msgstr "- 新增物體 (1)\n"
+
+msgctxt "Asm4_makeBOM|"
+msgid ""
+"\n"
+"BOM creation is done\n"
+msgstr ""
+"\n"
+"物料清單(BOM)建立完成\n"
+
+msgctxt "Asm4_makeBOM|"
+msgid " spreadsheet was created.\n"
+msgstr " 電子表格已建立.\n"
+
+#| msgid "New Assembly"
+msgctxt "Asm4_mirrorPart|"
+msgid ""
+"Create a mirrored part of a part. Use only on individual parts, not "
+"assemblies\n"
+"You must re-create the attachment datums in the resulting part"
+msgstr ""
+"建立零件的鏡像零件. 僅適用於單一零件，不適用於零件組合體\n"
+"您必須在產生的零件中重新建立零件基準"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "Create symmetric of part"
+msgstr "建立對稱零件"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "ERROR : You shouldn't see this message from mirrorPartCmd()\n"
+msgstr "錯誤: 您不應該從mirrorPartCmd()看到此訊息\n"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "Create mirrored Part"
+msgstr "建立鏡像特徵零件"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "Selected Part :"
+msgstr "選擇的零件:"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "Select the symmetry plane :"
+msgstr "選擇對稱平面:"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "Mirrored part's name :"
+msgstr "鏡像零件名稱:"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_mirrorPart|"
+msgid "OK"
+msgstr "確定"
+
+msgctxt "Asm4_newAssembly|"
+msgid "New Assembly"
+msgstr "新增零件組合"
+
+msgctxt "Asm4_newAssembly|"
+msgid "This document already contains a valid Assembly, please use it"
+msgstr "此文件已包含有效零件組合，請使用它"
+
+msgctxt "Asm4_newAssembly|"
+msgid ""
+"There seems to already be a Parts object, you might get unexpected behaviour"
+msgstr "似乎已經有一個零件物體，您可能會得到意想不到的行為"
+
+msgctxt "Asm4_newPart|"
+msgid "New Part"
+msgstr "新增零件"
+
+msgctxt "Asm4_newPart|"
+msgid "Create a new Part"
+msgstr "建立一個新的零件"
+
+msgctxt "Asm4_newPart|"
+msgid "New Body"
+msgstr "新增實體"
+
+msgctxt "Asm4_newPart|"
+msgid "Create a new Body"
+msgstr "建立一個實體"
+
+msgctxt "Asm4_newPart|"
+msgid "New Group"
+msgstr "新增群組"
+
+msgctxt "Asm4_newPart|"
+msgid "Create a new Group"
+msgstr "建立一個群組"
+
+msgctxt "Asm4_newPart|"
+msgid "Enter new "
+msgstr "輸入新的 "
+
+msgctxt "Asm4_newPart|"
+msgid " name :"
+msgstr " 名稱 :"
+
+msgctxt "Asm4_objects|"
+msgid "Initialising ...\n"
+msgstr "初始化 ...\n"
+
+msgctxt "Asm4_objects|"
+msgid "No \"Variables\" container in source object\n"
+msgstr "來源物體中沒有\"變數\"容器\n"
+
+msgctxt "Asm4_objects|"
+msgid "Attaching VariantLink ...\n"
+msgstr "附加變數連結 ...\n"
+
+msgctxt "Asm4_objects|"
+msgid "Original object from which this variant is derived"
+msgstr "衍生此變數的原始物體"
+
+msgctxt "Asm4_objects|"
+msgid "Link to the modified object"
+msgstr "連結到修改後的物體"
+
+msgctxt "Asm4_objects|"
+msgid "Triggered onSettingDocument() in VariantLink\n"
+msgstr "由變數連結中的 onSettingDocument() 觸發\n"
+
+msgctxt "Asm4_objects|"
+msgid "Triggered onLostLinkToObject() in VariantLink\n"
+msgstr "由變數連結中的 onLostLinkToObject() 觸發\n"
+
+msgctxt "Asm4_objects|"
+msgid "Triggered by setupObject() in VariantLink\n"
+msgstr "由變數連結中的 setupObject() 觸發\n"
+
+msgctxt "Asm4_objects|"
+msgid "The object to array"
+msgstr "要陣列的物體"
+
+msgctxt "Asm4_objects|"
+msgid "Total number of elements in the array"
+msgstr "陣列中元素的總數"
+
+#, qt-format
+msgctxt "Asm4_objects|"
+msgid ""
+"Calculates element placements in relation to the Axis.\n"
+"Each element is assigned an Index starting from 0\n"
+"The Index can be used in expressions calculating this Placement or its "
+"sub-properties\n"
+"Expression examples:\n"
+"on Angle: Index%2==0?30:-30\n"
+"on Position.X: Index*30"
+msgstr ""
+"計算相對於軸的元素放置.\n"
+"每個元素分配一個從0開始的索引(Index)\n"
+"索引可用於計算此 '放置位置' 或其子屬性的表達式中\n"
+"表達範例:\n"
+"角度: Index%2==0?30:-30\n"
+"在位置.X: Index*30"
+
+msgctxt "Asm4_objects|"
+msgid "Missing Source Object"
+msgstr "缺少來源物體"
+
+msgctxt "Asm4_objects|"
+msgid "Source Object must reside inside a Part"
+msgstr "來源物體必須駐留在零件內"
+
+msgctxt "Asm4_objects|"
+msgid "Source Object and Axis must have the same parent Part"
+msgstr "來源物體和軸必須具有相同的上級零件"
+
+msgctxt "Asm4_objects|"
+msgid "The type of the selected axis is not supported"
+msgstr "不支援所選軸的類型"
+
+msgctxt "Asm4_objects|"
+msgid "Circular reference detected: {} -> {}"
+msgstr "偵測到循環引用: {} -> {}"
+
+msgctxt "Asm4_placePart|"
+msgid ""
+"WARNING : unsupported Assembly/Solver/Part combination, you shouldn't be "
+"seeing this\n"
+msgstr "警告: 不支援的組裝/解算器/零件組合，您不應該看到此內容\n"
+
+msgctxt "Asm4_placePart|"
+msgid "Place linked Part"
+msgstr "放置連結的零件"
+
+msgctxt "Asm4_placePart|"
+msgid "Problem in selections\n"
+msgstr "選擇上的問題\n"
+
+msgctxt "Asm4_placePart|"
+msgid "Part is now manually placed\n"
+msgstr "零件現在手動放置\n"
+
+msgctxt "Asm4_placePart|"
+msgid "Part untouched\n"
+msgstr "零件未接觸\n"
+
+msgctxt "Asm4_placePart|"
+msgid "Parent Assembly"
+msgstr "上層零件組合"
+
+msgctxt "Asm4_placePart|"
+msgid "Please select"
+msgstr "請選擇"
+
+msgctxt "Asm4_placePart|"
+msgid "Selected Link :"
+msgstr "選定的連結:"
+
+msgctxt "Asm4_placePart|"
+msgid ""
+"Choose the part in which the attachment\n"
+"coordinate system is to be found"
+msgstr "選擇要在其中找到附加依賴座標系統的零件"
+
+msgctxt "Asm4_placePart|"
+msgid "Attach to :"
+msgstr "附加到:"
+
+msgctxt "Asm4_placePart|"
+msgid "Linked Part :"
+msgstr "連結的零件:"
+
+msgctxt "Asm4_placePart|"
+msgid "Select LCS in Part :"
+msgstr "在零件中選擇區域座標系統(LCS):"
+
+msgctxt "Asm4_placePart|"
+msgid "Select a coordinate system from the list"
+msgstr "從清單中選擇座標系統"
+
+msgctxt "Asm4_placePart|"
+msgid "Parent Part :"
+msgstr "上層零件:"
+
+msgctxt "Asm4_placePart|"
+msgid "Select LCS in Parent :"
+msgstr "在上層零件中選擇區域座標系統(LCS):"
+
+msgctxt "Asm4_placePart|"
+msgid "X Translation :"
+msgstr "X 軸平移:"
+
+msgctxt "Asm4_placePart|"
+msgid "Translation along X axis"
+msgstr "沿 Z 軸平移"
+
+msgctxt "Asm4_placePart|"
+msgid "Rotate X +90°"
+msgstr "X 軸旋轉 90°"
+
+msgctxt "Asm4_placePart|"
+msgid "Rotate 90 deg around X axis"
+msgstr "繞X軸旋轉90°"
+
+msgctxt "Asm4_placePart|"
+msgid "Y Translation :"
+msgstr "Y 軸平移:"
+
+msgctxt "Asm4_placePart|"
+msgid "Translation along Y"
+msgstr "沿 Y 軸平移"
+
+msgctxt "Asm4_placePart|"
+msgid "Rotate Y +90°"
+msgstr "Y 軸旋轉 90°"
+
+msgctxt "Asm4_placePart|"
+msgid "Rotate 90 deg around Y axis"
+msgstr "繞Y軸旋轉90°"
+
+msgctxt "Asm4_placePart|"
+msgid "Z Translation :"
+msgstr "Z 軸平移:"
+
+msgctxt "Asm4_placePart|"
+msgid "Translation along Z:"
+msgstr "沿 Z 軸平移:"
+
+msgctxt "Asm4_placePart|"
+msgid "Rotate Z +90°"
+msgstr "Z 軸旋轉 90°"
+
+msgctxt "Asm4_placePart|"
+msgid "Rotate 90 deg around Z axis"
+msgstr "繞Z軸旋轉90°"
+
+msgctxt "Asm4_placePart|"
+msgid "Edit Placement of a Part"
+msgstr "編輯零件的放置位置"
+
+msgctxt "Asm4_placePart|"
+msgid "Move/Attach a Part in the assembly"
+msgstr "在零件組合中移動/附加零件"
+
+msgctxt "Asm4_placePart|"
+msgid "This Part has the Attachment extension, it can only be placed manually"
+msgstr "該零件有附件延伸，只能手動放置"
+
+msgctxt "Asm4_placePart|"
+msgid ""
+"This Part wasn't assembled with this Assembly4 WorkBench, but I can convert "
+"it."
+msgstr "該零件不是用這個版本的 零件組合四工作台 組裝的，但可以轉換它."
+
+msgctxt "Asm4_placePart|"
+msgid "Please select a link in the assembly Model."
+msgstr "請在零件組合模型中選擇一個連結."
+
+msgctxt "Asm4_placePart|"
+msgid "Please select an object in the assembly Model."
+msgstr "請在零件組合模型中選擇一個物體."
+
+msgctxt "Asm4_placePart|"
+msgid "Place a Part in the assembly"
+msgstr "將零件放置在零件組合件中"
+
+msgctxt "Asm4_placePart|"
+msgid "Please select ab object with a Placement property"
+msgstr "請選擇具有放置位置(Placement) 屬性的物體"
+
+msgctxt "Asm4_placePart|"
+msgid "selection: "
+msgstr "選擇: "
+
+msgctxt "Asm4_placePart|"
+msgid "Selected Object :"
+msgstr "選擇的物體:"
+
+msgctxt "Asm4_placePart|"
+msgid "Select attachment LCS in parent Part :"
+msgstr "在上層零件中選擇附件區域座標系統(LCS):"
+
+msgctxt "Asm4_placePart|"
+msgid "This command will release all attachments on "
+msgstr "此命令將釋放所有附件 "
+
+msgctxt "Asm4_placePart|"
+msgid " and set it to manual positioning in its current location."
+msgstr " 並將其設定為手動定位在目前位置."
+
+msgctxt "Asm4_releaseAttachment|"
+msgid "Release from Attachment"
+msgstr "從附件中釋放"
+
+msgctxt "Asm4_releaseAttachment|"
+msgid "Release an object from all attachments to any geometry"
+msgstr "將物體從任何幾何形體的所有附件中釋放"
+
+msgctxt "Asm4_releaseAttachment|"
+msgid "This command will release all attachments on "
+msgstr "此命令將釋放所有附件 "
+
+msgctxt "Asm4_releaseAttachment|"
+msgid " and set it to manual positioning in its current location."
+msgstr " 並將其設定為手動定位在目前位置."
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Clear all selection filters"
+msgstr "清除所有選擇過濾器"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "All selection filters cleared\n"
+msgstr "已清除所有選擇過濾器\n"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Select only Vertices"
+msgstr "僅選擇頂點"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Select only Edges"
+msgstr "僅選擇邊緣"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Select only Faces"
+msgstr "僅選擇平面"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Enable/Disable 3D View selection mode"
+msgstr "啟用/禁用 3D視圖連結選擇模式"
+
+msgctxt "Asm4_selectionFilter|"
+msgid ""
+"Enable/Disable 3D View selection mode\n"
+"\n"
+"Allows to select a Link object in the 3D view\n"
+"window instead of the Model tree"
+msgstr ""
+"啟用/停用 3D 視圖選擇模式\n"
+"\n"
+"允許在 3D 視圖視窗中選擇連結物體而不是模型樹"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Asm4 3D view selection mode is now ENABLED\n"
+msgstr "零件組合 3D視圖連結選擇模式現已啟用\n"
+
+msgctxt "Asm4_selectionFilter|"
+msgid "Asm4 3D view selection mode is now DISABLED\n"
+msgstr "零件組合 3D視圖連結選擇模式現已停用\n"
+
+msgctxt "Asm4_shapeBinder|"
+msgid ""
+"Create a reference to an external shape\n"
+"This creates a SubShapeBinder of the selected shapes\n"
+"(face, edge, point) in the root assembly\n"
+"Only shapes belonging to the same part can be imported in a single step"
+msgstr ""
+"建立對外部形狀的引用\n"
+"這將建立所選形狀的子形狀黏合\n"
+"根零件組合中的(面、邊、點)\n"
+"只能在一個步驟中匯入屬於同一零件的形狀"
+
+msgctxt "Asm4_shapeBinder|"
+msgid "Create a shape binder"
+msgstr "建立形狀粘合"
+
+msgctxt "Asm4_showLcs|"
+msgid "Show LCS"
+msgstr "顯示區域座標系統(LCS)"
+
+msgctxt "Asm4_showLcs|"
+msgid "Show LCS and Datums of selected part and its children"
+msgstr "顯示所選零件及其子零件的區域座標系統和基準"
+
+msgctxt "Asm4_treeSelectionOverride|"
+msgid "Enable/Disable 3D View selection mode"
+msgstr "啟用/禁用 3D視圖連結選擇模式"
+
+msgctxt "Asm4_treeSelectionOverride|"
+msgid ""
+"Enable/Disable 3D View selection mode\n"
+"\n"
+"Allows to select a Link object in the 3D view\n"
+"window instead of the Model tree"
+msgstr ""
+"啟用/停用 3D 視圖選擇模式\n"
+"\n"
+"允許在 3D 視圖視窗中選擇連結物體而不是模型樹"
+
+msgctxt "Asm4_treeSelectionOverride|"
+msgid "3D view link selection mode is now ENABLED\n"
+msgstr "3D 視圖連結選擇模式現已啟用\n"
+
+msgctxt "Asm4_treeSelectionOverride|"
+msgid "3D view link selection mode is now DISABLED\n"
+msgstr "3D 視圖連結選擇模式現已停用\n"
+
+msgctxt "Asm4_updateAssembly|"
+msgid "Solve and Update Assembly"
+msgstr "求解並更新零件組合"
+
+msgctxt "Asm4_updateAssembly|"
+msgid "Update Assembly"
+msgstr "更新零件組合"
+
+msgctxt "Asm4_variables|"
+msgid ""
+"<p>Adds a variable into the <i>Variables</i> placeholder in the document. "
+"This variable can then be used in any formula using the "
+"<i>ExpressionEngine</i> of any compatible input field. These are marked with "
+"a \"f(x)\" symbol</p>"
+msgstr ""
+"<p>將變數加入文件中的<i>變數</i>佔位符中. "
+"然後，可以使用<i>ExpressionEngine</i>在任何公式中使用該變數任何相容的輸入欄位. 它們標有\"f(x)\"符號</p>"
+
+msgctxt "Asm4_variables|"
+msgid "Add Variable"
+msgstr "新增變量"
+
+msgctxt "Asm4_variables|"
+msgid "Type"
+msgstr "類型"
+
+msgctxt "Asm4_variables|"
+msgid "Name"
+msgstr "名稱"
+
+msgctxt "Asm4_variables|"
+msgid "Value"
+msgstr "值"
+
+msgctxt "Asm4_variables|"
+msgid "Description"
+msgstr "說明"
+
+msgctxt "Asm4_variables|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_variables|"
+msgid "OK"
+msgstr "確定"
+
+msgctxt "Asm4_variables|"
+msgid "Delete Variable"
+msgstr "刪除變量"
+
+msgctxt "Asm4_variables|"
+msgid "Delete a Variable"
+msgstr "刪除一個變量"
+
+msgctxt "Asm4_variables|"
+msgid "There are no variables here"
+msgstr "這裡沒有變數"
+
+msgctxt "Asm4_variables|"
+msgid "Please choose"
+msgstr "請選擇"
+
+msgctxt "Asm4_variables|"
+msgid "Variable"
+msgstr "變量"
+
+msgctxt "Asm4_variables|"
+msgid "Delete"
+msgstr "刪除"
+
+msgctxt "Asm4_variables|"
+msgid ""
+"Adds a variable into the \"Variables\" placeholder in the document.\n"
+"This variable can then be used in any formula using the ExpressionEngine\n"
+"of any compatible input field. These are marked with a \"f(x)\" symbol."
+msgstr ""
+"將變數加入文件中的\"變數\"佔位符中.\n"
+"然後，可以使用\"ExpressionEngine\"在任何公式中使用該變數任何相容的輸入欄位.\n"
+"它們標有\"f(x)\"符號."
+
+msgctxt "Asm4_variables|"
+msgid "Variables"
+msgstr "變量"
+
+msgctxt "Asm4_variantLink|"
+msgid ""
+"EXPERIMENTAL !!!\n"
+"Create a variant link to a part\n"
+"Select a part containing a \"Variables\" property container"
+msgstr ""
+"實驗性!!!\n"
+"建立零件的變體鏈接\n"
+"選擇包含“變數”屬性容器的零件"
+
+msgctxt "Asm4_variantLink|"
+msgid "Create a variant Part"
+msgstr "建立一個變量零件"
+
+msgctxt "Asm4_variantLink|"
+msgid "Please create an Assembly"
+msgstr "請先建立一個零件組合"
+
+msgctxt "Asm4_variantLink|"
+msgid "The current document must be saved before inserting an external part"
+msgstr "插入外部零件之前必須儲存目前文件"
+
+msgctxt "Asm4_variantLink|"
+msgid "Insert a variant of a Part"
+msgstr "插入零件的變數"
+
+msgctxt "Asm4_variantLink|"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "Asm4_variantLink|"
+msgid "Insert"
+msgstr "插入"
+
+msgctxt "Asm4_variantLink|"
+msgid "Filter :"
+msgstr "篩選器 :"
+
+msgctxt "Asm4_variantLink|"
+msgid "Select Part to be inserted :"
+msgstr "選擇要插入的零件:"
+
+msgctxt "Asm4_variantLink|"
+msgid "Name for the link :"
+msgstr "連結的名稱:"
+
+msgctxt "Commands|"
+msgid "Activates the document of the selected linked part"
+msgstr "啟用所選連結零件的檔案"
+
+msgctxt "Commands|"
+msgid "<p>Create a new Assembly container</p>"
+msgstr "新增零件組合容器"
+
+#: ../../newAssemblyCmd.py:44
+msgctxt "Commands|"
+msgid "New Assembly"
+msgstr "新增零件組合"
+
+#: ../../newAssemblyCmd.py:62
+msgctxt "Commands|"
+msgid "This document already contains a valid Assembly, please use it"
+msgstr "此文件已包含有效零件組合，請使用它"
+
+#: ../../newAssemblyCmd.py:67
+msgctxt "Commands|"
+msgid ""
+"This document already contains another FreeCAD object called \"Assembly\", "
+"but it's of type \""
+msgstr "該文件已包含另一個名為\"Assembly\"的 FreeCAD 物體，但它的類型為 \""
+
+#: ../../newAssemblyCmd.py:68
+msgctxt "Commands|"
+msgid "\", unsuitable for an assembly. I can't proceed."
+msgstr "\"，不適合零件組合. 無法繼續."
+
+msgctxt "Commands|"
+msgid "Open Document"
+msgstr "開啟文件"
+
+#: ../../newPartCmd.py:40
+msgctxt "Commands1|"
+msgid "New Part"
+msgstr "新增零件"
+
+#: ../../newPartCmd.py:79
+msgctxt "Commands1|"
+msgid "Enter new "
+msgstr "輸入新的 "
+
+#: ../../newPartCmd.py:79
+msgctxt "Commands1|"
+msgid " name :"
+msgstr " 名稱 :"
+
+msgctxt "Commands1|"
+msgid "Create a new Part"
+msgstr "建立一個零件組合"
+
+#: ../../newPartCmd.py:45
+msgctxt "Commands1|"
+msgid "New Body"
+msgstr "新增實體"
+
+msgctxt "Commands1|"
+msgid "Create a new Body"
+msgstr "建立一個實體"
+
+#: ../../newPartCmd.py:50
+msgctxt "Commands1|"
+msgid "New Group"
+msgstr "新增群組"
+
+msgctxt "Commands1|"
+msgid "Create a new Group"
+msgstr "建立一個群組"
+
+msgctxt "Fasteners|"
+msgid "Insert Screw"
+msgstr "插入螺絲"
+
+msgctxt "Fasteners|"
+msgid "Insert Nut"
+msgstr "插入螺母"
+
+msgctxt "Fasteners|"
+msgid "Insert Washer"
+msgstr "插入墊圈"
+
+msgctxt "Fasteners|"
+msgid "Insert threaded rod"
+msgstr "插入螺桿"
+
+msgctxt "Fasteners|"
+msgid ""
+"FastenersWorkbench is not installed.\n"
+" \n"
+"You can install it with the FreeCAD AddonsManager:\n"
+"Menu Tools > Addon Manager > fasteners"
+msgstr ""
+"緊固件工作台尚未安裝.\n"
+"\n"
+"您可以使用 FreeCAD 附加元件管理員 安裝它:\n"
+"功能表工具 > 附加元件管理器 > fasteners"
+
+msgctxt "Fasteners|"
+msgid "Edit Attachment of a Fastener"
+msgstr "編輯緊固件的連接"
+
+msgctxt "Fasteners|"
+msgid "Change Fastener parameters"
+msgstr "更改緊固件參數"
+
+msgctxt "Fasteners|"
+msgid "Clone Fastener to Axes"
+msgstr "將緊固件複製到軸"
+
+msgctxt "Fasteners|"
+msgid ""
+"<p>Insert a Screw into the Assembly</p><p>If another fastener is selected, a "
+"new fastener of the same type is created in the same assembly.If an axis or "
+"LCS is selected, the new fastener will be attached to it.If an assembly is "
+"selected, the new fastener will be inside that assembly.</p>"
+msgstr ""
+"<p>將螺絲插入緊固件</p><p>如果選擇了另一個緊固件，則會在同一緊固件中建立相同類型的新緊固件。如果選擇了軸或區域座標系統(LCS)，如果選擇了某個緊固件則會附加新緊固件，新的緊固件將位於該緊固件內.</p>"
+
+msgctxt "Fasteners|"
+msgid ""
+"<p>Insert a Nut into the Assembly</p><p>If another fastener is selected, a "
+"new fastener of the same type is created in the same assembly.If an axis or "
+"LCS is selected, the new fastener will be attached to it.If an assembly is "
+"selected, the new fastener will be inside that assembly.</p>"
+msgstr ""
+"<p>將螺帽插入零件組合</p><p>如果選擇了另一個緊固件，則會在同一零件組合中建立相同類型的新緊固件。如果選擇了軸或LCS，如果選擇了某個零件組合則會附加新緊固件，新的緊固件將位於該零件組合內.</p>"
+
+msgctxt "Fasteners|"
+msgid ""
+"<p>Insert a Washer into the Assembly</p><p>If another fastener is selected, "
+"a new fastener of the same type is created in the same assembly.If an axis "
+"or LCS is selected, the new fastener will be attached to it.If an assembly "
+"is selected, the new fastener will be inside that assembly.</p>"
+msgstr ""
+"<p>將墊圈插入零件組合</p><p>如果選擇了另一個緊固件，則會在同一零件組合中建立相同類型的新緊固件。如果選擇了軸或LCS，如果選擇了某個零件組合則會附加新緊固件，新的緊固件將位於該零件組合內.</p>"
+
+msgctxt "Fasteners|"
+msgid "Selected object doesn't seem to be a valid fastener, ignoring\n"
+msgstr "所選物體似乎不是有效的緊固件，忽略\n"
+
+msgctxt "Fasteners|"
+msgid "Length \""
+msgstr "長度: \""
+
+msgctxt "Fasteners|"
+msgid "\" is not available, ignoring\n"
+msgstr "\" 不可用，忽略\n"
+
+msgctxt "Fasteners|"
+msgid "unknown fastener type \""
+msgstr "未知緊固件類型 \""
+
+msgctxt "Fasteners|"
+msgid "\", ignoring\n"
+msgstr "\", 忽略\n"
+
+msgctxt "Fasteners|"
+msgid "Fasteners"
+msgstr "緊固件"
+
+msgctxt "Workbench|"
+msgid "Assembly 4"
+msgstr "零件組合 4"
+
+msgctxt "Workbench|"
+msgid "Assembly 4 workbench"
+msgstr "零件組合 4 工作台"
+
+msgctxt "Workbench|"
+msgid "&Help"
+msgstr "求助說明(&H)"
+
+msgctxt "Workbench|"
+msgid "&Assembly"
+msgstr "零件組合(&A)"
