@@ -18,6 +18,15 @@ import infoPartCmd
 #import infoKeys
 #All infor from infoKeys is process by infoPartCmd shouldn't need to
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
+
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 
 crea = infoPartCmd.infoPartUI.makePartInfo
 fill = infoPartCmd.infoPartUI.infoDefault
@@ -66,12 +75,12 @@ class makeBOM:
     def GetResources(self):
 
         if self.follow_subassemblies == True:
-            menutext = "Bill of Materials"
-            tooltip  = "Create the Bill of Materials of the Assembly including sub-assemblies"
+            menutext = App.Qt.translate("Asm4_makeBOM", "Bill of Materials")
+            tooltip  = App.Qt.translate("Asm4_makeBOM", "Create the Bill of Materials of the Assembly including sub-assemblies")
             iconFile = os.path.join( Asm4.iconPath, 'Asm4_PartsList_Subassemblies.svg' )
         else:
-            menutext = "Local Bill of Materials"
-            tooltip  = "Create the Bill of Materials of the Assembly"
+            menutext = App.Qt.translate("Asm4_makeBOM", "Local Bill of Materials")
+            tooltip  = App.Qt.translate("Asm4_makeBOM", "Create the Bill of Materials of the Assembly")
             iconFile = os.path.join( Asm4.iconPath, 'Asm4_PartsList.svg' )
 
         return {
@@ -96,13 +105,13 @@ class makeBOM:
 
         try:
             self.model = self.modelDoc.Assembly
-            print("ASM4> BOM of the Assembly 4 Model")
+            print(App.Qt.translate("Asm4_makeBOM", "ASM4> BOM of the Assembly 4 Model"))
         except:
             try:
                 self.model = self.modelDoc.Model
-                print("ASM4> BOM of the legacy Assembly 4 Model")
+                print(App.Qt.translate("Asm4_makeBOM", "ASM4> BOM of the legacy Assembly 4 Model"))
             except:
-                print("ASM4> BOM might not work with this file")
+                print(App.Qt.translate("Asm4_makeBOM", "ASM4> BOM might not work with this file"))
 
         self.drawUI()
         self.UI.show()
@@ -112,9 +121,9 @@ class makeBOM:
         self.BomKeyForAutoFillList = {}
 
         if self.follow_subassemblies == True:
-            print("ASM4> BOM following sub-assemblies")
+            print(App.Qt.translate("Asm4_makeBOM", "ASM4> BOM following sub-assemblies"))
         else:
-            print("ASM4> BOM local parts only")
+            print(App.Qt.translate("Asm4_makeBOM", "ASM4> BOM local parts only"))
 
         # This recursive routine goes through the Bom to find parts making up the
         # Assembly it then runs the Autofill to make sure that values than can be automatically applied are
@@ -184,7 +193,7 @@ class makeBOM:
             pass #This should be fine
 
         else:
-            print ("Nothing Applied")
+            print (App.Qt.translate("Asm4_makeBOM", "Nothing Applied"))
         #===================================
         # Continue walking inside the groups
         #=====  ==============================
@@ -398,7 +407,7 @@ class makeBOM:
                     self.BomKeyList[BomKey]['Qty.'] = 1
                     self.Verbose += '\n'
         else:
-            print ("Nothing Applied")
+            print (App.Qt.translate("Asm4_makeBOM", "Nothing Applied"))
 
         # else:
             # print("@", obj.TypeId)
@@ -478,7 +487,7 @@ class makeBOM:
     # Define the UI (static elements, only)
     def drawUI(self):
         # Main Window (QDialog)
-        self.UI.setWindowTitle('Parts List (BOM)')
+        self.UI.setWindowTitle(App.Qt.translate("Asm4_makeBOM", 'Parts List (BOM)'))
         self.UI.setWindowIcon(QtGui.QIcon(os.path.join(Asm4.iconPath , 'FreeCad.svg')))
         self.UI.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
         self.UI.setModal(False)
@@ -486,12 +495,12 @@ class makeBOM:
 
         # Help and Log
         self.LabelBOML1 = QtGui.QLabel()
-        self.LabelBOML1.setText('BOM generates bill of materials.\n\nIt uses the Parts\' info to generate entries on BOM, unless autofill is set.\n')
+        self.LabelBOML1.setText(App.Qt.translate("Asm4_makeBOM", 'BOM generates bill of materials.\n\nIt uses the Parts\' info to generate entries on BOM, unless autofill is set.\n'))
         self.LabelBOML2 = QtGui.QLabel()
-        self.LabelBOML2.setText("Check <a href='https://github.com/Zolko-123/FreeCAD_Assembly4/tree/master/Examples/ConfigBOM/README.md'>BOM tutorial</a>")
+        self.LabelBOML2.setText(App.Qt.translate("Asm4_makeBOM", "Check <a href='https://github.com/Zolko-123/FreeCAD_Assembly4/tree/master/Examples/ConfigBOM/README.md'>BOM tutorial</a>"))
         self.LabelBOML2.setOpenExternalLinks(True)
         self.LabelBOML3 = QtGui.QLabel()
-        self.LabelBOML3.setText('\n\nReport:')
+        self.LabelBOML3.setText(App.Qt.translate("Asm4_makeBOM", '\n\nReport:'))
 
         self.mainLayout.addWidget(self.LabelBOML1)
         self.mainLayout.addWidget(self.LabelBOML2)
@@ -506,7 +515,7 @@ class makeBOM:
         self.buttonLayout = QtGui.QHBoxLayout()
 
         # OK button
-        self.OkButton = QtGui.QPushButton('OK')
+        self.OkButton = QtGui.QPushButton(App.Qt.translate("Asm4_makeBOM", 'OK'))
         self.OkButton.setDefault(True)
         self.buttonLayout.addWidget(self.OkButton)
         self.mainLayout.addLayout(self.buttonLayout)

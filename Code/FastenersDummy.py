@@ -14,8 +14,15 @@ import FreeCAD as App
 import Asm4_libs as Asm4
 from Asm4_Translate import translate
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
 
-
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 
 """
     +-----------------------------------------------+
@@ -51,7 +58,7 @@ class insertFastener:
 
 
     def GetResources(self):
-        return {"MenuText": self.menutext,
+        return {"MenuText": App.Qt.translate("Fasteners", self.menutext),
                 "ToolTip": translate("Fasteners", "FastenersWorkbench is not installed.\n \nYou can install it with the FreeCAD AddonsManager:\nMenu Tools > Addon Manager > fasteners"),
                 "Pixmap" : self.icon }
 
@@ -79,8 +86,8 @@ class placeFastenerCmd():
         super(placeFastenerCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Edit Attachment of a Fastener",
-                "ToolTip": 'FastenersWorkbench is not installed.\n \nYou can install it with the FreeCAD AddonsManager:\nMenu Tools > Addon Manager > fasteners',
+        return {"MenuText": App.Qt.translate("Fasteners", "Edit Attachment of a Fastener"),
+                "ToolTip": App.Qt.translate("Fasteners", 'FastenersWorkbench is not installed.\n \nYou can install it with the FreeCAD AddonsManager:\nMenu Tools > Addon Manager > fasteners'),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_mvFastener.svg')
                 }
 
@@ -102,8 +109,8 @@ class changeFSparametersCmd():
         super(changeFSparametersCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Change Fastener parameters",
-                "ToolTip": "Change Fastener parameters",
+        return {"MenuText": App.Qt.translate("Fasteners", "Change Fastener parameters"),
+                "ToolTip": App.Qt.translate("Fasteners", "Change Fastener parameters"),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_FSparams.svg')
                 }
 
@@ -121,8 +128,8 @@ class cloneFastenersToAxesCmd():
         super(cloneFastenersToAxesCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Clone Fastener to Axes",
-                "ToolTip": 'FastenersWorkbench is not installed.\n \nYou can install it with the FreeCAD AddonsManager:\nMenu Tools > Addon Manager > fasteners',
+        return {"MenuText": App.Qt.translate("Fasteners", "Clone Fastener to Axes"),
+                "ToolTip": App.Qt.translate("Fasteners", 'FastenersWorkbench is not installed.\n \nYou can install it with the FreeCAD AddonsManager:\nMenu Tools > Addon Manager > fasteners'),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_cloneFasteners.svg')
                 }
 

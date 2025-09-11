@@ -19,7 +19,15 @@ import Part
 import Asm4_libs as Asm4
 from Asm4_Translate import translate
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
 
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 """
     +-----------------------------------------------+
     |    a class to create all container objects    |
@@ -32,18 +40,18 @@ class newPart:
         self.partName = partName
         if self.partName == "Part":
             self.partType = "App::Part"
-            self.menutext = "New Part"
-            self.tooltip = translate("Commands1", "Create a new Part")
+            self.menutext = App.Qt.translate("Commands1", "New Part")
+            self.tooltip = App.Qt.translate("Commands1", "Create a new Part")
             self.icon = os.path.join(Asm4.iconPath, "Asm4_Part.svg")
         elif self.partName == "Body":
             self.partType = "PartDesign::Body"
-            self.menutext = "New Body"
-            self.tooltip = translate("Commands1", "Create a new Body")
+            self.menutext = App.Qt.translate("Commands1", "New Body")
+            self.tooltip = App.Qt.translate("Commands1", "Create a new Body")
             self.icon = os.path.join(Asm4.iconPath, "Asm4_Body.svg")
         elif self.partName == "Group":
             self.partType = "App::DocumentObjectGroup"
-            self.menutext = "New Group"
-            self.tooltip = translate("Commands1", "Create a new Group")
+            self.menutext = App.Qt.translate("Commands1", "New Group")
+            self.tooltip = App.Qt.translate("Commands1", "Create a new Group")
             self.icon = os.path.join(Asm4.iconPath, "Asm4_Group.svg")
 
     def GetResources(self):

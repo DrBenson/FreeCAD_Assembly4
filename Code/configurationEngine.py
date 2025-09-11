@@ -15,6 +15,16 @@ from FreeCAD import Console as FCC
 
 import Asm4_libs as Asm4
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
+
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
+
 ASM4_CONFIG_TYPE        = 'Asm4::ConfigurationTable'
 HEADER_CELL             = 'A1'
 DESCRIPTION_CELL        = 'A2'
@@ -45,7 +55,7 @@ def createConfig(name, description):
         if assy:
             group = assy.newObject('App::DocumentObjectGroup','Configurations')
         else:
-            FCC.PrintWarnin('No assembly container here, quitting\n')
+            FCC.PrintWarnin(App.Qt.translate("Asm4_Configurations", 'No assembly container here, quitting\n'))
             return
     # Create the document
     conf = group.newObject('Spreadsheet::Sheet', name)
@@ -77,8 +87,8 @@ class applyConfigurationCmd:
         super(applyConfigurationCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Apply configuration",
-                "ToolTip": "Applies selected configuration\nConfigurations allow to set visibilities and offsets of parts",
+        return {"MenuText": App.Qt.translate("Asm4_Configurations", "Apply configuration"),
+                "ToolTip": App.Qt.translate("Asm4_Configurations", "Applies selected configuration\nConfigurations allow to set visibilities and offsets of parts"),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_applyConfig.svg')
                 }
 
@@ -108,8 +118,8 @@ class openConfigurationsCmd:
         super(openConfigurationsCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Open configurations panel",
-                "ToolTip": "Configurations allow to set visibilities and offsets of parts",
+        return {"MenuText": App.Qt.translate("Asm4_Configurations", "Open configurations panel"),
+                "ToolTip": App.Qt.translate("Asm4_Configurations", "Configurations allow to set visibilities and offsets of parts"),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_Configurations.svg')
                 }
 
@@ -130,7 +140,7 @@ class openConfigurationsUI():
         self.form = QtGui.QWidget()
         iconFile = os.path.join( Asm4.iconPath , 'Asm4_Variables.svg')
         self.form.setWindowIcon(QtGui.QIcon( iconFile ))
-        self.form.setWindowTitle('Assembly Configurations')
+        self.form.setWindowTitle(App.Qt.translate("Asm4_Configurations", 'Assembly Configurations'))
 
         # draw the GUI, objects are defined later down
         self.drawUI()
@@ -162,7 +172,7 @@ class openConfigurationsUI():
     def Restore(self):
         selectedItems = self.configList.selectedItems()
         if len(selectedItems) != 1:
-            Asm4.warningBox('Please select a configuration in the list')
+            Asm4.warningBox(App.Qt.translate("Asm4_Configurations", 'Please select a configuration in the list'))
             return
         confName = self.configList.currentItem().name
         restoreConfiguration(confName)
@@ -174,13 +184,13 @@ class openConfigurationsUI():
             confName = self.configList.currentItem().name
             conf = getConfig(confName)
             if isAsm4Config(conf):
-                confirm = Asm4.confirmBox('This will delete configuration "' + confName + '"?')
+                confirm = Asm4.confirmBox(App.Qt.translate("Asm4_Configurations", 'This will delete configuration "') + confName + '"?')
                 if confirm:
                     App.ActiveDocument.removeObject(confName)
                 else:
-                    FCC.PrintMessage('Configuration "' + confName + '" not touched\n')
+                    FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'Configuration "') + confName + App.Qt.translate("Asm4_Configurations", '" not touched\n'))
             else:
-                FCC.PrintMessage('Object "' + confName + '" is not a valid Assembly4 configuration, leaving untouched\n')
+                FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'Object "') + confName + App.Qt.translate("Asm4_Configurations", '" is not a valid Assembly4 configuration, leaving untouched\n'))
             # rescan configuration list
             self.initUI()
 
@@ -236,21 +246,21 @@ class openConfigurationsUI():
         self.mainLayout = QtGui.QVBoxLayout(self.form)
 
         # List of configurations
-        self.mainLayout.addWidget(QtGui.QLabel("Available configurations:"))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Asm4_Configurations", "Available configurations:")))
         self.configList = QtGui.QListWidget()
         self.configList.setMinimumHeight(100)
         self.mainLayout.addWidget(self.configList)
         # Descriptions
-        self.mainLayout.addWidget(QtGui.QLabel("Description:"))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Asm4_Configurations", "Description:")))
         self.configDescription = QtGui.QTextEdit()
         self.configDescription.setMinimumHeight(100)
         self.configDescription.setReadOnly(True)
         self.mainLayout.addWidget(self.configDescription)
         # Buttons
         self.buttonLayout = QtGui.QHBoxLayout()
-        self.newButton = QtGui.QPushButton('New')
-        self.deleteButton = QtGui.QPushButton('Delete')
-        self.overwriteButton = QtGui.QPushButton('Overwrite')
+        self.newButton = QtGui.QPushButton(App.Qt.translate("Asm4_Configurations", 'New'))
+        self.deleteButton = QtGui.QPushButton(App.Qt.translate("Asm4_Configurations", 'Delete'))
+        self.overwriteButton = QtGui.QPushButton(App.Qt.translate("Asm4_Configurations", 'Overwrite'))
         # the button layout
         self.buttonLayout.addWidget(self.newButton)
         self.buttonLayout.addStretch()
@@ -280,8 +290,8 @@ class newConfigurationCmd:
         self.drawUI()
 
     def GetResources(self):
-        return {"MenuText": "New configuration",
-                "ToolTip": "Create a new configuration of the assembly",
+        return {"MenuText": App.Qt.translate("Asm4_Configurations", "New configuration"),
+                "ToolTip": App.Qt.translate("Asm4_Configurations", "Create a new configuration of the assembly"),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_applyConfig.svg')
                 }
 
@@ -315,7 +325,7 @@ class newConfigurationCmd:
         confName = self.configName.text().strip()
         confDescr = self.configDescription.toPlainText().strip()
         if confName == '':
-            Asm4.warningBox('Please specify configuration name!')
+            Asm4.warningBox(App.Qt.translate("Asm4_Configurations", 'Please specify configuration name!'))
             self.configName.setFocus()
             return
         # if no description provided, give a single space to avoid errors
@@ -343,7 +353,7 @@ class newConfigurationCmd:
     # defines the UI, only static elements
     def drawUI(self):
         # Our main window will be a QDialog
-        self.UI.setWindowTitle('Create a new assembly configuration')
+        self.UI.setWindowTitle(App.Qt.translate("Asm4_Configurations", 'Create a new assembly configuration'))
         self.UI.setWindowIcon( QtGui.QIcon( os.path.join( Asm4.iconPath , 'FreeCad.svg' ) ) )
         self.UI.setWindowFlags( QtCore.Qt.WindowStaysOnTopHint )
         self.UI.setMinimumWidth(400)
@@ -352,16 +362,16 @@ class newConfigurationCmd:
         self.mainLayout = QtGui.QVBoxLayout(self.UI)
 
         # Configuration name
-        self.mainLayout.addWidget(QtGui.QLabel("Enter configuration name:"))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Asm4_Configurations", "Enter configuration name:")))
         self.configName = QtGui.QLineEdit()
         self.mainLayout.addWidget(self.configName)
         # Configuration description
-        self.mainLayout.addWidget(QtGui.QLabel("Description (optional):"))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Asm4_Configurations", "Description (optional):")))
         self.configDescription = QtGui.QTextEdit()
         self.configDescription.setMinimumHeight(100)
         self.mainLayout.addWidget(self.configDescription)
         # List of configurations
-        self.mainLayout.addWidget(QtGui.QLabel("Existing configurations:"))
+        self.mainLayout.addWidget(QtGui.QLabel(App.Qt.translate("Asm4_Configurations", "Existing configurations:")))
         self.configList = QtGui.QListWidget()
         self.configList.setMinimumHeight(100)
         self.mainLayout.addWidget(self.configList)
@@ -369,9 +379,9 @@ class newConfigurationCmd:
         # Buttons
         self.buttonLayout = QtGui.QHBoxLayout()
         # Cancel button
-        self.CancelButton = QtGui.QPushButton('Cancel')
+        self.CancelButton = QtGui.QPushButton(App.Qt.translate("Asm4_Configurations", 'Cancel'))
         # OK button
-        self.OkButton = QtGui.QPushButton('OK')
+        self.OkButton = QtGui.QPushButton(App.Qt.translate("Asm4_Configurations", 'OK'))
         self.OkButton.setDefault(True)
         # the button layout
         self.buttonLayout.addWidget(self.CancelButton)
@@ -398,13 +408,13 @@ class newConfigurationCmd:
 
 
 def SaveConfiguration(confName, description):
-    FCC.PrintMessage('Saving configuration to "' + confName + '"\n')
+    FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'Saving configuration to "') + confName + '"\n')
     #conf = getConfig(confName, 'Configurations')
     conf = getConfig(confName)
     if conf and isAsm4Config(conf):
-        confirm = Asm4.confirmBox('This will overwrite existing configuration "' + confName + '"')
+        confirm = Asm4.confirmBox(App.Qt.translate("Asm4_Configurations", 'This will overwrite existing configuration "') + confName + '"')
         if not confirm:
-            FCC.PrintMessage('Cancel save of configuration "' + confName + '"\n')
+            FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'Cancel save of configuration "') + confName + '"\n')
             return
         else:
             setConfigDescription(conf, description)
@@ -493,7 +503,7 @@ def SaveObject(conf, obj):
     +-----------------------------------------------+
 """
 def restoreConfiguration(confName):
-    FCC.PrintMessage('Restoring configuration "' + confName + '"\n')
+    FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'Restoring configuration "') + confName + '"\n')
     #doc = getConfig(confName, 'Configurations')
     conf = getConfig(confName)
     assy = Asm4.getAssembly()
@@ -523,7 +533,7 @@ def restoreObject(conf, obj):
     row = GetObjectRow(conf, objName)
     if row is None:
         if obj.isDerivedFrom('Part::Feature') or obj.isDerivedFrom('App::Link'):
-            FCC.PrintMessage('No data for object "' + objName + '" in configuration "' + conf.Name + '"\n')
+            FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'No data for object "') + objName + App.Qt.translate("Asm4_Configurations", '" in configuration "') + conf.Name + '"\n')
         return
     # set visibility, valid for all objects
     vis = conf.get( OBJECT_VISIBLE_COL   + row )
@@ -556,7 +566,7 @@ def restoreObject(conf, obj):
             placement = App.Placement(position, rotation)
             obj.Placement = placement
     except:
-        FCC.PrintMessage('Unknown AssemblyType "'+asmType+'" for object "' + objName + '" in configuration "' + conf.Name + '"\n')
+        FCC.PrintMessage(App.Qt.translate("Asm4_Configurations", 'Unknown AssemblyType "')+asmType+App.Qt.translate("Asm4_Configurations", '" for object "' )+ objName + App.Qt.translate("Asm4_Configurations", '" in configuration "') + conf.Name + '"\n')
 
 
 """

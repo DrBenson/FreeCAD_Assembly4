@@ -24,7 +24,12 @@ from FreeCAD import Console as FCC
 codePath   = os.path.dirname(__file__)
 iconPath = os.path.join( codePath, '../Resources/icons' )
 
-
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 
 # Types of datum objects
 datumTypes = [  'PartDesign::CoordinateSystem', \
@@ -584,7 +589,7 @@ class dropDownCmd:
         return tuple(self.cmdlist)
 
     def GetResources(self):
-        return { 'MenuText': self.menu, 'ToolTip': self.tooltip }
+        return { 'MenuText': App.Qt.translate("Asm4", self.menu), 'ToolTip': App.Qt.translate("Asm4", self.tooltip) }
 
 
 

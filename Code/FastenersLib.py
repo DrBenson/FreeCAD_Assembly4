@@ -19,6 +19,15 @@ import FastenersCmd as FS
 import Asm4_libs as Asm4
 from Asm4_Translate import translate
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
+
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 
 
 # icon to show in the Menu, toolbar and widget window
@@ -90,8 +99,8 @@ class insertFastener:
 
 
     def GetResources(self):
-        return {"MenuText": self.menutext,
-                "ToolTip" : self.tooltip,
+        return {"MenuText": translate("Fasteners", self.menutext),
+                "ToolTip" : translate("Fasteners", self.tooltip),
                 "Pixmap"  : self.icon }
 
     def IsActive(self):
@@ -222,8 +231,8 @@ class changeFSparametersCmd():
         super(changeFSparametersCmd,self).__init__()
 
     def GetResources(self):
-        return {"MenuText": "Change Fastener parameters",
-                "ToolTip": "Change Fastener parameters",
+        return {"MenuText": translate("Fasteners", "Change Fastener parameters"),
+                "ToolTip": translate("Fasteners", "Change Fastener parameters"),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_FSparams.svg')
                 }
 
@@ -290,8 +299,8 @@ class cloneFastenersToAxesCmd():
         super(cloneFastenersToAxesCmd,self).__init__()
     
     def GetResources(self):
-        return {"MenuText": "Clone Fastener to Axes",
-                "ToolTip": "Clone Fastener to Axes",
+        return {"MenuText": translate("Fasteners", "Clone Fastener to Axes"),
+                "ToolTip": translate("Fasteners", "Clone Fastener to Axes"),
                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_cloneFasteners.svg')
                 }
     
@@ -379,4 +388,4 @@ FastenersCmdList = [    'Asm4_insertScrew',
                         'Asm4_insertWasher', 
                         'Asm4_cloneFastenersToAxes',
                         'Asm4_FSparameters'] 
-Gui.addCommand( 'Asm4_Fasteners', Asm4.dropDownCmd( FastenersCmdList, 'Fasteners'))
+Gui.addCommand( 'Asm4_Fasteners', Asm4.dropDownCmd( FastenersCmdList, translate("Fasteners", 'Fasteners')))

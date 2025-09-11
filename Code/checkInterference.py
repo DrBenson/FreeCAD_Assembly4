@@ -23,6 +23,16 @@ import Asm4_libs as Asm4
 import showHideLcsCmd as lcs
 import Part
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
+
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
+
 class checkInterference:
 
     def __init__(self):
@@ -30,8 +40,8 @@ class checkInterference:
 
 
     def GetResources(self):
-        menutext = "Check Intereferences"
-        tooltip  = "Check interferences among assembled objects (may take time)"
+        menutext = App.Qt.translate("Asm4_checkInterference", "Check Intereferences")
+        tooltip  = App.Qt.translate("Asm4_checkInterference", "Check interferences among assembled objects (may take time)")
         iconFile = os.path.join(Asm4.iconPath, 'Asm4_Interference_Check.svg')
         return {
             "MenuText": menutext,

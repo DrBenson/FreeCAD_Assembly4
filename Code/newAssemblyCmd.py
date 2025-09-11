@@ -17,7 +17,15 @@ import FreeCAD as App
 import Asm4_libs as Asm4
 from Asm4_Translate import translate
 
+import Asm4_locator
+global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+Asm4_path  = os.path.dirname( Asm4_locator.__file__ )
+Asm4_code  = os.path.join(Asm4_path, "../Code")
+Asm4_icon  = os.path.join(Asm4_path, '../Resources/icons/Assembly4.svg' )
+Asm4_trans = os.path.join(Asm4_path, "../Resources/translations")
 
+Gui.addLanguagePath(Asm4_trans)
+Gui.updateLocale()
 
 class newAssemblyCmd:
     """
@@ -39,7 +47,7 @@ def makeAssembly():
     def GetResources(self):
         tooltip  = translate("Commands", "<p>Create a new Assembly container</p>")
         iconFile = os.path.join( Asm4.iconPath , 'Asm4_Model.svg')
-        return {"MenuText": "New Assembly", "ToolTip": tooltip, "Pixmap" : iconFile }
+        return {"MenuText": translate("Commands", "New Assembly"), "ToolTip": tooltip, "Pixmap" : iconFile }
 
 
     def IsActive(self):
@@ -55,19 +63,18 @@ def makeAssembly():
         assy = App.ActiveDocument.getObject('Assembly')
         if assy is not None:
             if assy.TypeId=='App::Part':
-                message = "This document already contains a valid Assembly, please use it"
+                message = translate("Commands", "This document already contains a valid Assembly, please use it")
                 Asm4.warningBox(message)
                 # set the Type to Assembly
                 assy.Type = 'Assembly'
             else:
-                message  = "This document already contains another FreeCAD object called \"Assembly\", "
-                message += "but it's of type \""+assy.TypeId+"\", unsuitable for an assembly. I can\'t proceed."
+                message  = translate("Commands", "This document already contains another FreeCAD object called \"Assembly\", but it's of type \"")+assy.TypeId+translate("Commands", "\", unsuitable for an assembly. I can\'t proceed.")
                 Asm4.warningBox(message)
             # abort
             return
 
         # there is no object called "Assembly"
-        text,ok = QtGui.QInputDialog.getText(None, 'Create a new assembly', 'Enter assembly name :'+' '*30, text='Assembly')
+        text,ok = QtGui.QInputDialog.getText(None, translate("Commands", 'Create a new assembly'), translate("Commands", 'Enter assembly name :')+' '*30, text='Assembly')
         if ok and text:
             # create a group 'Parts' to hold all parts in the assembly document (if any)
             # must be done before creating the assembly

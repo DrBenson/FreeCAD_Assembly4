@@ -11,56 +11,12 @@
 <context>
     <name>Asm4</name>
     <message>
-        <source>&amp;Assembly</source>
-        <translation>零件組合(&amp;A)</translation>
-    </message>
-    <message>
-        <source>&amp;Constraints</source>
-        <translation>約束(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Assembly</source>
-        <translation>零件組合</translation>
-    </message>
-    <message>
-        <source>Selection Filter</source>
-        <translation>選擇篩選器</translation>
-    </message>
-    <message>
-        <source>Create</source>
-        <translation>建立</translation>
-    </message>
-    <message>
         <source>Measure</source>
         <translation>測量</translation>
     </message>
     <message>
         <source>Measure Tool</source>
         <translation>測量工具</translation>
-    </message>
-    <message>
-        <source>This Part contains an incompatible &quot;Variables&quot; object, </source>
-        <translation>此零件包含不相容的&quot;變量&quot;物體， </translation>
-    </message>
-    <message>
-        <source>this could lead to unexpected results
-</source>
-        <translation>這可能會導致意想不到的結果
-</translation>
-    </message>
-    <message>
-        <source>Found legacy AssemblyType property, adding new empty SolverId property
-</source>
-        <translation>找到舊的 &quot;零件組合類型&quot; 屬性，新增新的空白 求解ID 屬性
-</translation>
-    </message>
-    <message>
-        <source>FreeCAD Warning</source>
-        <translation>FreeCAD 警示</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to proceed ?</source>
-        <translation>您確定要繼續嗎?</translation>
     </message>
     <message>
         <source>Initialising variantLink ...
@@ -126,6 +82,50 @@ on Position.X: Index*30</source>
         <location filename="../../Asm4_objects.py" line="535"/>
         <source>The axis, direction or plane the Placer relates to</source>
         <translation>位置相關的軸、方向或平面</translation>
+    </message>
+    <message>
+        <source>&amp;Assembly</source>
+        <translation>零件組合(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Constraints</source>
+        <translation>約束(&amp;C)</translation>
+    </message>
+    <message>
+        <source>Assembly</source>
+        <translation>零件組合</translation>
+    </message>
+    <message>
+        <source>Selection Filter</source>
+        <translation>選擇篩選器</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation>建立</translation>
+    </message>
+    <message>
+        <source>This Part contains an incompatible &quot;Variables&quot; object, </source>
+        <translation>此零件包含不相容的&quot;變量&quot;物體， </translation>
+    </message>
+    <message>
+        <source>this could lead to unexpected results
+</source>
+        <translation>這可能會導致意想不到的結果
+</translation>
+    </message>
+    <message>
+        <source>Found legacy AssemblyType property, adding new empty SolverId property
+</source>
+        <translation>找到舊的 &quot;零件組合類型&quot; 屬性，新增新的空白 求解ID 屬性
+</translation>
+    </message>
+    <message>
+        <source>FreeCAD Warning</source>
+        <translation>FreeCAD 警示</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to proceed ?</source>
+        <translation>您確定要繼續嗎?</translation>
     </message>
     <message>
         <source>No &quot;Variables&quot; container in source object
@@ -327,47 +327,6 @@ Supported extensions are *.png *.jpg *.jpeg *.gif</source>
         <translation>請選擇一個現有變數.</translation>
     </message>
     <message>
-        <location filename="../../AnimationLib.py" line="495"/>
-        <source>The Python module &quot;OpenCV&quot; (cv2) is not installed</source>
-        <translation>Python 模組&quot;OpenCV&quot; (cv2) 未安裝</translation>
-    </message>
-    <message>
-        <location filename="../../AnimationLib.py" line="640"/>
-        <source>Save this sequence as video</source>
-        <translation>將此序列儲存為影片</translation>
-    </message>
-    <message>
-        <location filename="../../AnimationLib.py" line="644"/>
-        <source>Stop</source>
-        <translation>停止</translation>
-    </message>
-    <message>
-        <location filename="../../AnimationLib.py" line="656"/>
-        <source>Plot</source>
-        <translation>影像輸出</translation>
-    </message>
-    <message>
-        <location filename="../../AnimationLib.py" line="667"/>
-        <source>Plot trajectories in this sequence</source>
-        <translation>繪製此序列中的軌跡</translation>
-    </message>
-    <message>
-        <location filename="../../AnimationLib.py" line="671"/>
-        <source>Run</source>
-        <translation>執行</translation>
-    </message>
-    <message>
-        <location filename="../../AnimationLib.py" line="686"/>
-        <source>Run this sequence in the 3D window
-
-If the model is large and complex,
-it is advisable to try with 10 frames</source>
-        <translation>在 3D 檢視中執行此序列
-
-如果模型龐大且複雜，
-建議嘗試 10 幀</translation>
-    </message>
-    <message>
         <source>Animate Assembly</source>
         <translation>零件組合動畫</translation>
     </message>
@@ -382,6 +341,11 @@ it is advisable to try with 10 frames</source>
     <message>
         <source>Unknown State/Transition</source>
         <translation>未知狀態/轉換</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="495"/>
+        <source>The Python module &quot;OpenCV&quot; (cv2) is not installed</source>
+        <translation>Python 模組&quot;OpenCV&quot; (cv2) 未安裝</translation>
     </message>
     <message>
         <source>Document</source>
@@ -460,8 +424,44 @@ it is advisable to try with 10 frames</source>
         <translation>結束離開</translation>
     </message>
     <message>
+        <location filename="../../AnimationLib.py" line="656"/>
+        <source>Plot</source>
+        <translation>影像輸出</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="667"/>
+        <source>Plot trajectories in this sequence</source>
+        <translation>繪製此序列中的軌跡</translation>
+    </message>
+    <message>
         <source>Save</source>
         <translation>儲存</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="640"/>
+        <source>Save this sequence as video</source>
+        <translation>將此序列儲存為影片</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="644"/>
+        <source>Stop</source>
+        <translation>停止</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="671"/>
+        <source>Run</source>
+        <translation>執行</translation>
+    </message>
+    <message>
+        <location filename="../../AnimationLib.py" line="686"/>
+        <source>Run this sequence in the 3D window
+
+If the model is large and complex,
+it is advisable to try with 10 frames</source>
+        <translation>在 3D 檢視中執行此序列
+
+如果模型龐大且複雜，
+建議嘗試 10 幀</translation>
     </message>
     <message>
         <source>animationProvider.nextFrame not implemented.</source>
@@ -1157,6 +1157,11 @@ Area : </source>
 <context>
     <name>Asm4_Plot</name>
     <message>
+        <location filename="../../Code/AnimationLib.py" line="44"/>
+        <source>animationProvider.nextFrame not implemented.</source>
+        <translation>animationProvider.nextFrame 未達成.</translation>
+    </message>
+    <message>
         <source>Plot trajectories of Points
 
 Only visible Datum Points are shown</source>
@@ -1610,11 +1615,25 @@ There seems to be some conflicts between parts
         <translation> 與目前的選擇</translation>
     </message>
     <message>
-        <source>New Hole Axis</source>
+        <source>Create new </source>
+        <translation>建立一個新的 </translation>
+    </message>
+    <message>
+        <source>Enter </source>
+        <translation>輸入 </translation>
+    </message>
+    <message>
+        <source> name :</source>
+        <translation> 名稱 :</translation>
+    </message>
+    <message>
+        <location filename="../../Code/newDatumCmd.py" line="183"/>
+        <source>New Circle Axis</source>
         <translation>新增圓孔軸</translation>
     </message>
     <message>
-        <source>Create a Datum Axis attached to a hole</source>
+        <location filename="../../Code/newDatumCmd.py" line="184"/>
+        <source>Create a Datum Axis attached to a circle</source>
         <translation>建立附加到孔的基準軸</translation>
     </message>
     <message>
@@ -1626,20 +1645,16 @@ There seems to be some conflicts between parts
         <translation>建立基準物件</translation>
     </message>
     <message>
+        <source>New Hole Axis</source>
+        <translation>新增圓孔軸</translation>
+    </message>
+    <message>
+        <source>Create a Datum Axis attached to a hole</source>
+        <translation>建立附加到孔的基準軸</translation>
+    </message>
+    <message>
         <source>I can&apos;t create a </source>
         <translation>我無法建立一個 </translation>
-    </message>
-    <message>
-        <source>Create new </source>
-        <translation>建立一個新的 </translation>
-    </message>
-    <message>
-        <source>Enter </source>
-        <translation>輸入 </translation>
-    </message>
-    <message>
-        <source> name :</source>
-        <translation> 名稱 :</translation>
     </message>
 </context>
 <context>
@@ -1737,15 +1752,15 @@ Enter name for this datum :</source>
 輸入該基準資料的名稱:</translation>
     </message>
     <message>
-        <source>Import Datum</source>
-        <translation>匯入基準</translation>
-    </message>
-    <message>
         <source> selected datum objects will be imported into the root assembly
 with their default names such as:
 </source>
         <translation> 選定的基準將以其預設名稱匯入到根零件組合中. 例如:
 </translation>
+    </message>
+    <message>
+        <source>Import Datum</source>
+        <translation>匯入基準</translation>
     </message>
     <message>
         <source> is already attached to some geometry. This will superimpose its Placement on:
@@ -2627,6 +2642,10 @@ Select a part containing a &quot;Variables&quot; property container</source>
 <context>
     <name>Commands</name>
     <message>
+        <source>Open Document</source>
+        <translation>開啟文件</translation>
+    </message>
+    <message>
         <source>Activates the document of the selected linked part</source>
         <translation>啟用所選連結零件的檔案</translation>
     </message>
@@ -2655,8 +2674,14 @@ Select a part containing a &quot;Variables&quot; property container</source>
         <translation>&quot;，不適合零件組合. 無法繼續.</translation>
     </message>
     <message>
-        <source>Open Document</source>
-        <translation>開啟文件</translation>
+        <location filename="../../Code/newAssemblyCmd.py" line="77"/>
+        <source>Create a new assembly</source>
+        <translation>建立一個新的零件組合</translation>
+    </message>
+    <message>
+        <location filename="../../Code/newAssemblyCmd.py" line="77"/>
+        <source>Enter assembly name :</source>
+        <translation>輸入零件組合名稱:</translation>
     </message>
 </context>
 <context>
@@ -2740,6 +2765,10 @@ Menu Tools &gt; Addon Manager &gt; fasteners</source>
         <translation>將緊固件複製到軸</translation>
     </message>
     <message>
+        <source>Fasteners</source>
+        <translation>緊固件</translation>
+    </message>
+    <message>
         <source>&lt;p&gt;Insert a Screw into the Assembly&lt;/p&gt;&lt;p&gt;If another fastener is selected, a new fastener of the same type is created in the same assembly.If an axis or LCS is selected, the new fastener will be attached to it.If an assembly is selected, the new fastener will be inside that assembly.&lt;/p&gt;</source>
         <translation>&lt;p&gt;將螺絲插入緊固件&lt;/p&gt;&lt;p&gt;如果選擇了另一個緊固件，則會在同一緊固件中建立相同類型的新緊固件。如果選擇了軸或區域座標系統(LCS)，如果選擇了某個緊固件則會附加新緊固件，新的緊固件將位於該緊固件內.&lt;/p&gt;</translation>
     </message>
@@ -2776,10 +2805,6 @@ Menu Tools &gt; Addon Manager &gt; fasteners</source>
 </source>
         <translation>&quot;, 忽略
 </translation>
-    </message>
-    <message>
-        <source>Fasteners</source>
-        <translation>緊固件</translation>
     </message>
 </context>
 <context>
