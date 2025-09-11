@@ -1,0 +1,13 @@
+--- Code/updateAssemblyCmd.py	2025-09-08 10:52:28.588123139 +0800
++++ ../Assembly4-0.50.19/updateAssemblyCmd.py	2025-07-04 15:35:09.487472939 +0800
+@@ -18,8 +18,8 @@
+ class updateAssembly:
+ 
+     def GetResources(self):
+-        return {"MenuText": "Solve and Update Assembly",
+-                "ToolTip": "Update Assembly",
++        return {"MenuText": App.Qt.translate("Asm4_updateAssembly", "Solve and Update Assembly"),
++                "ToolTip": App.Qt.translate("Asm4_updateAssembly", "Update Assembly"),
+                 "Pixmap" : os.path.join( Asm4.iconPath , 'Asm4_Solver.svg')
+                 }
+ 

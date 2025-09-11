@@ -1,0 +1,75 @@
+--- Code/InitGui.py	2025-09-08 10:52:28.581122861 +0800
++++ ../Assembly4-0.50.19/InitGui.py	2025-09-11 08:15:07.640214672 +0800
+@@ -22,17 +22,18 @@
+ ###################################################################################
+ 
+ 
+ import os, sys
+ 
++import FreeCAD
+ import Asm4_locator
+ global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+@@ -45,10 +46,10 @@
+ """
+ class Assembly4Workbench(Workbench):
+ 
+     global Asm4_path, Asm4_icon, Asm4_code, Asm4_trans
+     global selectionFilter
+-    MenuText = "Assembly 4"
+-    ToolTip = "Assembly 4 workbench"
++    MenuText = FreeCAD.Qt.translate("Workbench", "Assembly 4")
++    ToolTip = FreeCAD.Qt.translate("Workbench", "Assembly 4 workbench")
+     Icon = Asm4_icon
+ 
+     def __init__(self):
+@@ -85,6 +86,7 @@
+     +-----------------------------------------------+
+         """
+     def Initialize(self):
++
+         # check for FreeCAD version
+         FCver = FreeCAD.Version()
+         # print("This is FreeCAD version "+FCver[0]+"."+FCver[1]+"."+FCver[2]+"-"+FCver[3])
+@@ -182,22 +184,27 @@
+ 
+         # Define Menus
+         # commands to appear in the Assembly4 menu 'Assembly'
+-        self.appendMenu("&Assembly", self.assemblyMenuItems())
++        self.appendMenu(FreeCAD.Qt.translate("Asm4", "&Assembly"), self.assemblyMenuItems())
+         self.dot()
+ 
+         # put all constraints related commands in a separate menu
+-        self.appendMenu("&Constraints", self.constraintsMenuItems())
++        self.appendMenu(FreeCAD.Qt.translate("Asm4", "&Constraints"), self.constraintsMenuItems())
+         self.dot()
+ 
+         # self.appendMenu("&Geometry",["Asm4_newPart"])
+ 
++        # additional entry in the Help menu
++        # self.appendMenu(Qtranslate("Workbench", "&Help"), ["Asm4_Help"])
++        self.appendMenu( FreeCAD.Qt.translate("Workbench", "&Help"), ["Asm4_Help"])
++        self.dot()
++
+         # Define Toolbars
+         # commands to appear in the Assembly4 toolbar
+-        self.appendToolbar("Assembly", self.assemblyToolbarItems())
++        self.appendToolbar(FreeCAD.Qt.translate("Asm4", "Assembly"), self.assemblyToolbarItems())
+         self.dot()
+ 
+         # build the selection toolbar
+-        self.appendToolbar("Selection Filter", self.selectionToolbarItems())
++        self.appendToolbar(FreeCAD.Qt.translate("Asm4", "Selection Filter"), self.selectionToolbarItems())
+         self.dot()
+ 
+         # self.appendToolbar("Geometry",["Asm4_newPart"])
+@@ -346,8 +353,8 @@
+ 
+         self.appendContextMenu("", "Separator")
+         self.appendContextMenu("", contextMenu)  # add commands to the context menu
+-        self.appendContextMenu("Assembly", assemblySubMenu)  # add commands to the context menu
+-        self.appendContextMenu("Create", createSubMenu)  # add commands to the context menu
++        self.appendContextMenu(FreeCAD.Qt.translate("Asm4", "Assembly"), assemblySubMenu)  # add commands to the context menu
++        self.appendContextMenu(FreeCAD.Qt.translate("Asm4", "Create"), createSubMenu)  # add commands to the context menu
+         self.appendContextMenu("", "Separator")
+ 
+ 

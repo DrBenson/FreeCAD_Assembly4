@@ -1,0 +1,127 @@
+--- Code/infoPartCmd.py	2025-09-11 11:42:25.521211046 +0800
++++ ../Assembly4-0.50.19/infoPartCmd.py	2025-07-04 14:20:21.442213642 +0800
+@@ -115,7 +115,7 @@
+     part.Type
+     if part.Type =="Assembly" and part.TypeId == 'App::Part':
+ 
+-        print ("We have an assembly")
++        print (App.Qt.translate("Asm4_InfoPart", "We have an assembly"))
+         try:
+             infoKeys.AssignCustomerValuesIntoUserFieldsForPartWithSingleBody(part, doc, None)
+         except NotImplementedError as e:
+@@ -237,10 +237,10 @@
+         super(infoPartCmd, self).__init__()
+ 
+     def GetResources(self):
+-        tooltip  = "<p>Edit Part information</p>"
+-        tooltip += "<p>User-supplied information can be added to a part</p>"
++        tooltip  = App.Qt.translate("Asm4_InfoPart", "<p>Edit Part information</p>"
++        + "<p>User-supplied information can be added to a part</p>")
+         iconFile = os.path.join(Asm4.iconPath, 'Asm4_PartInfo.svg')
+-        return {"MenuText": "Edit Part Information", "ToolTip": tooltip, "Pixmap": iconFile}
++        return {"MenuText": App.Qt.translate("Asm4_InfoPart", "Edit Part Information"), "ToolTip": tooltip, "Pixmap": iconFile}
+ 
+     def IsActive(self):
+         if App.ActiveDocument and Asm4.getSelectedContainer():
+@@ -263,7 +263,7 @@
+         self.form = self.base
+         iconFile = os.path.join(Asm4.iconPath, 'Asm4_PartInfo.svg')
+         self.form.setWindowIcon(QtGui.QIcon(iconFile))
+-        self.form.setWindowTitle("Edit Part Information")
++        self.form.setWindowTitle(App.Qt.translate("Asm4_InfoPart", "Edit Part Information"))
+         # has been checked before
+         self.part = Asm4.getSelectedContainer()
+         # Check and load if the configuration file exists
+@@ -373,7 +373,7 @@
+         mb.setText("The Part Info field\nhas been cleared")
+         mb.exec_()
+         '''
+-        Asm4.warningBox("The Part Info field has been cleared")
++        Asm4.warningBox(App.Qt.translate("Asm4_InfoPart", "The Part Info field has been cleared"))
+         self.finish()
+ 
+ 
+@@ -515,12 +515,12 @@
+ 
+         # Buttons
+         self.buttonsLayout = QtGui.QHBoxLayout()
+-        self.confFields = QtGui.QPushButton('Configure fields')
+-        self.confFields.setToolTip('Edit fields')
+-        self.reinit = QtGui.QPushButton('Reset fields')
+-        self.reinit.setToolTip('Reset fields')
+-        self.autoFill = QtGui.QPushButton('Autofill data')
+-        self.autoFill.setToolTip('Autofill fields')
++        self.confFields = QtGui.QPushButton(App.Qt.translate("Asm4_InfoPart", 'Configure fields'))
++        self.confFields.setToolTip( App.Qt.translate("Asm4_InfoPart", 'Edit fields'))
++        self.reinit = QtGui.QPushButton( App.Qt.translate("Asm4_InfoPart", 'Reset fields'))
++        self.reinit.setToolTip( App.Qt.translate("Asm4_InfoPart", 'Reset fields'))
++        self.autoFill = QtGui.QPushButton( App.Qt.translate("Asm4_InfoPart", 'Autofill data'))
++        self.autoFill.setToolTip( App.Qt.translate("Asm4_InfoPart", 'Autofill fields'))
+         self.buttonsLayout.addWidget(self.confFields)
+         self.buttonsLayout.addWidget(self.reinit)
+         self.buttonsLayout.addWidget(self.autoFill)
+@@ -552,7 +552,7 @@
+         self.form = self.base
+         iconFile = os.path.join(Asm4.iconPath, 'Asm4_PartInfo.svg')
+         self.form.setWindowIcon(QtGui.QIcon(iconFile))
+-        self.form.setWindowTitle("Edit Part Information")
++        self.form.setWindowTitle(App.Qt.translate("Asm4_InfoPart", "Edit Part Information"))
+ 
+         self.infoKeysDefault = partInfo.copy()
+         self.infoToolTip = infoToolTip.copy()
+@@ -585,7 +585,7 @@
+                     mb.setText("Fields Name cannot be blank\nYou must disable or delete it")
+                     mb.exec_()
+                     '''
+-                    Asm4.warningBox("Fields Name cannot be blank. You must disable or delete it")
++                    Asm4.warningBox(App.Qt.translate("Asm4_InfoPart", "Fields Name cannot be blank. You must disable or delete it"))
+                     return
+                 i += 1
+ 
+@@ -742,14 +742,14 @@
+                 self.label.append(default)
+                 i += 1
+ 
+-        self.addnewLab = QtGui.QLabel('Field')
++        self.addnewLab = QtGui.QLabel(App.Qt.translate("Asm4_InfoPart", 'Field'))
+         self.gridLayoutButtons.addWidget(self.addnewLab, 0, 0)
+ 
+-        self.suppLab = QtGui.QLabel('Field')
++        self.suppLab = QtGui.QLabel(App.Qt.translate("Asm4_InfoPart", 'Field'))
+         self.gridLayoutButtons.addWidget(self.suppLab, 1, 0)
+ 
+         # 2nd column holds the data
+-        user = QtGui.QLabel('Name')
++        user = QtGui.QLabel(App.Qt.translate("Asm4_InfoPart", 'Name'))
+         self.gridLayout.addWidget(user, 0, 1)
+ 
+         i = 1
+@@ -789,9 +789,9 @@
+                 self.checker.append(checked)
+                 i += 1
+ 
+-        self.addnew = QtGui.QPushButton('Add')
++        self.addnew = QtGui.QPushButton( App.Qt.translate("Asm4_InfoPart", 'Add'))
+         self.gridLayoutButtons.addWidget(self.addnew, 0, 2)
+-        self.suppBut = QtGui.QPushButton('Delete')
++        self.suppBut = QtGui.QPushButton( App.Qt.translate("Asm4_InfoPart", 'Delete'))
+         self.gridLayoutButtons.addWidget(self.suppBut, 1, 2)
+ 
+         # Actions
+@@ -804,14 +804,14 @@
+ 
+         # Show the update if any
+         if self.updateAutoFieldlist() != None:
+-            updateLab = QtGui.QLabel('Update automatic input field')
++            updateLab = QtGui.QLabel(App.Qt.translate("Asm4_InfoPart", 'Update automatic input field'))
+             self.gridLayoutUpdate.addWidget(updateLab, 0, 0)
+             self.upCombo = QtGui.QComboBox()
+             self.gridLayoutUpdate.addWidget(self.upCombo, 1, 0)
+ 
+             for prop in self.updateAutoFieldlist():
+                 self.upCombo.addItem(prop)
+-            self.upBut = QtGui.QPushButton('Update')
++            self.upBut = QtGui.QPushButton(App.Qt.translate("Asm4_InfoPart", 'Update'))
+             self.gridLayoutUpdate.addWidget(self.upBut, 1, 1)
+ 
+             # Actions

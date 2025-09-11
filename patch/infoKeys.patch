@@ -1,0 +1,22 @@
+--- Code/infoKeys.py	2025-09-08 10:52:28.585123020 +0800
++++ ../Assembly4-0.50.19/infoKeys.py	2025-07-04 14:15:02.289721461 +0800
+@@ -28,7 +28,7 @@
+ '''
+ 
+ infoToolTipUserAdded ={
+-'FileName': 'File Name'}
++'FileName': App.Qt.translate("Asm4_InfoPart", 'File Name')}
+ '''
+     'DrawnBy': 'Drawn By',
+     'DrawnDate': 'Drawn Date',
+@@ -87,8 +87,8 @@
+     part.DrawingName = base_part_id
+     part.DrawingRevision = revision
+ 
+-    print("Base Part ID:", base_part_id)
+-    print("Revision:", revision)
++    print(App.Qt.translate("Asm4_InfoPart", "Base Part ID:"), base_part_id)
++    print(App.Qt.translate("Asm4_InfoPart", "Revision:"), revision)
+ 
+     # Todo in my business rules base_part_id should be the PartID unless there are multiple parts in the drawing.
+     # in that case the base_part_id should be prepended by a :1 :2 .etc
