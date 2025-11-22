@@ -2,6 +2,8 @@
 
 Current version 0.60.3
 
+This workbench is based on the original [Assembly4](https://codeberg.org/Zolko/Assembly4) workbench and can be installed alongside it.
+
 ## New FreeCAD hosting
 
 We are pleased to announce that FreeCAD version 0.21 is maintained again, and is hosted at European git hosting provider [CodeBerg](https://codeberg.org/). Please visit us and don't hesitate to contribute:
