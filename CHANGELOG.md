@@ -1,13 +1,9 @@
-
-# FreeCAD Assembly4.1 Workbench
-
-* 2025.09.21 (**0.1**) :  
-Initial release organizing sources and avoiding conflicts with the Assembly4. Both workbenches can now be installed together.
-
-
 # FreeCAD Assembly4 Workbench
 
 ## Release notes
+
+* 2025.11.18 (**0.60.3**) :  
+Mostly a test update  
 
 * 2025.07.27 (**0.60.2**) :  
 Moved all Python code (including the init files) to the Code subdirectory (thanx leoheck)  
